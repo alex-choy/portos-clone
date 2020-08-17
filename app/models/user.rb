@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true}
   
   attr_reader :password
-  after_initialize :ensure_session_token
+  after_initialize :ensure_session_token, :set_shopping_cart_id
 
 
   def self.find_by_credentials(un, pw)
@@ -17,11 +17,11 @@ class User < ApplicationRecord
 
   def password=(pw)
     @password = pw
-    self.password_digest = BCrypt.create(pw)
+    self.password_digest = BCrypt::Password.create(pw)
   end
 
   def is_password?(pw)
-    BCrypt.new(self.password_digest).is_password?(pw)
+    BCrypt::Password.new(self.password_digest).is_password?(pw)
   end
 
   def reset_session_token!
@@ -32,6 +32,10 @@ class User < ApplicationRecord
 
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64
+  end
+
+  def set_shopping_cart_id
+    self.shopping_cart_id = SecureRandom.random_number(1000000)
   end
 
 end
