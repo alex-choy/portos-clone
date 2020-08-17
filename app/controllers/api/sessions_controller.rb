@@ -6,7 +6,7 @@ class Api::SessionsController < ApplicationController
       login!(user)
       redirect_to api_user_url(user)
     else
-      render json: ["Invalid username and/or password combination, please try again"]
+      render json: ["Invalid username and/or password combination, please try again"], status: 404
     end
   end
 
