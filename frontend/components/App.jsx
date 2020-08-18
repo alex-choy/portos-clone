@@ -12,7 +12,6 @@ const App = () => (
     <header>
       <MastheadContainer />
     </header>
-    <Modal />
     <br />
     <br />
     <br />
@@ -103,13 +102,16 @@ const App = () => (
     <br />
     <br />
     <br />
-    <Switch>
-      {/* <AuthRoute path="/login" component={LoginFormContainer} />
-      <AuthRoute path="/signup" component={SignupFormContainer} /> */}
+    {/* <Switch>
+      <AuthRoute path="/login" component={LoginFormContainer} />
+      <AuthRoute path="/signup" component={SignupFormContainer} />
       <Route path="/" component={GreetingContainer} />
-    </Switch>
+    </Switch> */}
     <br />
     <br />
+    <h1>text here</h1>
+
+    <Modal />
   </div>
 );
 

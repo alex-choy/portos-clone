@@ -1,0 +1,24 @@
+.session-form {
+  position: relative;
+}
+
+.session-header {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.session-field {
+  padding: 3px;
+  margin: 5px 0;
+}
+
+.session-field > input {
+  margin-left: 5px;
+  border-bottom: 1px solid black;
+}
+
+.session-button {
+  position: absolute;
+  left: 83%;
+}
