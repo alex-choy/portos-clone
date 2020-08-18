@@ -5,6 +5,9 @@ import { connect } from 'react-redux';
 import LoginFormContainer from '../session_forms/login_form_container';
 import SignupFormContainer from '../session_forms/signup_form_container';
 
+export const LOGIN_MODAL = "LOGIN_MODAL";
+export const SIGNUP_MODAL = "SIGNUP_MODAL";
+
 const Modal = (props) => {
   const { modal, closeModal } = props;
   if(!modal) {
@@ -12,10 +15,10 @@ const Modal = (props) => {
   } 
   let component;
   switch(modal) {
-    case 'login':
+    case LOGIN_MODAL:
       component = <LoginFormContainer />;
       break;
-    case 'signup':
+    case SIGNUP_MODAL:
       component = <SignupFormContainer />;
       break;
     default: 

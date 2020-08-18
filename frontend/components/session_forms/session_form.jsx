@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    const { formType, currentUserId, sessionErrors } = this.props;
+    const { formType, sessionErrors, otherForm } = this.props;
     const { username, password } = this.state;
 
     const otherButtonName = (formType === 'login') ? 'Signup' : 'Login';
@@ -56,7 +56,8 @@ class SessionForm extends React.Component {
           /><br/>
           <button>{formType}</button>
         </form>
-        <Link to={`/${otherButtonName.toLowerCase()}`}>{otherButtonName}</Link>
+        {/* <Link to={`/${otherButtonName.toLowerCase()}`}>{otherButtonName}</Link> */}
+        {otherForm}
       </div>
     );
   }

@@ -1,5 +1,5 @@
 // import OPEN_MODAL and CLOSE_MODAL
-
+import { OPEN_MODAL, CLOSE_MODAL } from '../actions/modal_actions';
 const _defaultState = null;
 
 const modalReducer = (state = _defaultState, action) => {
@@ -13,3 +13,5 @@ const modalReducer = (state = _defaultState, action) => {
       return state;
   }
 };
+
+export default modalReducer;

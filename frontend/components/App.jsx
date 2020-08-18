@@ -5,12 +5,14 @@ import LoginFormContainer from './session_forms/login_form_container';
 import SignupFormContainer from './session_forms/signup_form_container';
 import { AuthRoute } from '../utils/route_util';
 import Masthead from './masthead';
+import Modal from './modal/modal';
 
 const App = () => (
   <div>
     <header>
       <Masthead />
     </header>
+    <Modal />
     <br />
     <br />
     <br />
@@ -102,8 +104,8 @@ const App = () => (
     <br />
     <br />
     <Switch>
-      <AuthRoute path="/login" component={LoginFormContainer} />
-      <AuthRoute path="/signup" component={SignupFormContainer} />
+      {/* <AuthRoute path="/login" component={LoginFormContainer} />
+      <AuthRoute path="/signup" component={SignupFormContainer} /> */}
       <Route path="/" component={GreetingContainer} />
     </Switch>
     <br />
