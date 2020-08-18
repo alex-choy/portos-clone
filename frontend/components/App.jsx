@@ -4,13 +4,13 @@ import { Route, Switch, Link } from "react-router-dom";
 import LoginFormContainer from './session_forms/login_form_container';
 import SignupFormContainer from './session_forms/signup_form_container';
 import { AuthRoute } from '../utils/route_util';
-import Masthead from './masthead';
+import MastheadContainer from './masthead/masthead_container';
 import Modal from './modal/modal';
 
 const App = () => (
   <div>
     <header>
-      <Masthead />
+      <MastheadContainer />
     </header>
     <Modal />
     <br />

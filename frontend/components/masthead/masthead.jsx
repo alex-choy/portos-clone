@@ -2,17 +2,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { NavDropdown, NavItem, Dropdown} from 'react-bootstrap'
 import Navbar from 'react-bootstrap/Navbar'
-import { getModal } from '../actions/modal_actions';
-import { LOGIN_MODAL } from './modal/modal';
+import { getModal } from '../../actions/modal_actions';
 
-class Masthead extends React.Component {
+class Masthead extends React.Component { 
+  constructor(props) {
+    super(props);
+    this.handleModal = this.handleModal.bind(this);
+  }
 
+  handleModal() {
+    console.log('clicked');
+    this.props.getLoginModal();
+  }
 
   render() {
     return (
       <div className="nav-wrapper">
         <nav className="nav">
-          <Link to="/#" onClick={() => getModal(LOGIN_MODAL)} className="nav-link">Account</Link>
+          <Link to="/#" onClick={this.handleModal} className="nav-link">Account</Link>
           <div className="center-nav">
             <Link to="/#" className="nav-link">Menu</Link>
             <Link to="/#" className="nav-link">Bake At Home</Link>
