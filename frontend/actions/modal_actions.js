@@ -11,6 +11,5 @@ export const openModal = (modal) => ({
 });
 
 export const getModal = (modal) => (dispatch) => {
-  console.log('get modal hit in actions');
   return () => dispatch(openModal(modal))
 };
