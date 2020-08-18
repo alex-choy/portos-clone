@@ -22,7 +22,6 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const newState = {...this.state};
     this.props.processForm(newState);
-    this.resetState();
   }
 
   handleChange(field) {
@@ -41,7 +40,7 @@ class SessionForm extends React.Component {
       <div>
         <h3>{formType.toUpperCase()}</h3>
         <form onSubmit={this.handleSubmit}>
-          {sessionErrors.length > 0 && <ul>{errorMsgs}</ul>}
+          {sessionErrors.length > 0 && <ul className="errors">{errorMsgs}</ul>}
           Username:
           <input
             type="text"

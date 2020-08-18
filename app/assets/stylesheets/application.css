@@ -13,3 +13,35 @@
  *= require_tree .
  *= require_self
  */
+.nav-wrapper {
+  width: 80%;
+  margin: auto;
+  position: fixed;
+  left: 10%;
+  z-index: 500;
+  background-color: transparent;
+}
+
+ .nav {
+   display: flex;
+   padding: 20px;
+   /* flex-flow: row wrap; */
+   justify-content: space-between;
+ }
+
+ .nav-link {
+   text-decoration: none;
+   color: #666;
+   font-family: "Bebas Neue",sans-serif;
+   font-size: 21px;
+ }
+
+ .nav-login {
+   z-index: 2;
+   color: white;
+   background-color: red;
+ }
+
+ .errors {
+   color: red;
+ }
