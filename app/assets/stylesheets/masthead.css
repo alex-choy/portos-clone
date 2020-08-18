@@ -1,4 +1,5 @@
 .nav-wrapper {
+  color: white;
   position: fixed;
   width: 100%;
   z-index: 500;
@@ -28,7 +29,6 @@
   /* background-color: teal; */
   padding: 5px 15px;
   text-decoration: none;
-  color: #666;
   font-family: "Bebas Neue",sans-serif;
   font-size: 14px;
   font-weight: 500;
