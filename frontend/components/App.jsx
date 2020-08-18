@@ -1,5 +1,5 @@
 import React from "react";
-import GreetingContainer from './greetings/greeting_container';
+import GreetingContainer from './account/account_container';
 import { Route, Switch, Link } from "react-router-dom";
 import LoginFormContainer from './session_forms/login_form_container';
 import SignupFormContainer from './session_forms/signup_form_container';

@@ -28,6 +28,10 @@ class SessionForm extends React.Component {
     return e => this.setState({ [field]: e.target.value })
   }
 
+  selectInputField() {
+
+  }
+
   render() {
     const { formType, sessionErrors, otherForm } = this.props;
     const { username, password } = this.state;
@@ -36,8 +40,8 @@ class SessionForm extends React.Component {
     
     const formText = otherForm.props.children;
     const otherSession = (formText === 'Signup' ? 
-      <div>No account? {otherForm}</div> :
-      <div>Have an account? {otherForm}</div>
+      <div>No account?<br/>{otherForm}</div> :
+      <div>Have an account?<br/>{otherForm}</div>
     );
 
     return (

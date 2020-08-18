@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import GreetingContainer from '../greetings/greeting_container';
+import GreetingContainer from '../account/account_container';
 import { NavDropdown, NavItem, Dropdown} from 'react-bootstrap'
 import Navbar from 'react-bootstrap/Navbar'
 import { getModal } from '../../actions/modal_actions';
@@ -12,7 +12,6 @@ class Masthead extends React.Component {
   }
 
   handleModal() {
-    console.log('clicked');
     this.props.getLoginModal();
   }
 
@@ -20,14 +19,15 @@ class Masthead extends React.Component {
     const accountSection = (this.props.currentUser ? 
       <GreetingContainer /> :
       <Link to="/#" onClick={this.handleModal} className="nav-link">
-        Login
+        Login/Signup
       </Link>
     );
 
     return (
       <div className="nav-wrapper">
         <nav className="nav">
-          {accountSection}
+          {/* {accountSection} */}
+          <GreetingContainer handleModal={this.handleModal} />
           <div className="center-nav">
             <Link to="/#" className="nav-link">Menu</Link>
             <Link to="/#" className="nav-link">Bake At Home</Link>

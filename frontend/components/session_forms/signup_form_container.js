@@ -13,7 +13,11 @@ const mSTP = (state) => ({
 const mDTP = (dispatch) => ({
   processForm: (user) => dispatch(signup(user)),
   otherForm: (
-    <Link to="/#" onClick={() => dispatch(openModal(LOGIN_MODAL))}>
+    <Link 
+      to="/#"
+      className="other-form-link"  
+      onClick={() => dispatch(openModal(LOGIN_MODAL))}
+    >
       Login
     </Link>
   ),
