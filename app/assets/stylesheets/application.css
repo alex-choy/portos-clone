@@ -14,34 +14,53 @@
  *= require_self
  */
 .nav-wrapper {
-  width: 80%;
-  margin: auto;
   position: fixed;
-  left: 10%;
+  width: 100%;
   z-index: 500;
-  background-color: transparent;
+  /* background-color: yellowgreen; */
 }
 
- .nav {
-   display: flex;
-   padding: 20px;
-   /* flex-flow: row wrap; */
-   justify-content: space-between;
- }
+.nav {
+  /* background-color: red; */
+  margin: auto;
+  width: 80%;
+  left: 10%;
+  display: flex;
+  padding: 20px;
+  /* flex-flow: row wrap; */
+  justify-content: space-around;
+}
 
- .nav-link {
-   text-decoration: none;
-   color: #666;
-   font-family: "Bebas Neue",sans-serif;
-   font-size: 21px;
- }
+.center-nav {
+  display: flex;
+  width: 50%;
+  justify-content: space-evenly;
+  /* background-color: #fff; */
+}
 
- .nav-login {
-   z-index: 2;
-   color: white;
-   background-color: red;
- }
+.nav-link {
+  box-sizing: border-box;
+  /* background-color: teal; */
+  padding: 5px 15px;
+  text-decoration: none;
+  color: #666;
+  font-family: "Bebas Neue",sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
 
- .errors {
-   color: red;
- }
+.nav-link-logo {
+   font-weight: 700;
+}
+
+
+
+.nav-login {
+  z-index: 2;
+  color: white;
+  background-color: red;
+}
+
+.errors {
+  color: red;
+}
