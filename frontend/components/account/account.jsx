@@ -9,11 +9,11 @@ class Greeting extends React.Component {
     
     const accountSection = (this.props.currentUser ?
       <div>
-        <Link to="/#">Hello {currentUserName}!</Link>
+        <Link className="nav-link" to="/#">Hello {currentUserName}!</Link>
         <button onClick={logout}>Logout</button>
       </div>   
       :
-      <Link to="/#" onClick={this.props.handleModal} className="nav-link">
+      <Link className="nav-link" to="/#" onClick={this.props.handleModal} className="nav-link">
         Login/Signup
       </Link>
     );

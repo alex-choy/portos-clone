@@ -1,0 +1,47 @@
+.nav-wrapper {
+  position: fixed;
+  width: 100%;
+  z-index: 500;
+  /* background-color: yellowgreen; */
+  background-color: transparent;
+}
+
+.nav {
+  margin: auto;
+  width: 80%;
+  left: 10%;
+  display: flex;
+  padding: 20px;
+  /* flex-flow: row wrap; */
+  justify-content: space-around;
+}
+
+.center-nav {
+  display: flex;
+  width: 70%;
+  justify-content: space-evenly;
+  /* background-color: #fff; */
+}
+
+.nav-link {
+  box-sizing: border-box;
+  /* background-color: teal; */
+  padding: 5px 15px;
+  text-decoration: none;
+  color: #666;
+  font-family: "Bebas Neue",sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.nav-link-logo {
+   font-weight: 700;
+}
+
+.nav-login {
+  z-index: 2;
+  color: white;
+  background-color: red;
+}

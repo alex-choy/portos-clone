@@ -29,7 +29,7 @@ export const signup = (user) => (dispatch) =>
     },
     (err) => dispatch(receiveErrors(err.responseJSON))
   ).then(
-    () => dispatch(closeModal())
+    () => dispatch(closeModal()) // close the modal on signup
   );
 
 export const login = (user) => (dispatch) =>
@@ -40,7 +40,7 @@ export const login = (user) => (dispatch) =>
     },
     (err) => dispatch(receiveErrors(err.responseJSON))
   ) .then(
-    () => dispatch(closeModal())
+    () => dispatch(closeModal()) // close the modal on login
   );
 
 export const logout = () => (dispatch) =>
