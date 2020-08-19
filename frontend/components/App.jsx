@@ -1,6 +1,6 @@
 import React from "react";
 import MastheadContainer from './masthead/masthead_container';
-import Modal from './modal/modal';
+import Modal from './session_forms/session_modal';
 import VideoOverlay from './homepage/video_overlay';
 
 const App = () => (

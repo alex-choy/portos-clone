@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Masthead from './masthead';
 import { openModal } from '../../actions/modal_actions';
-import { LOGIN_MODAL } from '../modal/modal';
+import { LOGIN_MODAL } from '../session_forms/session_modal';
 
 
 const mSTP = (state) => ({

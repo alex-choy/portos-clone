@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { signup } from "../../actions/session_actions";
 import SessionForm from "./session_form";
 import { openModal, closeModal } from "../../actions/modal_actions";
-import { LOGIN_MODAL } from '../modal/modal';
+import { LOGIN_MODAL } from './session_modal';
 import { Link } from 'react-router-dom'; 
 const mSTP = (state) => ({
   formType: "signup",

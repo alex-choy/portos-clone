@@ -2,8 +2,8 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 // Make closeModal action
 import { connect } from 'react-redux';
-import LoginFormContainer from '../session_forms/login_form_container';
-import SignupFormContainer from '../session_forms/signup_form_container';
+import LoginFormContainer from './login_form_container';
+import SignupFormContainer from './signup_form_container';
 
 export const LOGIN_MODAL = "LOGIN_MODAL";
 export const SIGNUP_MODAL = "SIGNUP_MODAL";
