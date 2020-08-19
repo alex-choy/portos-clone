@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { logout } from "../../actions/session_actions";
-import Greeting from "./account";
+import AccountMasthead from "./account_masthead";
 
 const mSTP = (state) => ({
   currentUser: state.entities.users[state.session.id],
@@ -11,4 +11,4 @@ const mDTP = (dispatch, ownProps) => ({
   handleModal: () => ownProps.handleModal()
 });
 
-export default connect(mSTP, mDTP)(Greeting);
+export default connect(mSTP, mDTP)(AccountMasthead);

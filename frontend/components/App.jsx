@@ -8,11 +8,6 @@ const App = () => (
     <header>
       <MastheadContainer />
     </header>
-    {/* <Switch>
-      <AuthRoute path="/login" component={LoginFormContainer} />
-      <AuthRoute path="/signup" component={SignupFormContainer} />
-      <Route path="/" component={GreetingContainer} />
-    </Switch> */}
     <VideoOverlay />
     <br />
     <br />

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import { signup } from "../../actions/session_actions";
 import SessionForm from "./session_form";
-import { openModal, closeModal } from "../../actions/modal_actions";
+import { openSessionModal, closeSessionModal } from "../../actions/modal_actions";
 import { LOGIN_MODAL } from './session_modal';
 import { Link } from 'react-router-dom'; 
 const mSTP = (state) => ({
@@ -16,12 +16,12 @@ const mDTP = (dispatch) => ({
     <Link 
       to="/#"
       className="other-form-link"  
-      onClick={() => dispatch(openModal(LOGIN_MODAL))}
+      onClick={() => dispatch(openSessionModal(LOGIN_MODAL))}
     >
       Login
     </Link>
   ),
-  closeModal: () => dispatch(closeModal())
+  closeSessionModal: () => dispatch(closeSessionModal())
 });
 
 export default connect(mSTP, mDTP)(SessionForm);

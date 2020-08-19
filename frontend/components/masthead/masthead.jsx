@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import GreetingContainer from '../account/account_container';
+import AccountContainer from '../account/account_masthead_container';
 import { NavDropdown, NavItem, Dropdown} from 'react-bootstrap'
 import Navbar from 'react-bootstrap/Navbar'
 import { getModal } from '../../actions/modal_actions';
@@ -16,18 +16,10 @@ class Masthead extends React.Component {
   }
 
   render() {
-    const accountSection = (this.props.currentUser ? 
-      <GreetingContainer /> :
-      <Link to="/#" onClick={this.handleModal} className="nav-link">
-        Login/Signup
-      </Link>
-    );
-
     return (
       <div className="nav-wrapper">
         <nav className="nav">
-          {/* {accountSection} */}
-          <GreetingContainer handleModal={this.handleModal} />
+          <AccountContainer handleModal={this.handleModal} />
           <div className="center-nav">
             <Link to="/#" className="nav-link">Menu</Link>
             <Link to="/#" className="nav-link">Bake At Home</Link>

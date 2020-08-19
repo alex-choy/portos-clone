@@ -1,6 +1,5 @@
 import React from 'react';
-import { closeModal } from '../../actions/modal_actions';
-// Make closeModal action
+import { closeSessionModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import LoginFormContainer from './login_form_container';
 import SignupFormContainer from './signup_form_container';
@@ -9,12 +8,12 @@ export const LOGIN_MODAL = "LOGIN_MODAL";
 export const SIGNUP_MODAL = "SIGNUP_MODAL";
 
 const Modal = (props) => {
-  const { modal, closeModal } = props;
+  const { modal, closeSessionModal } = props;
   if(!modal) {
     return null;
   } 
   let component;
-  switch(modal) {
+  switch(modal.sessionModal) {
     case LOGIN_MODAL:
       component = <LoginFormContainer />;
       break;
@@ -26,7 +25,7 @@ const Modal = (props) => {
   }
 
   return (
-    <div className="modal-background" onClick={closeModal}>
+    <div className="modal-background" onClick={closeSessionModal}>
       <div className="modal-child" onClick={e => e.stopPropagation()}>
         {component}
       </div>
@@ -39,7 +38,7 @@ const mSTP = (state) => ({
 });
 
 const mDTP = (dispatch) => ({
-  closeModal: () => dispatch(closeModal())
+  closeSessionModal: () => dispatch(closeSessionModal())
 });
 
 export default connect(mSTP, mDTP)(Modal);

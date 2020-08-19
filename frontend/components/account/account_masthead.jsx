@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class Greeting extends React.Component {
+class AccountMasthead extends React.Component {
 
   render() {
     const { currentUser, logout } = this.props;
@@ -25,4 +25,4 @@ class Greeting extends React.Component {
   }
 }
 
-export default Greeting;
+export default AccountMasthead;
