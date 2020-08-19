@@ -14,7 +14,20 @@ const OrderModal = (props) => {
   return (
     <div className="order-modal-parent" onClick={closeOrderModal}>
       <div className="order-modal-child" onClick={(e) => e.stopPropagation()}>
-        <p>Order Modal</p>
+        <span className="order-modal-title ord-mod">
+          <h2>OPEN TO</h2>
+          <h2>SERVE YOU</h2>
+        </span>
+        <span className="order-modal-subtitle ord-mod">
+          <p>You better sit tight in your car</p>
+        </span>
+        <button className="ord-button pickup">Pickup In-Store</button>
+        <br />
+        <br />
+        <span className="order-modal-subtitle ord-mod">
+          <p>Maybe it'll ship, maybe it won't</p>
+        </span>
+        <button className="ord-button delivery">Home Delivery</button>
       </div>
     </div>
   );

@@ -3,8 +3,9 @@
   position: fixed;
   width: 100%;
   z-index: 500;
-  background-color: yellowgreen;
-  /* background-color: transparent; */
+  /* background-color: yellowgreen; */
+  background-color: transparent;
+  color: white;
 }
 
 .nav {
@@ -40,8 +41,28 @@
    font-weight: 700;
 }
 
+.nav-button {
+  font-size: 20px;
+  padding: 10px 15px;
+}
+
+.nav-login-wrapper {
+  position: relative;
+  top: 5px;
+}
+
 .nav-login {
   z-index: 2;
   color: white;
-  background-color: red;
+  background-color: #E4AF2B;
+  color: #662F1E;
+  text-align: center;
+}
+
+.nav-pickup {
+  position: relative;
+  background-color: #662F1E;
+  color: #E4AF2B;
+  margin: auto;
+  top: -4px;
 }

@@ -10,7 +10,7 @@ class Homepage extends React.Component {
   render() {
     return (
       <div>
-        Homepage
+        <VideoOverlay />
         <OrderModalContainer />
       </div>
     ); 

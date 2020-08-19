@@ -5,10 +5,10 @@ class VideoOverlay extends React.Component {
     return (
       // chrome allows autoplay only if muted
       <video width="100%"  muted loop playsInline>
-        {/* <source
+        <source
           src="https://www.portosbakery.com/wp-content/uploads/2018/05/DesktopOptimizedVideo.mp4"
           type="video/mp4"
-        /> */}
+        />
         This video can't be played
       </video>
     );

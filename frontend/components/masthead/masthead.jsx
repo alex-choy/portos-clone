@@ -20,13 +20,13 @@ class Masthead extends React.Component {
         <nav className="nav">
           <AccountContainer handleModal={this.handleModal} />
           <div className="center-nav">
-            <Link to="/#" className="nav-link">Menu</Link>
-            <Link to="/#" className="nav-link">Bake At Home</Link>
-            <Link to="/" className="nav-link nav-link-logo">PoroSnaxx</Link>
-            <Link to="/#" className="nav-link">Locations</Link>
-            <Link to="/#" className="nav-link">Our Story</Link>
+            <Link to="/#" className="nav-link">MENU</Link>
+            <Link to="/#" className="nav-link">TAKE AND BAKE</Link>
+            <Link to="/" className="nav-link nav-link-logo">POROSNAXX</Link>
+            <Link to="/#" className="nav-link">LOCATIONS</Link>
+            <Link to="/#" className="nav-link">OUR STORY</Link>
           </div>
-          <Link to="/#" className="nav-link">In-Car Pickup</Link>
+          <Link to="/#" className="nav-button nav-pickup">In-Car Pickup</Link>
         </nav>
       </div>
     );
