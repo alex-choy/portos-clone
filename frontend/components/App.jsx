@@ -3,7 +3,7 @@ import MastheadContainer from './masthead/masthead_container';
 import Modal from './session_forms/session_modal';
 import HomepageContainer from "./homepage/homepage_container";
 import { Route } from "react-router-dom";
-import FoodItemIndex from './food_items/food_items_index';
+import FoodIndexContainer from './food_items/food_index_container';
 
 const App = () => (
   <div>
@@ -11,7 +11,7 @@ const App = () => (
       <MastheadContainer />
     </header>
     <Route exact path="/" component={HomepageContainer} />
-    <Route path="/menu" component={FoodItemIndex} />
+    <Route path="/menu" component={FoodIndexContainer} />
     <br />
     <br />
     <br />
