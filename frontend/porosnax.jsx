@@ -4,7 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 // TESTING IMPORTS
-import { login, logout, signup } from './actions/session_actions';
+import { getFoodItems, getFoodItem } from './actions/food_item_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -25,10 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // TESTING BEGIN
-  window.login = login;
-  window.logout = logout;
-  window.signup = signup;
-
+  window.getFoodItem = getFoodItem;
+  window.getFoodItems = getFoodItems;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   // TESTING END

@@ -5,7 +5,8 @@
   z-index: 500;
   /* background-color: yellowgreen; */
   background-color: transparent;
-  color: white;
+  color: gray;
+  border-bottom: 1px solid black ;
 }
 
 .nav {
