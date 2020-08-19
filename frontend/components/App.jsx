@@ -3,7 +3,7 @@ import MastheadContainer from './masthead/masthead_container';
 import Modal from './session_forms/session_modal';
 import HomepageContainer from "./homepage/homepage_container";
 import { Route } from "react-router-dom";
-import FoodIndexContainer from './food_items/food_index_container';
+import FoodIndexContainer from './foods/food_index_container';
 
 const App = () => (
   <div>

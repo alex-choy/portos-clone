@@ -3,7 +3,7 @@ import React from 'react';
 const FoodIndexItem = (props) => {
 
   return (
-    <div>
+    <div className="food-card">
       FII!
     </div>
   );

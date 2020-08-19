@@ -1,4 +1,4 @@
-import { connect } from 'redux';
+import { connect } from 'react-redux';
 import FoodIndex from './food_index';
 import { getFoodItems } from '../../actions/food_item_actions';
 
@@ -7,7 +7,7 @@ const mSTP = (state) => ({
 });
 
 const mDTP = (dispatch) => ({
-  getFoodItems: dispatch(() => getFoodItems())
+  getFoodItems: () => dispatch(getFoodItems())
 });
 
 export default connect(mSTP, mDTP)(FoodIndex);

@@ -1,0 +1,9 @@
+.food-card-list {
+  display: flex;
+}
+
+.food-card {
+  width: 250px;
+  height: 300px;
+  border: 1px solid goldenrod;
+}
