@@ -1,0 +1,1 @@
+json.extract! food_item, :id, :name, :price, :description, :image_url

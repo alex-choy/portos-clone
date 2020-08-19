@@ -1,0 +1,1 @@
+json.partial! 'food_item', food_item: @food_item

@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id               :bigint           not null, primary key
+#  username         :string           not null
+#  password_digest  :string           not null
+#  session_token    :string           not null
+#  shopping_cart_id :integer          not null
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#
 class User < ApplicationRecord
   validates :username, :session_token, :shopping_cart_id, {
     presence: true, uniqueness: true
