@@ -19,3 +19,23 @@
   padding: 30px;
   border-radius: 4px;
 }
+
+.order-modal-parent {
+  display: block;
+  box-sizing: border-box;
+  border: 1px solid red;
+  position: relative;
+  /* left: 38%; */
+  top: 100px;
+  width: 400px;
+  height: 450px;
+  padding: 30px;
+  margin: auto;
+}
+
+.order-modal-child {
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+  vertical-align: center;
+}

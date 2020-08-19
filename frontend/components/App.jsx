@@ -1,14 +1,14 @@
 import React from "react";
 import MastheadContainer from './masthead/masthead_container';
 import Modal from './session_forms/session_modal';
-import VideoOverlay from './homepage/video_overlay';
+import HomepageContainer from "./homepage/homepage_container";
 
 const App = () => (
   <div>
     <header>
       <MastheadContainer />
     </header>
-    <VideoOverlay />
+    <HomepageContainer />
     <br />
     <br />
     <br />

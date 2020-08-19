@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import AccountContainer from '../account/account_masthead_container';
 import { NavDropdown, NavItem, Dropdown} from 'react-bootstrap'
 import Navbar from 'react-bootstrap/Navbar'
-import { getModal } from '../../actions/modal_actions';
 
 class Masthead extends React.Component { 
   constructor(props) {

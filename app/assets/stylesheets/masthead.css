@@ -3,8 +3,8 @@
   position: fixed;
   width: 100%;
   z-index: 500;
-  /* background-color: yellowgreen; */
-  background-color: transparent;
+  background-color: yellowgreen;
+  /* background-color: transparent; */
 }
 
 .nav {
@@ -30,7 +30,7 @@
   padding: 5px 15px;
   text-decoration: none;
   font-family: "Bebas Neue",sans-serif;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 500;
   overflow: hidden;
   white-space: nowrap;
