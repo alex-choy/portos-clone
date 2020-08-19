@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import DemoUser from './demo_user';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -28,12 +29,8 @@ class SessionForm extends React.Component {
     return e => this.setState({ [field]: e.target.value })
   }
 
-  selectInputField() {
-
-  }
-
   render() {
-    const { formType, sessionErrors, otherForm } = this.props;
+    const { formType, sessionErrors, otherForm, processForm } = this.props;
     const { username, password } = this.state;
 
     const errorMsgs = sessionErrors.map((error, idx) => <li key={idx}>{error}</li>);
@@ -75,6 +72,7 @@ class SessionForm extends React.Component {
           <button className="session-button">{formType}</button>
         </form><br />
         {otherSession}
+        {formText === 'Signup' && <DemoUser processForm={processForm} />}
       </div>
     );
   }

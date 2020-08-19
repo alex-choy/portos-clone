@@ -20,12 +20,14 @@
 }
 
 .session-button {
-    position: absolute;
-    right: 2%;
-    margin-top: 2px;
-    padding: 4px 7px;
-    background-color: blueviolet;
-    border-radius: 3px;
+  position: absolute;
+  right: 2%;
+  margin-top: 2px;
+  padding: 4px 7px;
+  background-color: #E4AF2C;
+  color: white;
+  border-radius: 3px;
+  font-size: 18px;
 }
 
 .other-form-link {
@@ -35,4 +37,12 @@
 }
 .other-form-link:hover {
   text-decoration: underline;
+}
+
+.demo-user {
+  margin-top: 20px;
+}
+
+.demo-user a {
+  margin-left: 5px;
 }
