@@ -1,8 +1,8 @@
 .menu {
+  box-sizing: border-box;
   padding-top: 60px;
   position: relative;
   top: 83px;
-  height: 500px;
   width: 100%;
   border: 1px solid red;
 }

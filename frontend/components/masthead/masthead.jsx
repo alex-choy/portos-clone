@@ -18,7 +18,7 @@ class Masthead extends React.Component {
         <nav className="nav">
           <AccountContainer handleModal={this.handleModal} />
           <div className="center-nav">
-            <Link to="/#" className="nav-link">MENU</Link>
+            <Link to="/menu" className="nav-link">MENU</Link>
             <Link to="/#" className="nav-link">TAKE AND BAKE</Link>
             <Link to="/" className="nav-link nav-link-logo">POROSNAXX</Link>
             <Link to="/#" className="nav-link">LOCATIONS</Link>
