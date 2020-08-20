@@ -13,9 +13,9 @@ class AccountMasthead extends React.Component {
         <button onClick={logout}>Logout</button>
       </div>   
       :
-      <Link className="nav-button nav-login" to="/#" onClick={this.props.handleModal}>
+      <button className="nav-button nav-login" onClick={this.props.handleModal}>
         Login/Signup
-      </Link>
+      </button>
     );
     return (
       <div className="nav-login-wrapper">

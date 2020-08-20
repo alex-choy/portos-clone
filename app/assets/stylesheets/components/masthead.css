@@ -3,10 +3,11 @@
   position: fixed;
   width: 100%;
   z-index: 500;
-  /* background-color: yellowgreen; */
-  background-color: transparent;
+  background-color: white;
+  /* background-color: transparent; */
   color: gray;
-  border-bottom: 1px solid black ;
+  /* border-bottom: 1px solid black ; */
+  box-shadow: 0 0 8px #3d3d3d;
 }
 
 .nav {

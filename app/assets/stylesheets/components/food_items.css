@@ -12,12 +12,15 @@
   min-width: 250px;
   max-width: 300px; */
   width: 275px;
-  height: 400px;
-  padding: 10px;
+  height: 450px;
+  padding: 20px;
   margin-right: 35px;
   margin-bottom: 50px;
   /* margin: 0 auto 50px auto; */
-  border: 1px solid goldenrod;
+  /* border: 1px solid goldenrod; */
+  border: 1px solid #BFBFBF;
+  border-radius: 3px;
+  box-shadow: 10px 10px 5px #aaaaaa;
 }
 
 .food-card > h2 {

@@ -17,11 +17,21 @@ require 'open-uri'
 
 # demo_user.avatar.attach(io: file, filename: 'some_file.jpg')
 food_items = [
-  {name: 'Shortbread Cookies', quantity: 240, price: 5.50, description: "Shortbread cookies pressed together with dark chocolate", image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/tanaphong-toochinda-_f8S_o9xQK8-unsplash.jpg"},
-  {name: 'Chocolate Cookies', quantity: 150, price: 4.00, description: "Chocolate cookies with chopped walnuts", image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/american-heritage-chocolate-DoK5qEy2L60-unsplash.jpg"},
-  {name: 'Raspberry Tart', quantity: 80, price: 4.50, description: "Pie crust filled with cream, topped with raspberries, dusted with powdered sugar", image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/louis-mornaud-bLbRF0XWHJs-unsplash.jpg"},
-  {name: 'Vanilla Bean Cheesecake', quantity: 40, price: 6.00, description: "Vanilla cheesecake, graham cracker crust, dried apricot layer on the bottom, mango jam spread on top", image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/alana-harris-sSLi0wraDmQ-unsplash.jpg"},
-  {name: 'Lemon Cupcake', quantity: 300 , price: 2.25, description: "Lemon-flavored mini cupcakes, topped with buttercream", image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/chaman-raj-JbeYtG0HizE-unsplash.jpg"}
+  {name: 'Shortbread Cookies', quantity: 240, price: 5.50, 
+    description: "Shortbread cookies pressed together with dark chocolate", 
+    image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/tanaphong-toochinda-_f8S_o9xQK8-unsplash.jpg"},
+  {name: 'Chocolate Cookies', quantity: 150, price: 4.00, 
+    description: "Chocolate cookies with chopped peanuts", 
+    image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/american-heritage-chocolate-DoK5qEy2L60-unsplash.jpg"},
+  {name: 'Raspberry Tart', quantity: 80, price: 4.50, 
+    description: "Pie crust filled with cream, topped with raspberries, dusted with powdered sugar", 
+    image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/louis-mornaud-bLbRF0XWHJs-unsplash.jpg"},
+  {name: 'Vanilla Bean Cheesecake', quantity: 40, price: 6.00, 
+    description: "Vanilla cheesecake, graham cracker crust, dried apricot layer on the bottom, mango jam spread on top", 
+    image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/alana-harris-sSLi0wraDmQ-unsplash.jpg"},
+  {name: 'Lemon Cupcake', quantity: 300 , price: 2.25, 
+    description: "Lemon-flavored mini cupcakes, topped with buttercream", 
+    image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/chaman-raj-JbeYtG0HizE-unsplash.jpg"}
 ]
 
 

@@ -4,6 +4,10 @@
   position: relative;
   top: 83px;
   width: 100%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
+}
+
+.show-food-img {
+  width: 500px;
 }
 
