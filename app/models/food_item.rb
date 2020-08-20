@@ -16,12 +16,12 @@ class FoodItem < ApplicationRecord
   validates :name, :quantity, :price, :description, :image_url, presence: true
   validates :name, :image_url, uniqueness: true
   has_one_attached :photo
-  after_initialize :test_set_photo
+  # after_initialize :test_set_photo
 
-  def test_set_photo
-    file = open('https://porosnax-dev.s3-us-west-1.amazonaws.com/american-heritage-chocolate-HuzdnhOfTKs-unsplash.jpg')
+  # def test_set_photo
+  #   file = open('https://porosnax-dev.s3-us-west-1.amazonaws.com/american-heritage-chocolate-HuzdnhOfTKs-unsplash.jpg')
 
-    self.photo.attach(io: file, filename: 'american-chocolate.jpg')
-  end
+  #   self.photo.attach(io: file, filename: 'american-chocolate.jpg')
+  # end
 
 end
