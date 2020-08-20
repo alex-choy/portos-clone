@@ -14,4 +14,13 @@
 class FoodItem < ApplicationRecord
   validates :name, :quantity, :price, :description, :image_url, presence: true
   validates :name, :image_url, uniqueness: true
+  has_one_attached :photo
+  after_initialize :test_set_photo
+
+  def test_set_photo
+    file = open('https://porosnax-dev.s3-us-west-1.amazonaws.com/american-heritage-chocolate-HuzdnhOfTKs-unsplash.jpg')
+
+    demo_user.avatar.attach(io: file, filename: 'some_file.jpg')
+  end
+
 end
