@@ -14,13 +14,6 @@ const App = () => (
     <Route exact path="/" component={HomepageContainer} />
     <Route path={`/menu/:foodId`} component={FoodShowContainer} />
     <Route exact path="/menu" component={Menu} />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <h1>text here</h1>
 
     <Modal />
   </div>

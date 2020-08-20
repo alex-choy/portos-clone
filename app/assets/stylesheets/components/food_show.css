@@ -1,0 +1,37 @@
+.food-display {
+  padding: 50px 0 60px 100px;
+  overflow: hidden;
+  background-color: rgb(236,236,236);
+  color: rgb(84,84,84);
+}
+
+.food-display-child {
+  float: left;
+}
+
+.food-display-child > h1 {
+  font-size: 44px;
+  font-weight: 600;
+}
+
+.food-display-child > h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.food-display-child > p {
+  font-size: 16px;
+}
+
+.show-food-img {
+  width: 33%;
+}
+
+.show-food-info {
+  padding-top: 30px;
+  margin-left: 40px;
+}
+
+.menu-index {
+  margin-left: 20px;
+}
