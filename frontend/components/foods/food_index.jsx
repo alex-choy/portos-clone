@@ -16,9 +16,6 @@ class FoodIndex extends React.Component {
   render() {
     return (
       <div className="food-card-list">
-        {/* picture, 270px height, 100% width */}
-        {/* 20-25% left nav-bar for sorting? */}
-        {/* 75-80% right menu grid */}
         {this.createFoodItems()}
       </div>
     );
@@ -26,3 +23,4 @@ class FoodIndex extends React.Component {
 }
 
 export default FoodIndex;
+

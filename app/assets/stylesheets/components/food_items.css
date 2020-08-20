@@ -1,9 +1,15 @@
 .food-card-list {
   display: flex;
+  flex-flow: row wrap;
 }
 
 .food-card {
+  box-sizing: border-box;
   width: 250px;
   height: 300px;
+  padding: 10px;
+  margin-right: 35px;
+  margin-bottom: 25px;
+
   border: 1px solid goldenrod;
 }
