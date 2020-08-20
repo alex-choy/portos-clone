@@ -9,7 +9,7 @@ const FoodIndexItem = (props) => {
         <h5>{image_url}</h5>
         <img src={photo_url} alt=""/>
         {/* <img src="croissant-qZ5lPCPvdXE-unsplash.jpg" alt=""/> */}
-        <p>Quantity: {quantity}</p>
+        {/* <p>Quantity: {quantity}</p> */}
         <p>${parseFloat(price).toFixed(2)} each</p>
         <p>{description}</p>
     </div>

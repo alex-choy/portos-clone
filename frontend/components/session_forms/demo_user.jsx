@@ -9,8 +9,8 @@ class DemoUser extends React.Component {
 
   loginDemoUser() {
     this.props.processForm({
-      username: 'DemoUser',
-      password: 'DemoUser',
+      username: 'GuestUser',
+      password: 'GuestUser',
     })
   }
 
@@ -21,7 +21,7 @@ class DemoUser extends React.Component {
         <br />
         Use our 
         <Link to="/#" onClick={this.loginDemoUser} className="other-form-link">
-          Demo User
+          Guest User
         </Link>
       </div>
     );

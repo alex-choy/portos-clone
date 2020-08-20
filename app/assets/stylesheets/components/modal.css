@@ -22,16 +22,18 @@
 }
 
 .order-modal-parent {
-  position: absolute;
-  box-sizing: border-box;
-  position: relative;
-  /* left: 38%; */
-  top: -575px;
-  width: 30%;
-  height: 450px;
-  padding: 30px;
-  margin: auto;
-  background-color: white;
+    position: absolute;
+    box-sizing: border-box;
+    bottom: 200px;
+    /* position: relative; */
+    left: 50%;
+    /* top: -528px; */
+    transform: translate(-50%);
+    width: 375px;
+    height: 450px;
+    padding: 30px;
+    margin: auto;
+    background-color: white;
 }
 
 .order-modal-child {
