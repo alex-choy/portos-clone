@@ -9,7 +9,7 @@ class AccountMasthead extends React.Component {
     
     const accountSection = (this.props.currentUser ?
       <div>
-        <Link className="nav-button nav-login" to="/#">Hello {currentUserName}!</Link>
+        <div className="nav-button nav-login" to="/#">Hello {currentUserName}!</div>
         <button onClick={logout}>Logout</button>
       </div>   
       :

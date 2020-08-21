@@ -19,10 +19,10 @@ class Masthead extends React.Component {
           <AccountContainer handleModal={this.handleModal} />
           <div className="center-nav">
             <Link to="/menu" className="nav-link">MENU</Link>
-            <Link to="/#" className="nav-link">TAKE AND BAKE</Link>
+            {/* <Link to="/#" className="nav-link">TAKE AND BAKE</Link> */}
             <Link to="/" className="nav-link nav-link-logo">POROSNAXX</Link>
             <Link to="/#" className="nav-link">LOCATIONS</Link>
-            <Link to="/#" className="nav-link">OUR STORY</Link>
+            {/* <Link to="/#" className="nav-link">OUR STORY</Link> */}
           </div>
           <Link to="/#" className="nav-button nav-pickup">In-Car Pickup</Link>
         </nav>

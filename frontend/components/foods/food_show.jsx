@@ -17,10 +17,9 @@ class FoodShow extends React.Component {
       const { name, photo_url, description, price } = this.props.foodItem;
       return (
         <div className="food-show avoid-masthead">
-          <Link to="/menu" className="menu-index">Back to Menu</Link>
-          <section className="food-display">
-            <img className="show-food-img food-display-child" src={photo_url} alt=""/>
-            <article className="show-food-info food-display-child">
+          <section className="food-display cf">
+            <img className="food-show-img food-display-child" src={photo_url} alt=""/>
+            <article className="food-show-info food-display-child">
               <h1>{name}</h1>
               <br/>
               <hr/>
@@ -28,8 +27,10 @@ class FoodShow extends React.Component {
               <p>${parseFloat(price).toFixed(2)} each</p>
               <h3>Description</h3>
               <p>{description}</p>
+              <Link to="/#" className="to-order-page">Order Now!</Link>
             </article>
           </section>
+          <Link to="/menu" className="to-menu-index">Back to Menu</Link>
         </div>
       );
     }

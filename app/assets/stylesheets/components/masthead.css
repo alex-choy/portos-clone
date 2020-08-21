@@ -22,8 +22,8 @@
 
 .center-nav {
   display: flex;
-  width: 70%;
-  justify-content: space-evenly;
+  width: 45%;
+  justify-content: space-around;
   /* background-color: #fff; */
 }
 
@@ -32,11 +32,14 @@
   /* background-color: teal; */
   padding: 5px 15px;
   text-decoration: none;
-  font-family: "Bebas Neue",sans-serif;
   font-size: 20px;
   font-weight: 500;
   overflow: hidden;
   white-space: nowrap;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
 }
 
 .nav-link-logo {
@@ -49,6 +52,10 @@
   white-space: nowrap;
 }
 
+.nav-button:hover {
+  color: white;
+}
+
 .nav-login-wrapper {
   position: relative;
   top: 5px;
@@ -56,6 +63,7 @@
 
 .nav-login {
   z-index: 2;
+  margin-top: -10px;
   color: white;
   background-color: #E4AF2B;
   color: #662F1E;
@@ -66,6 +74,6 @@
   position: relative;
   background-color: #662F1E;
   color: #E4AF2B;
-  margin: auto;
-  top: -4px;
+  /* margin: auto; */
+  top: -5px;
 }

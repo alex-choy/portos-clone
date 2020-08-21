@@ -1,8 +1,9 @@
 .food-display {
-  padding: 50px 0 60px 100px;
+  padding: 50px 0 60px 120px;
   overflow: hidden;
   background-color: rgb(236,236,236);
   color: rgb(84,84,84);
+  position: relative;
 }
 
 .food-display-child {
@@ -15,23 +16,51 @@
 }
 
 .food-display-child > h3 {
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 600;
 }
 
 .food-display-child > p {
-  font-size: 16px;
+  position: relative;
+  font-size: 20px;
 }
 
-.show-food-img {
+.food-show-img {
   width: 33%;
 }
 
-.show-food-info {
+.food-show-info {
   padding-top: 30px;
-  margin-left: 40px;
+  margin-left: 60px;
+  width: 600px;
 }
 
-.menu-index {
-  margin-left: 20px;
+.to-menu-index {
+  position: absolute;
+  left: 45px;
+  bottom: -45px;
+  font-size: 18px;
+  padding: 5px 10px;
+  background-color: #662F1E;
+  color: white;
+  border-radius: 3px;
+}
+
+.to-menu-index:hover {
+  color: #E4AF2B;
+}
+
+.to-order-page {
+  position: absolute;
+  padding: 5px 10px;
+  top: 350px;
+  left: 600px;
+  border-radius: 3px;
+  font-size: 20px;
+  background-color: #E4AF2B;
+  color: whitesmoke;
+}
+
+.to-order-page:hover {
+  color: #662F1E;
 }
