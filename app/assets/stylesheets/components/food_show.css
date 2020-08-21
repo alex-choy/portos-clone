@@ -21,7 +21,6 @@
 }
 
 .food-display-child > p {
-  position: relative;
   font-size: 20px;
 }
 
@@ -31,8 +30,10 @@
 
 .food-show-info {
   padding-top: 30px;
+  padding-bottom: 40px;
   margin-left: 60px;
   width: 600px;
+  position: relative;
 }
 
 .to-menu-index {
@@ -53,8 +54,7 @@
 .to-order-page {
   position: absolute;
   padding: 5px 10px;
-  top: 350px;
-  left: 600px;
+  top: 300px;
   border-radius: 3px;
   font-size: 20px;
   background-color: #E4AF2B;
