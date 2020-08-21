@@ -50,6 +50,7 @@
   font-size: 20px;
   padding: 10px 15px;
   white-space: nowrap;
+  text-align: center;
 }
 
 .nav-button:hover {
@@ -62,18 +63,35 @@
 }
 
 .nav-login {
+  position: relative;
   z-index: 2;
   margin-top: -10px;
-  color: white;
   background-color: #E4AF2B;
   color: #662F1E;
-  text-align: center;
+}
+
+.nav-drp-logout {
+  background-color: white;
+  color: black;
+  top: 43px;
+  left: 0px;
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  display: none;
+  box-shadow: 5px 5px 5px 3px #aaaaaa;
+}
+
+.nav-login:hover .nav-drp-logout {
+  display: block;
 }
 
 .nav-pickup {
   position: relative;
   background-color: #662F1E;
   color: #E4AF2B;
-  /* margin: auto; */
   top: -5px;
+  height: 30px;
+  padding: 10px 15px 5px;
 }
+

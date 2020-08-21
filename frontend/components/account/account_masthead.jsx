@@ -9,8 +9,12 @@ class AccountMasthead extends React.Component {
     
     const accountSection = (this.props.currentUser ?
       <div>
-        <div className="nav-button nav-login" to="/#">Hello {currentUserName}!</div>
-        <button onClick={logout}>Logout</button>
+        <div className="nav-button nav-login">
+          <span>Hello {currentUserName}!</span>
+          <div className="nav-drp-logout">
+            <button onClick={logout}>Logout</button>
+          </div>
+        </div>
       </div>   
       :
       <button className="nav-button nav-login" onClick={this.props.handleModal}>
