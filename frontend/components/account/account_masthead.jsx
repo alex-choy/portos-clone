@@ -12,10 +12,12 @@ class AccountMasthead extends React.Component {
         <div className="nav-button nav-login">
           <span>Hello {currentUserName}!</span>
           <div className="nav-drp-logout">
+            <Link to="/#">Account</Link>
+            <hr/>
             <button onClick={logout}>Logout</button>
           </div>
         </div>
-      </div>   
+      </div>      
       :
       <button className="nav-button nav-login" onClick={this.props.handleModal}>
         Login/Signup

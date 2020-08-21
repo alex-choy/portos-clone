@@ -71,15 +71,22 @@
 }
 
 .nav-drp-logout {
-  background-color: white;
+  background-color: rgb(247, 247, 247);
   color: black;
   top: 43px;
   left: 0px;
   width: 200px;
-  height: 100px;
+  /* height: 100px; */
+  padding-top: 10px;
   position: absolute;
   display: none;
   box-shadow: 5px 5px 5px 3px #aaaaaa;
+  text-align: left;
+}
+
+.nav-drp-logout > a, .nav-drp-logout > button {
+  margin: 5px 10px;
+  padding-bottom: 10px;
 }
 
 .nav-login:hover .nav-drp-logout {
