@@ -12,7 +12,8 @@ const OrderModal = (props) => {
   }
 
   return (
-    <div className="order-modal-parent" onClick={closeOrderModal}>
+    <div className="order-modal-parent">
+      <button className="order-modal-close" onClick={closeOrderModal}>&times;</button>
       <div className="order-modal-child" onClick={(e) => e.stopPropagation()}>
         <span className="order-modal-title ord-mod">
           <h2>OPEN TO</h2>
