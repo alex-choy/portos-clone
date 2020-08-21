@@ -14,3 +14,10 @@ export const getCategories = () => (dispatch) => (
   CategoryAPIUtil.requestCategories()
     .then((categories) => dispatch(fetchCategories(categories)))
 );
+
+export const getCategoriesAndFoodItems = () => (dispatch) => (
+  dispatch(getFoodItems())
+    .then(() => dispatch(getCategories()))
+    .then(() => console.log('finished'))
+);
+         

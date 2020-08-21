@@ -10,9 +10,19 @@ class OrderPage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getCategories();
-    this.props.getCategoriesAndFoods();
+    // this.props.getFoodItems();
+    // Promise.all([
+    //   this.props.getFoodItems(),
+    //   this.props.getCategories()
+    // ])
+    this.props.getCategoriesAndFoodItems();
   }
+
+  // componentDidUpdate() {
+  //   if(!this.props.categories) {
+  //     this.props.getCategories();
+  //   }
+  // }
 
   renderEachCategory(foodIds) {
     const foodItems = this.props.foodItems;
@@ -39,19 +49,21 @@ class OrderPage extends React.Component {
   }
 
   render() {
-    console.log("foodItems: ", this.props.foodItems);
-    // if(this.props.foodItems.length > 0 && this.props.categories.length > 0) {
-    //   console.log('both > 0');
-    //   return (
-    //     <div>
-    //       {this.renderItemsByCategory()}
-    //     </div>
-    //   );
-    // } else {
-    //   return null;
-    // }
+    console.log(this.props.categories);
+    console.log(this.props.foodItems);
+    if(this.props.foodItems && this.props.categories) {
+      console.log('both > 0');
+      return (
+        <div>
+        ORDER PAGE WORKS
+          {this.renderItemsByCategory()}
+        </div>
+      );
+    } else {
+      return null;
+    }
 
-    return <div>{this.renderItemsByCategory()}</div>;
+    // return <div>{this.renderItemsByCategory()}</div>;
   }
 }
 
