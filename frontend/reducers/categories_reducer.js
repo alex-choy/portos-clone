@@ -1,9 +1,6 @@
 const { RECEIVE_ALL_CATEGORIES } = require("../actions/category_actions");
 
-
-const _defaultState = {};
-
-const categoriesReducer = (oldState = _defaultState, action) => {
+const categoriesReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   switch(action.type) {
     case RECEIVE_ALL_CATEGORIES:

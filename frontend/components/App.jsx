@@ -5,7 +5,7 @@ import HomepageContainer from "./homepage/homepage_container";
 import { Route } from "react-router-dom";
 import Menu from './foods/menu';
 import FoodShowContainer from "./foods/food_show_container";
-import OrderPage from "./order_page/order_page";
+import OrderPageContainer from "./order_page/order_page_container";
 
 const App = () => (
   <div>
@@ -14,7 +14,7 @@ const App = () => (
     </header>
     <div className="under-masthead">
       <Route exact path="/" component={HomepageContainer} />
-      <Route exact path="/order" component={OrderPage} />
+      <Route exact path="/order" component={OrderPageContainer} />
       <Route path={`/menu/:foodId`} component={FoodShowContainer} />
       <Route exact path="/menu" component={Menu} />
     </div>

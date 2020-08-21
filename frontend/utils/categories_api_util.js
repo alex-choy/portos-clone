@@ -1,4 +1,4 @@
-export const requestAllCategories = () =>
+export const requestCategories = () =>
   $.ajax({
     method: "GET",
     url: "/api/categories",
