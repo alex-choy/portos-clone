@@ -30,6 +30,10 @@
   font-size: 18px;
 }
 
+.session-button:hover {
+  color: #662F1E;
+}
+
 .other-form-link {
   padding-top: 3px;
   border-radius: 3px;

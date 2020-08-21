@@ -1,6 +1,7 @@
 .nav-wrapper {
   /* color: white; */
   position: fixed;
+  display: block;
   width: 100%;
   z-index: 500;
   background-color: white;
@@ -102,3 +103,6 @@
   padding: 10px 15px 5px;
 }
 
+.under-masthead { 
+    padding-top: 83px;
+}

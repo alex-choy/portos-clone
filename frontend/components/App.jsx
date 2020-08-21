@@ -11,9 +11,11 @@ const App = () => (
     <header>
       <MastheadContainer />
     </header>
-    <Route exact path="/" component={HomepageContainer} />
-    <Route path={`/menu/:foodId`} component={FoodShowContainer} />
-    <Route exact path="/menu" component={Menu} />
+    <div className="under-masthead">
+      <Route exact path="/" component={HomepageContainer} />
+      <Route path={`/menu/:foodId`} component={FoodShowContainer} />
+      <Route exact path="/menu" component={Menu} />
+    </div>
 
     <Modal />
   </div>

@@ -14,7 +14,7 @@ class Masthead extends React.Component {
 
   render() {
     return (
-      <div className="nav-wrapper">
+      <div className="nav-wrapper cf">
         <nav className="nav">
           <AccountContainer handleModal={this.handleModal} />
           <div className="center-nav">

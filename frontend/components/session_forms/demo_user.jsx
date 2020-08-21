@@ -7,7 +7,8 @@ class DemoUser extends React.Component {
     this.loginDemoUser = this.loginDemoUser.bind(this);
   }
 
-  loginDemoUser() {
+  loginDemoUser(e) {
+    e.preventDefault();
     this.props.processForm({
       username: 'GuestUser',
       password: 'GuestUser',
