@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import OrderPage from './order_page';
-import { getCategoriesAndFoodItems } from "../../actions/category_actions";
+import { getCategories } from "../../actions/category_actions";
 import { getFoodItems } from '../../actions/food_item_actions';
 
 const mSTP = (state) => ({
@@ -9,8 +9,8 @@ const mSTP = (state) => ({
 });
 
 const mDTP = (dispatch) => ({
-  getCategoriesAndFoods: () => dispatch(getCategoriesAndFoodItems()),
-  // getFoodItems: () => dispatch(getFoodItems())
+  getCategoriesAndFoods: () => dispatch(getCategories()),
+  getFoodItems: () => dispatch(getFoodItems())
 });
 
 export default connect(mSTP, mDTP)(OrderPage);

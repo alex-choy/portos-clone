@@ -10,7 +10,7 @@ class OrderPage extends React.Component {
   }
 
   componentDidMount() {
-    // this.props.getCategories();
+    this.props.getCategories();
     this.props.getCategoriesAndFoods();
   }
 

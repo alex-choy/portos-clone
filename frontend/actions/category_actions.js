@@ -10,8 +10,7 @@ const fetchCategories = (categories) => ({
 
 
 
-export const getCategoriesAndFoodItems = () => (dispatch) => (
+export const getCategories = () => (dispatch) => (
   CategoryAPIUtil.requestCategories()
     .then((categories) => dispatch(fetchCategories(categories)))
-    .then(() => dispatch(getFoodItems()))
 );
