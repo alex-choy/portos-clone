@@ -10,10 +10,14 @@
 #  image_url   :string           not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  category_id :integer
 #
-require 'open-uri'
 class FoodItem < ApplicationRecord
   validates :name, :quantity, :price, :description, :image_url, presence: true
   validates :name, :image_url, uniqueness: true
   has_one_attached :photo
+
+  belongs_to :category,
+    foreign_key: :category_id,
+    class_name: :Category
 end

@@ -1,6 +1,7 @@
 
 import { OPEN_ORDER_MODAL } from "../../actions/modal_actions";
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const OrderModal = (props) => {
   const { modal, closeOrderModal } = props;
@@ -22,7 +23,7 @@ const OrderModal = (props) => {
         <span className="order-modal-subtitle ord-mod">
           <p>You better sit tight in your car</p>
         </span>
-        <button className="ord-button pickup">Pickup In-Store</button>
+        <Link className="ord-button pickup" to="/order">Pickup In-Store</Link>
         <br />
         <br />
         <span className="order-modal-subtitle ord-mod">

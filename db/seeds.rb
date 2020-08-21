@@ -16,25 +16,33 @@ require 'open-uri'
 # file = open('https://porosnax-dev.s3-us-west-1.amazonaws.com/american-heritage-chocolate-HuzdnhOfTKs-unsplash.jpg')
 
 # demo_user.avatar.attach(io: file, filename: 'some_file.jpg')
+
+
+# Categories
+cookie = Category.create(name: 'cookie')
+baked_good = Category.create(name: 'baked_good')
+pastry = Category.create(name: 'pastry')
+bread = Category.create(name: 'bread')
+cake = Category.create(name: 'cake')
+
+
 food_items = [
-  {name: 'Shortbread Cookies', quantity: 240, price: 5.50, 
+  {name: 'Shortbread Cookies', quantity: 240, price: 5.50, category_id: cookie.id,
     description: "Shortbread cookies pressed together with dark chocolate", 
     image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/tanaphong-toochinda-_f8S_o9xQK8-unsplash.jpg"},
-  {name: 'Chocolate Cookies', quantity: 150, price: 4.00, 
+  {name: 'Chocolate Cookies', quantity: 150, price: 4.00, category_id: cookie.id,
     description: "Chocolate cookies with chopped peanuts", 
     image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/american-heritage-chocolate-DoK5qEy2L60-unsplash.jpg"},
-  {name: 'Raspberry Tart', quantity: 80, price: 4.50, 
+  {name: 'Raspberry Tart', quantity: 80, price: 4.50, category_id: baked_good.id,
     description: "Pie crust filled with cream, topped with raspberries, dusted with powdered sugar", 
     image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/louis-mornaud-bLbRF0XWHJs-unsplash.jpg"},
-  {name: 'Vanilla Bean Cheesecake', quantity: 40, price: 6.00, 
+  {name: 'Vanilla Bean Cheesecake', quantity: 40, price: 6.00, category_id: cake.id,
     description: "Vanilla cheesecake, graham cracker crust, dried apricot layer on the bottom, mango jam spread on top", 
     image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/alana-harris-sSLi0wraDmQ-unsplash.jpg"},
-  {name: 'Lemon Cupcake', quantity: 300 , price: 2.25, 
+  {name: 'Lemon Cupcake', quantity: 300 , price: 2.25, category_id: baked_good.id,
     description: "Lemon-flavored mini cupcakes, topped with buttercream", 
     image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/chaman-raj-JbeYtG0HizE-unsplash.jpg"}
 ]
-
-
 # Food Items
 food_items.each do |food_info|
   p food_info
