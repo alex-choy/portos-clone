@@ -13,14 +13,17 @@ class OrderPage extends React.Component {
     this.props.getCategoriesAndFoodItems();
   }
 
-  renderEachCategory(foodIds, category) {
+  itemClick(e) {
+    e.preventDefault();
+    console.log(e.target.className);
+  }
+
+  renderEachCategory(foodIds) {
     const foodItems = this.props.foodItems;
     let categoryEles = [];
     foodIds.forEach((id) => {
       const foodItem = foodItems[id];
-      categoryEles.push(<OrderPageItem 
-        key={id} 
-        foodItem={foodItem} />);
+      categoryEles.push(<OrderPageItem key={id} foodItem={foodItem} itemClick={this.itemClick}/>);
     });
     return categoryEles;
   }
@@ -34,9 +37,7 @@ class OrderPage extends React.Component {
         items.push(
           <div className={`category ${category} cf`} key={category}>
             <h2 className="category-title">{category}</h2>
-            <section className="category-items-wrapper">
-              {categoryEles}
-            </section>
+            <section className="category-items-wrapper">{categoryEles}</section>
           </div>
         );
         // items.push(categoryEles);

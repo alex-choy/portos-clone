@@ -7,7 +7,7 @@
 
 .order-items {
   width: 70%;
-  font-family: "Bebas Neue",sans-serif;
+  font-family: "Bebas Neue", sans-serif;
 }
 
 .category {
@@ -22,19 +22,25 @@
 .category-item {
   box-sizing: border-box;
   width: 50%;
-  font-family: "Bebas Neue",sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   height: 140px;
 }
 
 .category-item:nth-child(odd) {
   margin-right: 20px;
-  max-width: 45%;
+  /* max-width: 45%; */
   background-color: red;
 }
 
 .category-item:nth-child(even) {
   margin-left: 20px;
   background-color: blue;
+}
+
+/* Get last child only if it's odd (don't disrupt even last children) */
+.category-item:nth-last-child(1):nth-child(odd) {
+  background-color: burlywood;
+  width: 47%;
 }
 
 .category-title {
@@ -44,6 +50,7 @@
 
 .order-food-title {
   font-size: 20px;
+  height: 10px;
   display: block;
 }
 
