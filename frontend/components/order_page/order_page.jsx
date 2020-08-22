@@ -18,6 +18,14 @@ class OrderPage extends React.Component {
     console.log(e.target.className);
   }
 
+  toTitleCase(phrase) {
+    return phrase
+      .toLowerCase()
+      .split('_')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  };
+
   renderEachCategory(foodIds) {
     const foodItems = this.props.foodItems;
     let categoryEles = [];
@@ -36,7 +44,7 @@ class OrderPage extends React.Component {
       if (categoryEles.length) {
         items.push(
           <div className={`category ${category} cf`} key={category}>
-            <h2 className="category-title">{category}</h2>
+            <h2 className="category-title">{this.toTitleCase(category)}s</h2>
             <section className="category-items-wrapper">{categoryEles}</section>
           </div>
         );
