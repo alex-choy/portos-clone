@@ -3,7 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import LoginFormContainer from './login_form_container';
 import SignupFormContainer from './signup_form_container';
-import OrderPageContainer from '../order_page/order_page_container';
+import OrderItemModal from "../order_page/order_item_modal";
 
 export const LOGIN_MODAL = "LOGIN_MODAL";
 export const SIGNUP_MODAL = "SIGNUP_MODAL";
@@ -15,7 +15,8 @@ const Modal = (props) => {
     return null;
   } 
   let component;
-  switch(modal.sessionModal) {
+  console.log('in session_modal.jsx');
+  switch(modal.popupModal) {
     case LOGIN_MODAL:
       component = <LoginFormContainer />;
       break;
@@ -23,6 +24,7 @@ const Modal = (props) => {
       component = <SignupFormContainer />;
       break;
     case ORDER_ITEM_MODAL:
+      console.log('ORDER ITEM MODAL IN SESSION_MODAL.JSX');
       component = <OrderItemModal />;
       break;
     default: 

@@ -1,5 +1,6 @@
 import React from 'react';
 import OrderPageItem from "./order_page_item";
+import Modal from '../session_forms/session_modal';
 
 class OrderPage extends React.Component {
   constructor(props) {
@@ -7,6 +8,7 @@ class OrderPage extends React.Component {
 
     this.renderItemsByCategory = this.renderItemsByCategory.bind(this);
     this.renderEachCategory = this.renderEachCategory.bind(this);
+    this.itemClick = this.itemClick.bind(this);
   }
 
   componentDidMount() {
@@ -15,7 +17,8 @@ class OrderPage extends React.Component {
 
   itemClick(e) {
     e.preventDefault();
-    console.log(e.target.className);
+    this.props.openOrderItemModal();
+    // console.log(e.target.className);
   }
 
   toTitleCase(phrase) {
@@ -63,6 +66,7 @@ class OrderPage extends React.Component {
           <section className="order-items">
             {this.renderItemsByCategory()}
           </section>
+          <Modal />
         </div>
       );
     } else {

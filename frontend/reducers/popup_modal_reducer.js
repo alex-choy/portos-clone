@@ -6,12 +6,13 @@ import {
 } from "../actions/modal_actions";
 const _defaultState = null;
 
-const sessionModalReducer = (state = _defaultState, action) => {
+const popupModalReducer = (state = _defaultState, action) => {
   Object.freeze(state);
   switch (action.type) {
     case OPEN_SESSION_MODAL:
       return action.modal;
     case OPEN_ORDER_ITEM_MODAL:
+      console.log('Open Item Modal Reducer');
       return action.modal;
     case CLOSE_MODAL:
       return _defaultState;
@@ -20,4 +21,4 @@ const sessionModalReducer = (state = _defaultState, action) => {
   }
 };
 
-export default sessionModalReducer;
+export default popupModalReducer;

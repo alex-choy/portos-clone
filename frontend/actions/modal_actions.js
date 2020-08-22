@@ -1,3 +1,6 @@
+import { ORDER_ITEM_MODAL } from "../components/session_forms/session_modal";
+
+
 export const OPEN_SESSION_MODAL = "OPEN_SESSION_MODAL";
 export const OPEN_ORDER_ITEM_MODAL = "OPEN_ORDER_ITEM_MODAL";
 export const CLOSE_MODAL = "CLOSE_MODAL";
@@ -17,7 +20,7 @@ export const openSessionModal = (modal) => ({
 
 export const openOrderItemModal = (modal) => ({
   type: OPEN_ORDER_ITEM_MODAL,
-  modal,
+  modal: ORDER_ITEM_MODAL
 });
 
 // export const openOrderModal

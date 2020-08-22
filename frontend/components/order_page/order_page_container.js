@@ -5,6 +5,7 @@ import {
   getCategoriesAndFoodItems,
 } from "../../actions/category_actions";
 import { getFoodItems } from '../../actions/food_item_actions';
+import { openOrderItemModal } from '../../actions/modal_actions';
 
 const mSTP = (state) => ({
   foodItems: state.entities.foodItems,
@@ -15,6 +16,7 @@ const mDTP = (dispatch) => ({
   getCategories: () => dispatch(getCategories()),
   getFoodItems: () => dispatch(getFoodItems()),
   getCategoriesAndFoodItems: () => dispatch(getCategoriesAndFoodItems()),
+  openOrderItemModal: () => dispatch(openOrderItemModal()),
 });
 
 export default connect(mSTP, mDTP)(OrderPage);
