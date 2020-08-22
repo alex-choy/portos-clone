@@ -12,7 +12,6 @@ const popupModalReducer = (state = _defaultState, action) => {
     case OPEN_SESSION_MODAL:
       return action.modal;
     case OPEN_ORDER_ITEM_MODAL:
-      console.log('Open Item Modal Reducer');
       return action.modal;
     case CLOSE_MODAL:
       return _defaultState;

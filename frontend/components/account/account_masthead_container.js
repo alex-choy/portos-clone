@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import { logout } from "../../actions/session_actions";
 import { openSessionModal } from '../../actions/modal_actions';
 import AccountMasthead from "./account_masthead";
-import { LOGIN_MODAL } from '../session_forms/session_modal';
+import { LOGIN_MODAL } from '../session_forms/popup_modal';
 
 const mSTP = (state) => ({
   currentUser: state.entities.users[state.session.id],

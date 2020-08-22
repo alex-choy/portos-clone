@@ -15,7 +15,6 @@ const Modal = (props) => {
     return null;
   } 
   let component;
-  console.log('in session_modal.jsx');
   switch(modal.popupModal) {
     case LOGIN_MODAL:
       component = <LoginFormContainer />;
@@ -24,8 +23,8 @@ const Modal = (props) => {
       component = <SignupFormContainer />;
       break;
     case ORDER_ITEM_MODAL:
-      console.log('ORDER ITEM MODAL IN SESSION_MODAL.JSX');
-      component = <OrderItemModal />;
+      const food = 
+      component = <OrderItemModal foodItem={props.foodItem}/>;
       break;
     default: 
       return null;
@@ -41,7 +40,8 @@ const Modal = (props) => {
 };
 
 const mSTP = (state) => ({
-  modal: state.ui.modal
+  modal: state.ui.modal,
+  foodItem: state.entities.foodItems[state.ui.currentFoodId]
 });
 
 const mDTP = (dispatch) => ({

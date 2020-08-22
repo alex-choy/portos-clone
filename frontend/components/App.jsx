@@ -1,6 +1,6 @@
 import React from "react";
 import MastheadContainer from './masthead/masthead_container';
-import Modal from './session_forms/session_modal';
+import Modal from './session_forms/popup_modal';
 import HomepageContainer from "./homepage/homepage_container";
 import { Route } from "react-router-dom";
 import Menu from './foods/menu';

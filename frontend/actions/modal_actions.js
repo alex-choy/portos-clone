@@ -1,9 +1,10 @@
-import { ORDER_ITEM_MODAL } from "../components/session_forms/session_modal";
+import { ORDER_ITEM_MODAL } from "../components/session_forms/popup_modal";
 
 
 export const OPEN_SESSION_MODAL = "OPEN_SESSION_MODAL";
 export const OPEN_ORDER_ITEM_MODAL = "OPEN_ORDER_ITEM_MODAL";
 export const CLOSE_MODAL = "CLOSE_MODAL";
+export const SET_ORDER_ITEM_MODAL_ID = "SET_ORDER_ITEM_MODAL_ID";
 
 export const OPEN_ORDER_MODAL = "OPEN_ORDER_MODAL";
 export const CLOSE_ORDER_MODAL = "CLOSE_ORDER_MODAL";
@@ -22,6 +23,17 @@ export const openOrderItemModal = (modal) => ({
   type: OPEN_ORDER_ITEM_MODAL,
   modal: ORDER_ITEM_MODAL
 });
+
+export const setOrderItemModalId = (foodId) => ({
+  type: SET_ORDER_ITEM_MODAL_ID,
+  foodId
+}); 
+
+// export const openOrderItemModalAndSetFoodId = (foodId) => (dispatch) => {
+//   // dispatch(openOrderItemModal()).then(() => dispatch(setOrderItemModalId(foodId)))
+//   return dispatch(openOrderItemModal())
+//     .then(() => dispatch(setOrderItemModalId(foodId)));
+// };
 
 // export const openOrderModal
 // export const closeLogoutModal = () => ({

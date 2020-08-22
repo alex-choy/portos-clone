@@ -1,6 +1,6 @@
 import React from 'react';
 import OrderPageItem from "./order_page_item";
-import Modal from '../session_forms/session_modal';
+import Modal from '../session_forms/popup_modal';
 
 class OrderPage extends React.Component {
   constructor(props) {
@@ -15,9 +15,10 @@ class OrderPage extends React.Component {
     this.props.getCategoriesAndFoodItems();
   }
 
-  itemClick(e) {
-    e.preventDefault();
+  itemClick(foodId) {
+    event.preventDefault();
     this.props.openOrderItemModal();
+    this.props.setOrderItemModalId(foodId);
     // console.log(e.target.className);
   }
 
