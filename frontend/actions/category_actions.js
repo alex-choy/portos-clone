@@ -18,6 +18,5 @@ export const getCategories = () => (dispatch) => (
 export const getCategoriesAndFoodItems = () => (dispatch) => (
   dispatch(getFoodItems())
     .then(() => dispatch(getCategories()))
-    .then(() => console.log('finished'))
 );
          

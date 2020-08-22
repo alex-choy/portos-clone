@@ -1,0 +1,64 @@
+.order-page-wrapper {
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+  border: 1px solid green;
+}
+
+.order-items {
+  width: 70%;
+  font-family: "Bebas Neue",sans-serif;
+}
+
+.category {
+  margin-bottom: 40px;
+}
+
+.category-items-wrapper {
+  display: flex;
+  height: 100%;
+}
+
+.category-item {
+  box-sizing: border-box;
+  width: 50%;
+  font-family: "Bebas Neue",sans-serif;
+  height: 140px;
+}
+
+.category-item:nth-child(odd) {
+  margin-right: 20px;
+  max-width: 45%;
+  background-color: red;
+}
+
+.category-item:nth-child(even) {
+  margin-left: 20px;
+  background-color: blue;
+}
+
+.category-title {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.order-food-title {
+  font-size: 20px;
+  display: block;
+}
+
+.order-food-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+  height: 40px;
+}
+
+.order-food-price {
+  position: relative;
+  bottom: 0;
+  line-height: 1.5;
+}

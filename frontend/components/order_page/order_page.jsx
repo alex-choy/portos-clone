@@ -10,60 +10,54 @@ class OrderPage extends React.Component {
   }
 
   componentDidMount() {
-    // this.props.getFoodItems();
-    // Promise.all([
-    //   this.props.getFoodItems(),
-    //   this.props.getCategories()
-    // ])
     this.props.getCategoriesAndFoodItems();
   }
 
-  // componentDidUpdate() {
-  //   if(!this.props.categories) {
-  //     this.props.getCategories();
-  //   }
-  // }
-
-  renderEachCategory(foodIds) {
+  renderEachCategory(foodIds, category) {
     const foodItems = this.props.foodItems;
     let categoryEles = [];
     foodIds.forEach((id) => {
       const foodItem = foodItems[id];
-      console.log('id: ', id);
-      console.log('foodItems: ', foodItems);
-      categoryEles.push(<OrderPageItem key={id} foodItem={foodItem} />);
+      categoryEles.push(<OrderPageItem 
+        key={id} 
+        foodItem={foodItem} />);
     });
     return categoryEles;
   }
 
   renderItemsByCategory() {
-    console.log('reder item cat');
     let items = [];
     for (const category in this.props.categories) {
       const foodIds = this.props.categories[category];
-      const categoryEles = this.renderEachCategory(foodIds);
-      items.push(<div key={category}>{categoryEles}</div>);
+      const categoryEles = this.renderEachCategory(foodIds, category);
+      if (categoryEles.length) {
+        items.push(
+          <div className={`category ${category} cf`} key={category}>
+            <h2 className="category-title">{category}</h2>
+            <section className="category-items-wrapper">
+              {categoryEles}
+            </section>
+          </div>
+        );
+        // items.push(categoryEles);
+      }
     }
 
     return items;
   }
 
   render() {
-    console.log(this.props.categories);
-    console.log(this.props.foodItems);
-    if(this.props.foodItems && this.props.categories) {
-      console.log('both > 0');
+    if (this.props.foodItems && this.props.categories) {
       return (
-        <div>
-        ORDER PAGE WORKS
-          {this.renderItemsByCategory()}
+        <div className="order-page-wrapper">
+          <section className="order-items">
+            {this.renderItemsByCategory()}
+          </section>
         </div>
       );
     } else {
       return null;
     }
-
-    // return <div>{this.renderItemsByCategory()}</div>;
   }
 }
 
