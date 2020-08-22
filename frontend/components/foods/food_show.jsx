@@ -27,7 +27,7 @@ class FoodShow extends React.Component {
               <p>${parseFloat(price).toFixed(2)} each</p>
               <h3>Description</h3>
               <p>{description}</p>
-              <Link to="/#" className="to-order-page">Order Now!</Link>
+              <Link to="/order" className="to-order-page">Order Now!</Link>
             </article>
           </section>
           <Link to="/menu" className="to-menu-index">Back to Menu</Link>

@@ -45,6 +45,7 @@ class OrderPage extends React.Component {
         items.push(
           <div className={`category ${category} cf`} key={category}>
             <h2 className="category-title">{this.toTitleCase(category)}s</h2>
+            <hr/>
             <section className="category-items-wrapper">{categoryEles}</section>
           </div>
         );

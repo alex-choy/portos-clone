@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import { signup } from "../../actions/session_actions";
 import SessionForm from "./session_form";
-import { openSessionModal, closeSessionModal } from "../../actions/modal_actions";
+import { openSessionModal, closeModal } from "../../actions/modal_actions";
 import { LOGIN_MODAL } from './session_modal';
 import { Link } from 'react-router-dom'; 
 const mSTP = (state) => ({
@@ -20,7 +20,7 @@ const mDTP = (dispatch) => ({
       Login
     </button>
   ),
-  closeSessionModal: () => dispatch(closeSessionModal())
+  closeModal: () => dispatch(closeModal())
 });
 
 export default connect(mSTP, mDTP)(SessionForm);

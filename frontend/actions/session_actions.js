@@ -1,5 +1,5 @@
 import * as SessionAPIUtil from "../utils/sesssion_api_util";
-import { closeSessionModal } from './modal_actions';
+import { closeModal } from './modal_actions';
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
@@ -29,7 +29,7 @@ export const signup = (user) => (dispatch) =>
     },
     (err) => dispatch(receiveErrors(err.responseJSON))
   ).then(
-    () => dispatch(closeSessionModal()) // close the modal on signup
+    () => dispatch(closeModal()) // close the modal on signup
   );
 
 export const login = (user) => (dispatch) =>
@@ -40,7 +40,7 @@ export const login = (user) => (dispatch) =>
     },
     (err) => dispatch(receiveErrors(err.responseJSON))
   ) .then(
-    () => dispatch(closeSessionModal()) // close the modal on login
+    () => dispatch(closeModal()) // close the modal on login
   );
 
 export const logout = () => (dispatch) =>

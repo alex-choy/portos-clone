@@ -5,18 +5,13 @@ import AccountContainer from '../account/account_masthead_container';
 class Masthead extends React.Component { 
   constructor(props) {
     super(props);
-    this.handleModal = this.handleModal.bind(this);
-  }
-
-  handleModal() {
-    this.props.getLoginModal();
   }
 
   render() {
     return (
       <div className="nav-wrapper cf">
         <nav className="nav">
-          <AccountContainer handleModal={this.handleModal} />
+          <AccountContainer/>
           <div className="center-nav">
             <Link to="/menu" className="nav-link">MENU</Link>
             {/* <Link to="/#" className="nav-link">TAKE AND BAKE</Link> */}

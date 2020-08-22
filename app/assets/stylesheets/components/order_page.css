@@ -29,17 +29,17 @@
 .category-item:nth-child(odd) {
   margin-right: 20px;
   /* max-width: 45%; */
-  background-color: red;
+  /* background-color: red; */
 }
 
 .category-item:nth-child(even) {
   margin-left: 20px;
-  background-color: blue;
+  /* background-color: blue; */
 }
 
 /* Get last child only if it's odd (don't disrupt even last children) */
 .category-item:nth-last-child(1):nth-child(odd) {
-  background-color: burlywood;
+  /* background-color: burlywood; */
   width: 47%;
 }
 
