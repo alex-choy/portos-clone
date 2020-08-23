@@ -80,32 +80,68 @@
 }
 
 .order-item-modal-wrapper {
-  
+
 }
 
 .order-modal-food-item {
   margin-bottom: 30px;
 }
 
-.order-modal-food-item > h2 {
+.order-item-modal-wrapper h2 {
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 10px;
 }
 
-.order-modal-details {
+.order-modal-food-item {
   display: flex;
   justify-content: space-between;
 }
 
-.order-modal-details > img {
-  /* height: 150px;  */
+.order-modal-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.order-modal-quantity {
+    justify-content: space-around;
+    font-size: 24px;
+    background-color: #F0F0F0;
+    color: #373737;
+    width: 100px;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.quantity-btn {
+  text-align: center;
+  /* background-color: gray; */
+  border-radius: 20px;
+  width: 25px;
+  height: 25px;
+}
+
+.quantity-btn:first-child {
+  padding-left: 5px;
+}
+
+.quantity-btn:last-child {
+  padding-right: 5px;
+}
+
+.order-modal-quantity input {
+  width: 35px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.order-item-modal-wrapper img {
   object-fit: contain;
   width: 40%;
   padding-left: 20px;
 }
 
-.order-modal-quantitiy {
-  display: block;
-  border-top: 1px solid black;
+.disabled {
+  color: rgb(170, 170, 170);
 }
