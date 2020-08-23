@@ -2,7 +2,7 @@
   width: 80%;
   margin: auto;
   margin-top: 20px;
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
 
 .order-items {
@@ -79,6 +79,10 @@
   line-height: 1.5;
 }
 
+
+/****************************************/
+/* Modal CSS */
+/****************************************/
 .order-item-modal-wrapper {
 
 }
@@ -98,6 +102,12 @@
   justify-content: space-between;
 }
 
+.left-order-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .order-modal-details {
   display: flex;
   flex-direction: column;
@@ -105,6 +115,8 @@
 }
 
 .order-modal-quantity {
+    box-sizing: border-box;
+    width: 100px;
     justify-content: space-around;
     font-size: 24px;
     background-color: #F0F0F0;
@@ -138,10 +150,31 @@
 
 .order-item-modal-wrapper img {
   object-fit: contain;
-  width: 40%;
+  width: 35%;
   padding-left: 20px;
 }
 
 .disabled {
-  color: rgb(170, 170, 170);
+  color: rgb(180, 180, 180);
+}
+
+.add-to-cart {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+
+.add-to-cart-btn {
+  box-sizing: border-box;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: rgb(240, 240, 240);
+  background-color: #008854;
+  padding: 10px 15px;
+  width: 250px;
+  border-radius: 20px;
+  margin-top: 5px;
+  font-size: 18px;
 }

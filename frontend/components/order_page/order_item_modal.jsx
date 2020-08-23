@@ -31,14 +31,22 @@ class OrderItemModal extends React.Component {
       <div className="order-item-modal-wrapper">
         <h2>{name}</h2>
         <section className="order-modal-food-item">
-          <span className="order-modal-details">
-            <p>{description}</p>
-            <OrderItemQuantity
-              quantity={quantity}
-              increaseQuantity={this.increaseQuantity}
-              decreaseQuantity={this.decreaseQuantity}
-            />
-          </span>
+          <section className="left-order-modal">
+            <span className="order-modal-details">
+              <p>{description}</p>
+            </span>
+            <div className="add-to-cart">
+              <OrderItemQuantity
+                quantity={quantity}
+                increaseQuantity={this.increaseQuantity}
+                decreaseQuantity={this.decreaseQuantity}
+              />
+              <button className="add-to-cart-btn">
+                <span>Add to Order</span>
+                <span>${(quantity * this.state.price).toFixed(2)}</span>
+              </button>
+            </div>
+          </section>
           <img src={photo_url} alt="" />
         </section>
       </div>
