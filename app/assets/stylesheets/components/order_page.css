@@ -35,8 +35,13 @@
   font-family: "Bebas Neue", sans-serif;
   height: 140px;
 }
+
 .category-item:hover { 
   cursor: pointer;
+}
+
+.category-item:hover .order-food-title { 
+  color: green;
 }
 
 .category-item:nth-child(odd) {
@@ -74,10 +79,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   height: 24px;
-}
-
-.order-food-title:hover {
-  color: green;
 }
 
 .order-food-desc {

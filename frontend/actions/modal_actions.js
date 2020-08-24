@@ -1,4 +1,4 @@
-import { ORDER_ITEM_MODAL } from "../components/session_forms/popup_modal";
+import { ORDER_ITEM_MODAL } from "../components/shared_components/popup_modal";
 
 
 export const OPEN_SESSION_MODAL = "OPEN_SESSION_MODAL";

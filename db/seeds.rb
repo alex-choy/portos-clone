@@ -48,7 +48,6 @@ food_items = [
 ]
 # Food Items
 food_items.each do |food_info|
-  p food_info
   file = open(food_info[:image_url])
   new_item = FoodItem.create(food_info)
   new_item.photo.attach(io: file, filename: food_info[:image_url])

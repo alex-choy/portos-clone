@@ -12,9 +12,8 @@
   padding-top: 15px;
   padding-bottom: 5px;
   padding-left: 10px;
-  border-bottom: 1px solid lightgray;
-  border-left: 1px solid lightgray;
-  border-right: 1px solid lightgray;
+  border: 1px solid lightgray;
+  border-top: none;
 }
 
 .cart-item span {

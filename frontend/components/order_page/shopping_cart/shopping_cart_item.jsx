@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ShoppingCartItem = ({ cartQuantity, foodItem: { name, price } }) => {
+const ShoppingCartItem = ({ cartQuantity, foodItem: { id, name, price }, removeItemFromCart }) => {
 
   return (
     <div className="cart-item">
@@ -16,7 +16,7 @@ const ShoppingCartItem = ({ cartQuantity, foodItem: { name, price } }) => {
       <div className="cart-item-bot">
         <button>Edit</button>
         <p className="separator">|</p>
-        <button>Remove</button>
+        <button onClick={() => removeItemFromCart(id)}>Remove</button>
       </div>
     </div>
   );

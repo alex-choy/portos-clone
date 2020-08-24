@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { login } from '../../actions/session_actions';
 import SessionForm from './session_form';
 import { openSessionModal, closeModal } from "../../actions/modal_actions";
-import { SIGNUP_MODAL } from './popup_modal';
+import { SIGNUP_MODAL } from '../shared_components/popup_modal';
 import { Link } from 'react-router-dom';
 
 const mSTP = (state) => ({

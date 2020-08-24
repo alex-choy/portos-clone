@@ -1,4 +1,7 @@
-import { ADD_ITEM_TO_CART } from '../actions/shopping_cart_actions';
+import {
+  ADD_ITEM_TO_CART,
+  REMOVE_ITEM_FROM_CART,
+} from "../actions/shopping_cart_actions";
 
 const shoppingCartReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -8,6 +11,9 @@ const shoppingCartReducer = (state = {}, action) => {
     case ADD_ITEM_TO_CART:
       const { foodId, quantity } = action.foodInfo;
       newState[foodId] = { quantity: quantity };
+      return newState;
+    case REMOVE_ITEM_FROM_CART:
+      delete newState[action.foodId]
       return newState;
     default: 
       return state;

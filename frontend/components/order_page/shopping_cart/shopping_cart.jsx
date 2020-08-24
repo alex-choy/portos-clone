@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ShoppingCartItem from './shopping_cart_item';
+import { removeItemFromCart } from '../../../actions/shopping_cart_actions';
 
 class ShoppingCart extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class ShoppingCart extends React.Component {
 
   renderCartItems(shoppingCart) {
     const foodIds = Object.keys(shoppingCart);
-    const { foodItems } = this.props;
+    const { foodItems, removeItemFromCart } = this.props;
     const cartItems = foodIds.map((foodId) => {
       const foodItem = foodItems[foodId];
       const cartQuantity = shoppingCart[foodId].quantity;
@@ -19,6 +20,7 @@ class ShoppingCart extends React.Component {
         key={foodId}
         cartQuantity={cartQuantity}
         foodItem={foodItem}
+        removeItemFromCart={removeItemFromCart}
       />
     });
     return cartItems;
@@ -52,7 +54,7 @@ const mSTP = (state) => ({
 });
 
 const mDTP = (dispatch) => ({
-
+  removeItemFromCart: (foodId) => dispatch(removeItemFromCart(foodId))
 });
 
 export default connect(mSTP, mDTP)(ShoppingCart);

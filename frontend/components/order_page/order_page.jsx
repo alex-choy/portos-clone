@@ -1,7 +1,7 @@
 import React from 'react';
 import OrderPageItem from "./order_page_item";
-import Modal from '../session_forms/popup_modal';
-import ShoppingCart from './shopping_cart';
+import Modal from '../shared_components/popup_modal';
+import ShoppingCart from './shopping_cart/shopping_cart';
 
 class OrderPage extends React.Component {
   constructor(props) {
