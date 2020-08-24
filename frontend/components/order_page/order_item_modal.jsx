@@ -5,28 +5,38 @@ class OrderItemModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      quantity: 1,
+      stateQuantity: 1,
       price: this.props.foodItem.price,
       decreaseAllowed: true,
     };
     this.increaseQuantity = this.increaseQuantity.bind(this);
     this.decreaseQuantity = this.decreaseQuantity.bind(this);
+    this.addItemsToCart = this.addItemsToCart.bind(this);
   }
 
   increaseQuantity() {
-    this.setState({ quantity: this.state.quantity + 1, decreaseAllowed: true });
+    this.setState({
+      stateQuantity: this.state.stateQuantity + 1,
+      decreaseAllowed: true,
+    });
   }
 
   decreaseQuantity() {
-    const currQuantity = this.state.quantity;
+    const currQuantity = this.state.stateQuantity;
     if (currQuantity > 1) {
-      this.setState({ quantity: currQuantity - 1 });
+      this.setState({ stateQuantity: currQuantity - 1 });
     }
   }
 
+  addItemsToCart() {
+    const { name } = this.props.foodItem;
+    const { stateQuantity } = this.state;
+    // localStorage.setItem(name, quantity);
+  }
+
   render() {
-    const { name, description, photo_url } = this.props.foodItem;
-    const { quantity } = this.state;
+    const { name, description, photo_url, quantity } = this.props.foodItem;
+    const { stateQuantity } = this.state;
     return (
       <div className="order-item-modal-wrapper">
         <h2>{name}</h2>
@@ -37,17 +47,33 @@ class OrderItemModal extends React.Component {
             </span>
             <div className="add-to-cart">
               <OrderItemQuantity
-                quantity={quantity}
+                quantity={stateQuantity}
                 increaseQuantity={this.increaseQuantity}
                 decreaseQuantity={this.decreaseQuantity}
               />
-              <button className="add-to-cart-btn">
+              <button onClick={this.addItemsToCart} className="add-to-cart-btn">
                 <span>Add to Order</span>
-                <span>${(quantity * this.state.price).toFixed(2)}</span>
+                <span>${(stateQuantity * this.state.price).toFixed(2)}</span>
               </button>
             </div>
           </section>
-          <img src={photo_url} alt="" />
+          <div className="order-img-wrapper">
+            <img
+              className={quantity > 1 ? "" : "sold-out-img"}
+              src={photo_url}
+              alt=""
+            />
+            <h3 className={quantity > 1 ? "in-stock" : "sold-out"}>
+              SOLD OUT
+            </h3>
+            {/* <img className="sold-out-img" src={photo_url} alt="" />
+            <h3 className="sold-out">SOLD OUT</h3> */}
+          </div>
+          {/* <img className="order-img" src={photo_url} alt="" />
+          <h3>SOLD OUT</h3> */}
+          {/* <div className="order-img">
+            <img src={photo_url} alt="" />
+          </div> */}
         </section>
       </div>
     );

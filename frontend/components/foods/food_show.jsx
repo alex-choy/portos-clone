@@ -8,6 +8,8 @@ class FoodShow extends React.Component {
 
   componentDidMount() {
     this.props.getFoodItem(this.props.match.params.foodId);
+    // localStorage.setItem('test', 'test');
+    localStorage.removeItem('test');
   }
 
   render () {
@@ -21,7 +23,6 @@ class FoodShow extends React.Component {
             <img className="food-show-img food-display-child" src={photo_url} alt=""/>
             <article className="food-show-info food-display-child">
               <h1>{name}</h1>
-              <br/>
               <hr/>
               <br/>
               <p>${parseFloat(price).toFixed(2)} each</p>
