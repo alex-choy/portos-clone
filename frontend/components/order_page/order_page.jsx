@@ -1,6 +1,7 @@
 import React from 'react';
 import OrderPageItem from "./order_page_item";
 import Modal from '../session_forms/popup_modal';
+import ShoppingCart from './shopping_cart';
 
 class OrderPage extends React.Component {
   constructor(props) {
@@ -16,16 +17,16 @@ class OrderPage extends React.Component {
   componentDidMount() {
     this.props.getCategoriesAndFoodItems();
     // fill in state with localStorage
-    localStorage.setItem(
-      'shopping_cart', JSON.stringify(
-        {
-          5: { name: 'corn', quantity: 20 },
-          4: { quantity: 5 },
-          9: 80
-        }
-      )
-    );
-    console.log(JSON.parse(localStorage.getItem('shopping_cart')));
+    // localStorage.setItem(
+    //   'shopping_cart', JSON.stringify(
+    //     {
+    //       5: { name: 'corn', quantity: 20 },
+    //       4: { quantity: 5 },
+    //       9: 80
+    //     }
+    //   )
+    // );
+    // console.log(JSON.parse(localStorage.getItem('shopping_cart')));
   }
 
   itemClick(foodId) {
@@ -36,7 +37,7 @@ class OrderPage extends React.Component {
   }
 
   addItemToCart(foodId, quantity) {
-    console.log(`foodId: ${foodId}, quantity: ${quantity}`);
+    // console.log(`foodId: ${foodId}, quantity: ${quantity}`);
     this.setState({ [foodId]: quantity });
   }
 
@@ -85,6 +86,9 @@ class OrderPage extends React.Component {
           <section className="order-items">
             {this.renderAllItemsByCategory()}
           </section>
+          <aside className="shopping-cart">
+            <ShoppingCart />
+          </aside>
           <Modal addItemToCart={this.addItemToCart} />
         </div>
       );
