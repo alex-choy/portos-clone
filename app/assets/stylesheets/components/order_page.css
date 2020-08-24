@@ -25,6 +25,9 @@
   font-family: "Bebas Neue", sans-serif;
   height: 140px;
 }
+.category-item:hover { 
+  cursor: pointer;
+}
 
 .category-item:nth-child(odd) {
   margin-right: 20px;
