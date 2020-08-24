@@ -1,47 +1,46 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import ShoppingCartItem from './shopping_cart_item';
 
 class ShoppingCart extends React.Component {
   constructor(props) {
     super(props);
+
+    this.renderCartItems = this.renderCartItems.bind(this);
+  }
+
+  renderCartItems(shoppingCart) {
+    const foodIds = Object.keys(shoppingCart);
+    const { foodItems } = this.props;
+    const cartItems = foodIds.map((foodId) => {
+      const foodItem = foodItems[foodId];
+      const cartQuantity = shoppingCart[foodId].quantity;
+      return <ShoppingCartItem 
+        key={foodId}
+        cartQuantity={cartQuantity}
+        foodItem={foodItem}
+      />
+    });
+    return cartItems;
   }
 
 
 
   render() {
     const { shoppingCart } = this.props;
-    const testFoodKey = 2; // chocolate cookies test
-    if(shoppingCart[testFoodKey]) {
-      const shoppingCartQuantity = shoppingCart[testFoodKey].quantity;
-      const { name, price } = this.props.foodItems[testFoodKey];
-      // console.log('testFood: ', testFood);
+    if(Object.keys(shoppingCart).length) {
       return (
         <div>
           <div className="cart-header">
             <h3>Order Summary</h3>
           </div>
           <div className="cart-items-wrapper">
-            <div className="cart-item">
-              <div className="cart-item-top">
-                <div className="item-top-left">
-                  <span className="cart-quantity">{shoppingCartQuantity}</span>
-                  <span>{name}</span>
-                </div>
-                <div className="item-top-right">
-                  <p>${(price * shoppingCartQuantity).toFixed(2)}</p>
-                </div>
-              </div>
-              <div className="cart-item-bot">
-                <button>Edit</button> 
-                <span className="separator">|</span>
-                <button>Remove</button>
-              </div>
-            </div>
+            {this.renderCartItems(shoppingCart)}
           </div>
         </div>
       );
     } 
-      return <div>No items yet, add some to the cart!</div>;
+    return <div>No items yet, add some to the cart!</div>;
     
   }
 }
