@@ -16,6 +16,16 @@ class OrderPage extends React.Component {
   componentDidMount() {
     this.props.getCategoriesAndFoodItems();
     // fill in state with localStorage
+    localStorage.setItem(
+      'shopping_cart', JSON.stringify(
+        {
+          5: { name: 'corn', quantity: 20 },
+          4: { quantity: 5 },
+          9: 80
+        }
+      )
+    );
+    console.log(JSON.parse(localStorage.getItem('shopping_cart')));
   }
 
   itemClick(foodId) {

@@ -3,7 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import LoginFormContainer from './login_form_container';
 import SignupFormContainer from './signup_form_container';
-import OrderItemModal from "../order_page/order_item_modal";
+import OrderItemModalContainer from "../order_page/order_item_modal_container";
 
 export const LOGIN_MODAL = "LOGIN_MODAL";
 export const SIGNUP_MODAL = "SIGNUP_MODAL";
@@ -23,7 +23,7 @@ const Modal = (props) => {
       component = <SignupFormContainer />;
       break;
     case ORDER_ITEM_MODAL:
-      component = <OrderItemModal foodItem={props.foodItem}/>;
+      component = <OrderItemModalContainer foodItem={props.foodItem}/>;
       break;
     default: 
       return null;

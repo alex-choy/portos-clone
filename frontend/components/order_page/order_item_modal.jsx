@@ -11,7 +11,7 @@ class OrderItemModal extends React.Component {
     };
     this.increaseQuantity = this.increaseQuantity.bind(this);
     this.decreaseQuantity = this.decreaseQuantity.bind(this);
-    this.addItemsToCart = this.addItemsToCart.bind(this);
+    this.addItemToCart = this.addItemToCart.bind(this);
   }
 
   increaseQuantity() {
@@ -32,9 +32,12 @@ class OrderItemModal extends React.Component {
     }
   }
 
-  addItemsToCart() {
-    const { name } = this.props.foodItem;
+  addItemToCart() {
+    const { id } = this.props.foodItem;
     const { stateQuantity } = this.state;
+    const foodInfo = {foodId: id, quantity: stateQuantity};
+    console.log(foodInfo);
+    this.props.addItemToCart(foodInfo);
     // localStorage.setItem(name, quantity);
   }
 
@@ -58,7 +61,7 @@ class OrderItemModal extends React.Component {
               />
               <AddToCart 
                 remainingQuantity={quantity} 
-                addItemsToCart={this.addItemsToCart}
+                addItemToCart={this.addItemToCart}
                 stateQuantity={stateQuantity}
                 price={price} />
               {/* Make price or sold out component here */}
@@ -71,14 +74,7 @@ class OrderItemModal extends React.Component {
               alt=""
             />
             <h3 className={quantity > 1 ? "in-stock" : "sold-out"}>SOLD OUT</h3>
-            {/* <img className="sold-out-img" src={photo_url} alt="" />
-            <h3 className="sold-out">SOLD OUT</h3> */}
           </div>
-          {/* <img className="order-img" src={photo_url} alt="" />
-          <h3>SOLD OUT</h3> */}
-          {/* <div className="order-img">
-            <img src={photo_url} alt="" />
-          </div> */}
         </section>
       </div>
     );
