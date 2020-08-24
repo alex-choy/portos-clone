@@ -66,6 +66,10 @@
   height: 24px;
 }
 
+.order-food-title:hover {
+  color: green;
+}
+
 .order-food-desc {
   display: -webkit-box;
   -webkit-line-clamp: 2;
