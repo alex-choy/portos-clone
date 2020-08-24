@@ -5,14 +5,17 @@ import Modal from '../session_forms/popup_modal';
 class OrderPage extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {};
 
-    this.renderAllItemsByCategory = this.renderAllItemsByCategory.bind(this);
-    this.renderEachCategory = this.renderEachCategory.bind(this);
     this.itemClick = this.itemClick.bind(this);
+    this.addItemToCart = this.addItemToCart.bind(this);
+    this.renderEachCategory = this.renderEachCategory.bind(this);
+    this.renderAllItemsByCategory = this.renderAllItemsByCategory.bind(this);
   }
 
   componentDidMount() {
     this.props.getCategoriesAndFoodItems();
+    // fill in state with localStorage
   }
 
   itemClick(foodId) {
@@ -20,6 +23,11 @@ class OrderPage extends React.Component {
     this.props.openOrderItemModal();
     this.props.setOrderItemModalId(foodId);
     // console.log(e.target.className);
+  }
+
+  addItemToCart(foodId, quantity) {
+    console.log(`foodId: ${foodId}, quantity: ${quantity}`);
+    this.setState({ [foodId]: quantity });
   }
 
   toTitleCase(phrase) {
@@ -67,7 +75,7 @@ class OrderPage extends React.Component {
           <section className="order-items">
             {this.renderAllItemsByCategory()}
           </section>
-          <Modal />
+          <Modal addItemToCart={this.addItemToCart} />
         </div>
       );
     } else {

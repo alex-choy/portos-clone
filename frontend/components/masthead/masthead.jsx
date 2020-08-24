@@ -19,7 +19,7 @@ class Masthead extends React.Component {
             <Link to="/#" className="nav-link">LOCATIONS</Link>
             {/* <Link to="/#" className="nav-link">OUR STORY</Link> */}
           </div>
-          <Link to="/#" className="nav-button nav-pickup">In-Car Pickup</Link>
+          <Link to="/order" className="nav-button nav-pickup">In-Car Pickup</Link>
         </nav>
       </div>
     );

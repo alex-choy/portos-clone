@@ -23,7 +23,6 @@ const Modal = (props) => {
       component = <SignupFormContainer />;
       break;
     case ORDER_ITEM_MODAL:
-      const food = 
       component = <OrderItemModal foodItem={props.foodItem}/>;
       break;
     default: 

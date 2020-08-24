@@ -12,7 +12,7 @@ const OrderPageQuantity = (props) => {
           &ndash;
         </button>
         <input type="text" value={stateQuantity} disabled />
-        <button className="quantity-btn" onClick={increaseQuantity}>
+        <button className={`quantity-btn ${stateQuantity === remainingQuantity ? "disabled" : ""}`} onClick={increaseQuantity}>
           +
         </button>
       </section>

@@ -27,7 +27,7 @@ cake = Category.create(name: 'cake')
 
 
 food_items = [
-  {name: 'Shortbread Cookies', quantity: 0, price: 5.50, category_id: cookie.id,
+  {name: 'Shortbread Cookies', quantity: 120, price: 5.50, category_id: cookie.id,
     description: "Shortbread cookies pressed together with dark chocolate", 
     image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/tanaphong-toochinda-_f8S_o9xQK8-unsplash.jpg"},
   {name: 'Chocolate Cookies', quantity: 150, price: 4.00, category_id: cookie.id,
@@ -41,7 +41,10 @@ food_items = [
     image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/alana-harris-sSLi0wraDmQ-unsplash.jpg"},
   {name: 'Lemon Cupcake', quantity: 0 , price: 2.25, category_id: baked_good.id,
     description: "Lemon-flavored mini cupcakes, topped with buttercream", 
-    image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/chaman-raj-JbeYtG0HizE-unsplash.jpg"}
+    image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/chaman-raj-JbeYtG0HizE-unsplash.jpg"},
+  {name: 'Black Sesame Honey Bread', quantity: 0 , price: 5.00, category_id: bread.id,
+    description: "Soft, fluffy bread sweetened with honey, sprinked with black sesame seeds and extra honey", 
+    image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/abraham-cisneros-0xxCRrgFrXk-unsplash.jpg"}
 ]
 # Food Items
 food_items.each do |food_info|

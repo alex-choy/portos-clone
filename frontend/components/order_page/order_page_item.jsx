@@ -9,7 +9,7 @@ const OrderPageItem = (props) => {
 
   return (
     <div className="category-item" onClick={() => props.itemClick(id)}>
-      <h3 className="order-food-title">*{name}*</h3>
+      <h3 className="order-food-title">{name}</h3>
       <p className="order-food-desc">{description}</p>
       {priceOrSoldOut}
     </div>

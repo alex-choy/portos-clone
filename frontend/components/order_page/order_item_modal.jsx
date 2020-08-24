@@ -7,7 +7,6 @@ class OrderItemModal extends React.Component {
     super(props);
     this.state = {
       stateQuantity: 1,
-      price: this.props.foodItem.price,
       decreaseAllowed: true,
     };
     this.increaseQuantity = this.increaseQuantity.bind(this);
@@ -16,10 +15,14 @@ class OrderItemModal extends React.Component {
   }
 
   increaseQuantity() {
-    this.setState({
-      stateQuantity: this.state.stateQuantity + 1,
-      decreaseAllowed: true,
-    });
+    const currQuantity = this.state.stateQuantity;
+    const remainingQuantity = this.props.foodItem.quantity;
+    if(currQuantity < remainingQuantity) {
+      this.setState({
+        stateQuantity: this.state.stateQuantity + 1,
+        decreaseAllowed: true,
+      });
+    }
   }
 
   decreaseQuantity() {
