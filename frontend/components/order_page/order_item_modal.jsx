@@ -1,5 +1,6 @@
 import React from "react";
-import OrderItemQuantity from './order_page_quantity';
+import OrderItemQuantity from './order_item_quantity';
+import AddToCart from './add_to_cart';
 
 class OrderItemModal extends React.Component {
   constructor(props) {
@@ -35,7 +36,7 @@ class OrderItemModal extends React.Component {
   }
 
   render() {
-    const { name, description, photo_url, quantity } = this.props.foodItem;
+    const { name, description, photo_url, quantity, price } = this.props.foodItem;
     const { stateQuantity } = this.state;
     return (
       <div className="order-item-modal-wrapper">
@@ -47,14 +48,17 @@ class OrderItemModal extends React.Component {
             </span>
             <div className="add-to-cart">
               <OrderItemQuantity
-                quantity={stateQuantity}
+                stateQuantity={stateQuantity}
                 increaseQuantity={this.increaseQuantity}
                 decreaseQuantity={this.decreaseQuantity}
+                remainingQuantity={quantity}
               />
-              <button onClick={this.addItemsToCart} className="add-to-cart-btn">
-                <span>Add to Order</span>
-                <span>${(stateQuantity * this.state.price).toFixed(2)}</span>
-              </button>
+              <AddToCart 
+                remainingQuantity={quantity} 
+                addItemsToCart={this.addItemsToCart}
+                stateQuantity={stateQuantity}
+                price={price} />
+              {/* Make price or sold out component here */}
             </div>
           </section>
           <div className="order-img-wrapper">
@@ -63,9 +67,7 @@ class OrderItemModal extends React.Component {
               src={photo_url}
               alt=""
             />
-            <h3 className={quantity > 1 ? "in-stock" : "sold-out"}>
-              SOLD OUT
-            </h3>
+            <h3 className={quantity > 1 ? "in-stock" : "sold-out"}>SOLD OUT</h3>
             {/* <img className="sold-out-img" src={photo_url} alt="" />
             <h3 className="sold-out">SOLD OUT</h3> */}
           </div>

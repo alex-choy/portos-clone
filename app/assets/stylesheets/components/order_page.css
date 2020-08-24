@@ -79,6 +79,10 @@
   line-height: 1.5;
 }
 
+.sold-out-price {
+  color: red;
+}
+
 
 /****************************************/
 /* Modal CSS */
@@ -216,7 +220,6 @@
   margin-top: 5px;
   font-size: 18px;
 }
-
 /* .order-img > img {
   position: relative;
 }

@@ -27,7 +27,7 @@ cake = Category.create(name: 'cake')
 
 
 food_items = [
-  {name: 'Shortbread Cookies', quantity: 240, price: 5.50, category_id: cookie.id,
+  {name: 'Shortbread Cookies', quantity: 0, price: 5.50, category_id: cookie.id,
     description: "Shortbread cookies pressed together with dark chocolate", 
     image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/tanaphong-toochinda-_f8S_o9xQK8-unsplash.jpg"},
   {name: 'Chocolate Cookies', quantity: 150, price: 4.00, category_id: cookie.id,
@@ -39,7 +39,7 @@ food_items = [
   {name: 'Vanilla Bean Cheesecake', quantity: 40, price: 6.00, category_id: cake.id,
     description: "Vanilla cheesecake, graham cracker crust, dried apricot layer on the bottom, mango jam spread on top", 
     image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/alana-harris-sSLi0wraDmQ-unsplash.jpg"},
-  {name: 'Lemon Cupcake', quantity: 300 , price: 2.25, category_id: baked_good.id,
+  {name: 'Lemon Cupcake', quantity: 0 , price: 2.25, category_id: baked_good.id,
     description: "Lemon-flavored mini cupcakes, topped with buttercream", 
     image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/chaman-raj-JbeYtG0HizE-unsplash.jpg"}
 ]

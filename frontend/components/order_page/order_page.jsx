@@ -6,7 +6,7 @@ class OrderPage extends React.Component {
   constructor(props) {
     super(props);
 
-    this.renderItemsByCategory = this.renderItemsByCategory.bind(this);
+    this.renderAllItemsByCategory = this.renderAllItemsByCategory.bind(this);
     this.renderEachCategory = this.renderEachCategory.bind(this);
     this.itemClick = this.itemClick.bind(this);
   }
@@ -35,12 +35,12 @@ class OrderPage extends React.Component {
     let categoryEles = [];
     foodIds.forEach((id) => {
       const foodItem = foodItems[id];
-      categoryEles.push(<OrderPageItem key={id} foodItem={foodItem} itemClick={this.itemClick}/>);
+      categoryEles.push(<OrderPageItem key={id} foodItem={foodItem} itemClick={this.itemClick} />);
     });
     return categoryEles;
   }
 
-  renderItemsByCategory() {
+  renderAllItemsByCategory() {
     let items = [];
     for (const category in this.props.categories) {
       const foodIds = this.props.categories[category];
@@ -65,7 +65,7 @@ class OrderPage extends React.Component {
       return (
         <div className="order-page-wrapper">
           <section className="order-items">
-            {this.renderItemsByCategory()}
+            {this.renderAllItemsByCategory()}
           </section>
           <Modal />
         </div>
