@@ -33,11 +33,8 @@ class ShoppingCart extends React.Component {
     const { foodItems, removeItemFromCart } = this.props;
     // console.log(shoppingCart);
     const cartItems = shoppingCart.map((foodInfo) => {
-      // console.log(foodInfo);
       const { foodId, quantity: cartQuantity } = foodInfo;
-      // console.log('foodId: ', foodId);
       const foodItem = foodItems[foodId];
-      // console.log('foodItem: ', foodItem);
       return (
         <ShoppingCartItem
           key={foodId}

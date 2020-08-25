@@ -50,6 +50,7 @@ const mSTP = (state) => {
   const {shoppingCart, currentFoodId} = state.ui;
   if(shoppingCart.length > 0) {
     const foodItemCartIdx = shoppingCart.findIndex(foodItem => foodItem.foodId === currentFoodId);
+    // add item's cart quantity if present in the shopping cart
     if(foodItemCartIdx >= 0) {
       newState.editedQuantity = shoppingCart[foodItemCartIdx].quantity;
     }
