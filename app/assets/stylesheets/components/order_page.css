@@ -42,9 +42,6 @@
   cursor: pointer;
 }
 
-.category-item:hover .order-food-title { 
-  color: green;
-}
 
 .category-item:nth-child(odd) {
   margin-right: 20px;
@@ -73,6 +70,7 @@
   height: 10px;
   display: block;
   z-index: 2;
+  transition: color .3s;
 
 
   display: -webkit-box;
@@ -81,6 +79,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
   height: 24px;
+}
+
+.category-item:hover .order-food-title { 
+  color: green;
 }
 
 .order-food-desc {
@@ -233,12 +235,17 @@
   flex-direction: row;
   justify-content: space-between;
   color: rgb(240, 240, 240);
-  background-color: #008854;
+  background: rgb(26, 167, 26);
+  transition: background .5s;
   padding: 10px 15px;
   width: 250px;
   border-radius: 20px;
   margin-top: 5px;
   font-size: 18px;
+}
+
+.add-to-cart-btn:hover {
+  background: #008854;
 }
 /* .order-img > img {
   position: relative;

@@ -80,18 +80,39 @@
   /* height: 100px; */
   padding-top: 10px;
   position: absolute;
-  display: none;
+  /* display: none; */
   box-shadow: 5px 5px 5px 3px #aaaaaa;
   text-align: left;
+
+  /* Transition */
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.12s linear;
+}
+
+.nav-drp-logout > * {
+  box-sizing: border-box;
+  display: block;
 }
 
 .nav-drp-logout > a, .nav-drp-logout > button {
-  margin: 5px 10px;
-  padding-bottom: 10px;
+  /* margin: 5px 10px; */
+  /* padding-bottom: 10px; */
+  padding: 10px 15px;
+  width: 100%;
+}
+.nav-drp-logout > *:hover {
+  background: rgb(210, 209, 209);
+}
+
+.nav-drp-logout > button{
+  margin-bottom: 10px;
 }
 
 .nav-login:hover .nav-drp-logout {
-  display: block;
+  /* display: block; */
+  visibility: visible;
+  opacity: 1;
 }
 
 .nav-pickup {

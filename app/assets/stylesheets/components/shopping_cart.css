@@ -91,6 +91,7 @@
   padding: 10px;
   font-size: 16px;
   color: rgb(114, 114, 114);
+  transition: color .3s;
 }
 
 .cart-item-bot > button:hover {
@@ -123,8 +124,8 @@
   box-sizing: border-box;
   display: block;
   margin: auto;
-  background: green;
-  color: white;
+  background: rgb(29, 189, 29);
+  color: rgb(240, 240, 240);
   width: 90%;
   padding: 10px 5px;
   margin-bottom: 10px;
@@ -133,8 +134,9 @@
   /* margin: 0 10px; */
   text-align: center;
   border-radius: 20px;
+  transition: background .5s;
 }
 
 .checkout-btn:hover {
-  color: #E4AF2B;
+  background: rgb(22, 138, 22);
 }
