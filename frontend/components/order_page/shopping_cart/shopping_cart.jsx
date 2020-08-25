@@ -48,9 +48,12 @@ class ShoppingCart extends React.Component {
       );
     });
     cartItems.push(
-      <div className="subtotal no-top-border">
-        <span>Subtotal:</span>
-        <span>${totalPrice.toFixed(2)}</span>
+      <div key="cart-bottom" className="no-top-border shopping-cart-bottom">
+        <div className="subtotal">
+          <span>Subtotal:</span>
+          <span>${totalPrice.toFixed(2)}</span>
+        </div>
+        <button className="checkout-btn">Checkout</button>
       </div>
     );
     return cartItems;
