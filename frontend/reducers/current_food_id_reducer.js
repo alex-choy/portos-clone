@@ -9,8 +9,8 @@ const currentFoodIdReducer = (oldState, action) => {
   switch(action.type) {
     case SET_ORDER_ITEM_MODAL_ID:
       return action.foodId
-    case ADD_ITEM_TO_CART:
-      return oldState;
+    // case ADD_ITEM_TO_CART:
+    //   return oldState;
     case OPEN_ORDER_ITEM_MODAL:
       return oldState;
     default:

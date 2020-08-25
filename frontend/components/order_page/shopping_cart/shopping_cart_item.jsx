@@ -19,7 +19,8 @@ const ShoppingCartItem = ({
         </div>
       </div>
       <div className="cart-item-bot">
-        <button onClick={() => editCartItems(id)}>Edit</button>
+        {/* CHANGE THIS PARAMS */}
+        <button onClick={() => editCartItems(id)}>Edit</button> 
         <p className="separator">|</p>
         <button onClick={() => removeItemFromCart(id)}>Remove</button>
       </div>

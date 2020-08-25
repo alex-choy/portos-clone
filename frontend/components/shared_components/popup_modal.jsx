@@ -45,11 +45,16 @@ const mSTP = (state) => {
     modal: state.ui.modal,
     foodItem: state.entities.foodItems[state.ui.currentFoodId],
   };
-  const currFoodCartQuantity = state.ui.shoppingCart[state.ui.currentFoodId];
-  if(currFoodCartQuantity) {
-    newState.editedQuantity = currFoodCartQuantity.quantity;
-  }
-  console.log('newState: ', newState);
+
+  // for editing a shopping cart quantity
+  const {shoppingCart, currentFoodId} = state.ui;
+  if(shoppingCart.length > 0) {
+    const foodItemCartIdx = shoppingCart.findIndex(foodItem => foodItem.foodId === currentFoodId);
+    if(foodItemCartIdx >= 0) {
+      newState.editedQuantity = shoppingCart[foodItemCartIdx].quantity;
+    }
+  } 
+  // console.log('newState: ', newState);
   return newState;
 }
 

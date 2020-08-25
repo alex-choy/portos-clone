@@ -3,30 +3,25 @@ import OrderPageItem from "./order_page_item";
 import Modal from '../shared_components/popup_modal';
 import ShoppingCart from './shopping_cart/shopping_cart';
 
+export const SHOPPING_CART = "shoppingCart";
+
 class OrderPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
 
     this.itemClick = this.itemClick.bind(this);
-    this.addItemToCart = this.addItemToCart.bind(this);
+    // this.addItemToCart = this.addItemToCart.bind(this);
     this.renderEachCategory = this.renderEachCategory.bind(this);
     this.renderAllItemsByCategory = this.renderAllItemsByCategory.bind(this);
   }
 
   componentDidMount() {
+    let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
+    if(!shoppingCart) {
+      shoppingCart = [];
+    }
+    this.props.getLocalShoppingCart(shoppingCart);
     this.props.getCategoriesAndFoodItems();
-    // fill in state with localStorage
-    // localStorage.setItem(
-    //   'shopping_cart', JSON.stringify(
-    //     {
-    //       5: { name: 'corn', quantity: 20 },
-    //       4: { quantity: 5 },
-    //       9: 80
-    //     }
-    //   )
-    // );
-    // console.log(JSON.parse(localStorage.getItem('shopping_cart')));
   }
 
   itemClick(foodId) {
@@ -36,10 +31,10 @@ class OrderPage extends React.Component {
     // console.log(e.target.className);
   }
 
-  addItemToCart(foodId, quantity) {
-    // console.log(`foodId: ${foodId}, quantity: ${quantity}`);
-    this.setState({ [foodId]: quantity });
-  }
+  // addItemToCart(foodId, quantity) {
+  //   // console.log(`foodId: ${foodId}, quantity: ${quantity}`);
+  //   this.setState({ [foodId]: quantity });
+  // }
 
   toTitleCase(phrase) {
     return phrase
@@ -89,7 +84,7 @@ class OrderPage extends React.Component {
           <aside className="shopping-cart">
             <ShoppingCart />
           </aside>
-          <Modal addItemToCart={this.addItemToCart} />
+          <Modal />
         </div>
       );
     } else {

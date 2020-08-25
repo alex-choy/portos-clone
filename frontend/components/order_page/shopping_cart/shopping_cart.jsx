@@ -6,6 +6,7 @@ import {
   openOrderItemModal,
   setOrderItemModalId,
 } from "../../../actions/modal_actions";
+import { SHOPPING_CART } from '../order_page';
 
 class ShoppingCart extends React.Component {
   constructor(props) {
@@ -15,17 +16,28 @@ class ShoppingCart extends React.Component {
     this.editCartItems = this.editCartItems.bind(this);
   }
 
+  componentDidMount() {
+    // this.props.getFoodItems();
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem(SHOPPING_CART, JSON.stringify(this.props.shoppingCart));
+  }
+
   editCartItems(foodId) {
     this.props.setOrderItemModalId(foodId);
     this.props.openOrderItemModal();
   }
 
   renderCartItems(shoppingCart) {
-    const foodIds = Object.keys(shoppingCart);
     const { foodItems, removeItemFromCart } = this.props;
-    const cartItems = foodIds.map((foodId) => {
+    // console.log(shoppingCart);
+    const cartItems = shoppingCart.map((foodInfo) => {
+      // console.log(foodInfo);
+      const { foodId, quantity: cartQuantity } = foodInfo;
+      // console.log('foodId: ', foodId);
       const foodItem = foodItems[foodId];
-      const cartQuantity = shoppingCart[foodId].quantity;
+      // console.log('foodItem: ', foodItem);
       return (
         <ShoppingCartItem
           key={foodId}
@@ -40,8 +52,11 @@ class ShoppingCart extends React.Component {
   }
 
   render() {
-    const { shoppingCart } = this.props;
-    if(Object.keys(shoppingCart).length) {
+    const { foodItems, shoppingCart } = this.props;
+    // console.log('foodItems: ', foodItems);
+    // if(JSON.stringify(foodItems) != '{}') {
+    console.log("shoppingCart:", shoppingCart);
+    if (shoppingCart.length > 0 && JSON.stringify(foodItems) != "{}") {
       return (
         <div>
           <div className="cart-header">
@@ -52,14 +67,14 @@ class ShoppingCart extends React.Component {
           </div>
         </div>
       );
-    } 
+    }
     return <div>No items yet, add some to the cart!</div>;
-    
   }
 }
 
 
 const mSTP = (state) => ({
+  // shoppingCart: state.ui.shoppingCart,
   shoppingCart: state.ui.shoppingCart,
   foodItems: state.entities.foodItems
 });
@@ -68,6 +83,7 @@ const mDTP = (dispatch) => ({
   removeItemFromCart: (foodId) => dispatch(removeItemFromCart(foodId)),
   openOrderItemModal: () => dispatch(openOrderItemModal()),
   setOrderItemModalId: (foodId) => dispatch(setOrderItemModalId(foodId)),
+  // getFoodItems: () => dispatch(getFoodItems()),
 });
 
 export default connect(mSTP, mDTP)(ShoppingCart);
