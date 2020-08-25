@@ -21,7 +21,7 @@ class Checkout extends React.Component {
   }
 
   componentDidUpdate() {
-
+    localStorage.setItem(SHOPPING_CART, JSON.stringify(this.props.shoppingCart));
   }
 
   editCartItems(foodId) {
@@ -36,7 +36,7 @@ class Checkout extends React.Component {
     const cartItems = shoppingCart.map((cartItem) => {
       const { foodId, quantity } = cartItem;
       const foodItem = foodItems[foodId];
-      totalPrice += parseFloat(foodItem.price);
+      totalPrice += parseFloat(foodItem.price) * quantity;
       return (
         <ShoppingCartItem
           key={foodId}
@@ -87,7 +87,6 @@ class Checkout extends React.Component {
 
 const mSTP = (state) => ({
   currentUser: state.entities.users[state.session.id], 
-  // shoppingCart: JSON.parse(localStorage.getItem(SHOPPING_CART)),
   shoppingCart: state.ui.shoppingCart,
   foodItems: state.entities.foodItems
 });

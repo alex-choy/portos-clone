@@ -17,9 +17,6 @@ class OrderPage extends React.Component {
 
   componentDidMount() {
     let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
-    if(!shoppingCart) {
-      shoppingCart = [];
-    }
     this.props.getLocalShoppingCart(shoppingCart);
     this.props.getCategoriesAndFoodItems();
   }
