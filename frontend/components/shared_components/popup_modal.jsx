@@ -10,7 +10,7 @@ export const SIGNUP_MODAL = "SIGNUP_MODAL";
 export const ORDER_ITEM_MODAL = "ORDER_ITEM_MODAL";
 
 const Modal = (props) => {
-  const { modal, closeModal } = props;
+  const { modal, closeModal, editedQuantity } = props;
   if(!modal) {
     return null;
   } 
@@ -23,7 +23,8 @@ const Modal = (props) => {
       component = <SignupFormContainer />;
       break;
     case ORDER_ITEM_MODAL:
-      component = <OrderItemModalContainer foodItem={props.foodItem}/>;
+      const quantity = (editedQuantity) ? editedQuantity : 1
+      component = <OrderItemModalContainer foodItem={props.foodItem} quantity={quantity} />;
       break;
     default: 
       return null;
@@ -38,10 +39,19 @@ const Modal = (props) => {
   );
 };
 
-const mSTP = (state) => ({
-  modal: state.ui.modal,
-  foodItem: state.entities.foodItems[state.ui.currentFoodId]
-});
+const mSTP = (state) => {
+
+  const newState = {
+    modal: state.ui.modal,
+    foodItem: state.entities.foodItems[state.ui.currentFoodId],
+  };
+  const currFoodCartQuantity = state.ui.shoppingCart[state.ui.currentFoodId];
+  if(currFoodCartQuantity) {
+    newState.editedQuantity = currFoodCartQuantity.quantity;
+  }
+  console.log('newState: ', newState);
+  return newState;
+}
 
 const mDTP = (dispatch) => ({
   closeModal: () => dispatch(closeModal())

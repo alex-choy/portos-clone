@@ -2,12 +2,22 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ShoppingCartItem from './shopping_cart_item';
 import { removeItemFromCart } from '../../../actions/shopping_cart_actions';
+import {
+  openOrderItemModal,
+  setOrderItemModalId,
+} from "../../../actions/modal_actions";
 
 class ShoppingCart extends React.Component {
   constructor(props) {
     super(props);
 
     this.renderCartItems = this.renderCartItems.bind(this);
+    this.editCartItems = this.editCartItems.bind(this);
+  }
+
+  editCartItems(foodId) {
+    this.props.setOrderItemModalId(foodId);
+    this.props.openOrderItemModal();
   }
 
   renderCartItems(shoppingCart) {
@@ -16,17 +26,18 @@ class ShoppingCart extends React.Component {
     const cartItems = foodIds.map((foodId) => {
       const foodItem = foodItems[foodId];
       const cartQuantity = shoppingCart[foodId].quantity;
-      return <ShoppingCartItem 
-        key={foodId}
-        cartQuantity={cartQuantity}
-        foodItem={foodItem}
-        removeItemFromCart={removeItemFromCart}
-      />
+      return (
+        <ShoppingCartItem
+          key={foodId}
+          cartQuantity={cartQuantity}
+          foodItem={foodItem}
+          removeItemFromCart={removeItemFromCart}
+          editCartItems={this.editCartItems}
+        />
+      );
     });
     return cartItems;
   }
-
-
 
   render() {
     const { shoppingCart } = this.props;
@@ -54,7 +65,9 @@ const mSTP = (state) => ({
 });
 
 const mDTP = (dispatch) => ({
-  removeItemFromCart: (foodId) => dispatch(removeItemFromCart(foodId))
+  removeItemFromCart: (foodId) => dispatch(removeItemFromCart(foodId)),
+  openOrderItemModal: () => dispatch(openOrderItemModal()),
+  setOrderItemModalId: (foodId) => dispatch(setOrderItemModalId(foodId)),
 });
 
 export default connect(mSTP, mDTP)(ShoppingCart);

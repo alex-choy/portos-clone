@@ -19,7 +19,7 @@ export const openSessionModal = (modal) => ({
   modal,
 });
 
-export const openOrderItemModal = (modal) => ({
+export const openOrderItemModal = () => ({
   type: OPEN_ORDER_ITEM_MODAL,
   modal: ORDER_ITEM_MODAL
 });
