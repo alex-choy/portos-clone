@@ -1,7 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { SHOPPING_CART } from '../order_page/order_page';
 
 class AccountMasthead extends React.Component {
+
+  componentDidUpdate() {
+    localStorage.removeItem(SHOPPING_CART);
+  }
 
   render() {
     const { currentUser, logout } = this.props;

@@ -8,8 +8,6 @@ class FoodShow extends React.Component {
 
   componentDidMount() {
     this.props.getFoodItem(this.props.match.params.foodId);
-    // localStorage.setItem('test', 'test');
-    localStorage.removeItem('test');
   }
 
   render () {

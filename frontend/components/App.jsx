@@ -7,6 +7,7 @@ import { ProtectedRoute } from '../utils/route_util';
 import Menu from './foods/menu';
 import FoodShowContainer from "./foods/food_show_container";
 import OrderPageContainer from "./order_page/order_page_container";
+import Checkout from "./checkout/checkout";
 
 const App = () => (
   <div>
@@ -18,6 +19,7 @@ const App = () => (
       <ProtectedRoute exact path="/order" component={OrderPageContainer} />
       <Route path={`/menu/:foodId`} component={FoodShowContainer} />
       <Route exact path="/menu" component={Menu} />
+      <ProtectedRoute path="/checkout" component={Checkout} />
     </div>
 
     <Modal />
