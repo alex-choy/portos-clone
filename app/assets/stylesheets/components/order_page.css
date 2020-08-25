@@ -12,12 +12,14 @@
 }
 
 .shopping-cart {
-  width: 35%;
-  font-family: "Bebas Neue", sans-serif;
-  height: 100%;
-  padding-left: 20px;
-  padding-top: 60px;
-  /* border: 1px solid orangered; */
+    position: sticky;
+    top: 10px;
+    width: 325px;
+    font-family: "Bebas Neue", sans-serif;
+    height: 100%;
+    padding-left: 20px;
+    padding-top: 40px;
+    /* border: 1px solid orangered; */
 }
 
 .category {

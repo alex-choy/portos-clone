@@ -1,3 +1,10 @@
+/* .shopping-cart {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 300px;
+} */
+
 .cart-header {
   padding: 0 10px;
   border: 1px solid lightgray;
