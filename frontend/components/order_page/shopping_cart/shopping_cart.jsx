@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import ShoppingCartItem from './shopping_cart_item';
 import { removeItemFromCart } from '../../../actions/shopping_cart_actions';
 import {
@@ -53,7 +54,7 @@ class ShoppingCart extends React.Component {
           <span>Subtotal:</span>
           <span>${totalPrice.toFixed(2)}</span>
         </div>
-        <button className="checkout-btn">Checkout</button>
+        <Link to="/checkout" className="checkout-btn">Checkout</Link>
       </div>
     );
     return cartItems;
