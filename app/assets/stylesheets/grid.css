@@ -12,3 +12,13 @@
 .col-4-5 {
   width: 80%;
 }
+
+.col-3-8 {
+  width: 37.5%;
+  border: 1px solid red;
+}
+
+.col-5-8 {
+  width: 62.5%;
+  border: 1px solid blue;
+}

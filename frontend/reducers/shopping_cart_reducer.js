@@ -23,7 +23,7 @@ const shoppingCartReducer = (state = [], action) => {
       newState.splice(foodItemIdx, 1);
       return newState;
     case GET_LOCAL_SHOPPING_CART:
-      return action.shoppingCart;
+      return action.shoppingCart ? action.shoppingCart : [];
     default: 
       return state;
   }

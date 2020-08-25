@@ -1,3 +1,5 @@
+import { SHOPPING_CART } from "../components/order_page/order_page";
+
 export const ADD_ITEM_TO_CART = "ADD_ITEM_TO_CART";
 export const REMOVE_ITEM_FROM_CART = "REMOVE_ITEM_FROM_CART";
 export const GET_LOCAL_SHOPPING_CART = "GET_LOCAL_SHOPPING_CART";
@@ -12,7 +14,7 @@ export const removeItemFromCart = (foodId) => ({
   foodId
 });
 
-export const getLocalShoppingCart = (shoppingCart) => ({
+export const getLocalShoppingCart = () => ({
   type: GET_LOCAL_SHOPPING_CART,
-  shoppingCart
+  shoppingCart: JSON.parse(localStorage.getItem(SHOPPING_CART))
 });

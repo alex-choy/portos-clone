@@ -1,0 +1,9 @@
+.checkout-wrapper {
+  padding-top: 30px;
+  width: 80%;
+  margin: auto;
+}
+
+.set-size {
+  box-sizing: border-box;
+}
