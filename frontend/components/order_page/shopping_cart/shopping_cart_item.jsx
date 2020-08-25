@@ -8,11 +8,11 @@ const ShoppingCartItem = ({
 }) => {
 
   return (
-    <div className="cart-item">
+    <div className="cart-item no-top-border">
       <div className="cart-item-top">
         <div className="item-top-left">
           <span className="cart-quantity">{cartQuantity}</span>
-          <span>{name}</span>
+          <span className="cart-item-name">{name}</span>
         </div>
         <div className="item-top-right">
           <p>${(price * cartQuantity).toFixed(2)}</p>
@@ -20,7 +20,7 @@ const ShoppingCartItem = ({
       </div>
       <div className="cart-item-bot">
         {/* CHANGE THIS PARAMS */}
-        <button onClick={() => editCartItems(id)}>Edit</button> 
+        <button onClick={() => editCartItems(id)}>Edit</button>
         <p className="separator">|</p>
         <button onClick={() => removeItemFromCart(id)}>Remove</button>
       </div>

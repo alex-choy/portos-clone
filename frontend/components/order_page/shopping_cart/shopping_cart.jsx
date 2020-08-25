@@ -32,9 +32,11 @@ class ShoppingCart extends React.Component {
   renderCartItems(shoppingCart) {
     const { foodItems, removeItemFromCart } = this.props;
     // console.log(shoppingCart);
+    let totalPrice = 0;
     const cartItems = shoppingCart.map((foodInfo) => {
       const { foodId, quantity: cartQuantity } = foodInfo;
       const foodItem = foodItems[foodId];
+      totalPrice += (foodItem.price * cartQuantity);
       return (
         <ShoppingCartItem
           key={foodId}
@@ -45,6 +47,12 @@ class ShoppingCart extends React.Component {
         />
       );
     });
+    cartItems.push(
+      <div className="subtotal no-top-border">
+        <span>Subtotal:</span>
+        <span>${totalPrice.toFixed(2)}</span>
+      </div>
+    );
     return cartItems;
   }
 
