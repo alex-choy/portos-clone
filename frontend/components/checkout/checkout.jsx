@@ -9,6 +9,7 @@ import {
   getLocalShoppingCart,
   removeItemFromCart,
 } from "../../actions/shopping_cart_actions";
+// import { createOrder } from '../../a'
 import CheckoutPricing from './checkout_pricing';
 const MONTHS = [
   "January",
@@ -31,14 +32,21 @@ const MINUTE_INTERVALS = [15, 30, 45];
 class Checkout extends React.Component {
   constructor(props) {
     super(props);
-
+    this.state = {
+      buyer_id: this.props.currentUser.id,
+      notes: '',
+      pickup_time: '',
+    }
     this.renderCartItems = this.renderCartItems.bind(this);
     this.editCartItems = this.editCartItems.bind(this);
+    this.stateChange = this.stateChange.bind(this);
+    this.handleSubmitOrder = this.handleSubmitOrder.bind(this);
   }
 
   componentDidMount() {
     this.props.getFoodItems();
     this.props.getLocalShoppingCart();
+    this.setState({ pickup_time: this.getPickupTime() });
   }
 
   componentDidUpdate() {
@@ -46,6 +54,16 @@ class Checkout extends React.Component {
       SHOPPING_CART,
       JSON.stringify(this.props.shoppingCart)
     );
+  }
+
+  stateChange(field) {
+    return e => this.setState({ [field]: e.target.value });
+  }
+
+  handleSubmitOrder() {
+    const {shoppingCart} = this.props; 
+    console.log(shoppingCart);
+    console.log(this.state);
   }
 
   editCartItems(foodId) {
@@ -56,7 +74,6 @@ class Checkout extends React.Component {
   renderCartItems() {
     const { shoppingCart, foodItems, removeItemFromCart } = this.props;
     let totalPrice = 0;
-    console.log("shopping cart: ", shoppingCart);
     const cartItems = shoppingCart.map((cartItem) => {
       const { foodId, quantity } = cartItem;
       const foodItem = foodItems[foodId];
@@ -74,7 +91,10 @@ class Checkout extends React.Component {
 
     const strTotalPrice = `$${totalPrice.toFixed(2)}`;
     cartItems.push(
-      <CheckoutPricing key="total-price" totalPrice={strTotalPrice} />
+      <CheckoutPricing 
+        key="total-price" 
+        totalPrice={strTotalPrice} 
+        handleSubmitOrder={this.handleSubmitOrder} />
     );
     return cartItems;
   }
@@ -98,8 +118,10 @@ class Checkout extends React.Component {
     if(newHour >= 24) {
       pickupDay.setDate(pickupDay.getDate() + 1);
     }
+
+    const pickup_time = `${MONTHS[pickupDay.getMonth()]} ${pickupDay.getDate()} at ${formattedHours}:${formattedMinutes}${amOrPm}`;
     // console.log(`pickupDay: ${MONTHS[pickupDay.getMonth()]} ${pickupDay.getDate()}`);
-    return `${MONTHS[pickupDay.getMonth()]} ${pickupDay.getDate()} at ${formattedHours}:${formattedMinutes}${amOrPm}`;
+    return pickup_time;
   }
 
   render() {
@@ -121,9 +143,9 @@ class Checkout extends React.Component {
               </p> 
             </span>
             <span className="pickup-time">
-              {this.getPickupTime()}
+              {this.state.pickup_time}
             </span>
-            <textarea className="order-notes" name="order[notes]" id="" cols="50" rows="10" placeholder="Order notes...">
+            <textarea className="order-notes" name="order[notes]" id="" cols="50" rows="10" placeholder="Order notes..." onChange={this.stateChange('notes')}>
             </textarea>
           </div>
           <div className="col col-3-8 set-size">
@@ -153,6 +175,7 @@ const mDTP = (dispatch) => ({
   openOrderItemModal: () => dispatch(openOrderItemModal()),
   setOrderItemModalId: (foodId) => dispatch(setOrderItemModalId(foodId)),
   getLocalShoppingCart: () => dispatch(getLocalShoppingCart()),
+  createOrder: (shoppingCart, order) => dispatch(createOrder(shoppingCart, order))
   // add to order action
   // modal stuff?
 });

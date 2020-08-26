@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CheckoutPricing = (props) => {
-  const { totalPrice } = props;
+  const { totalPrice, handleSubmitOrder } = props;
   // const totalPrice = "hi";
   return (
     <div key="cart-bottom" className="no-top-border shopping-cart-bottom">
@@ -20,9 +20,9 @@ const CheckoutPricing = (props) => {
          <h3>{totalPrice}</h3>
        </span>
      </div>
-     <Link to="/checkout" className="checkout-btn">
+      <button onClick={handleSubmitOrder} className="checkout-btn">
        Place Order
-     </Link>
+     </button>
     </div> 
   );
 };
