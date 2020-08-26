@@ -63,3 +63,4 @@ order1 = Order.create(buyer_id: 1, notes: "don't burn it please thanks", pickup_
 ofi1 = OrderedFoodItem.create(order_id: order1.id, food_item_id: 2, quantity: 20)
 ofi2 = OrderedFoodItem.create(order_id: order1.id, food_item_id: 4, quantity: 40)
 ofi3 = OrderedFoodItem.create(order_id: order1.id, food_item_id: 5, quantity: 50)
+ofi4 = OrderedFoodItem.create(order_id: order1.id, food_item_id: 5, quantity: 50)
