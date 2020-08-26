@@ -82,7 +82,7 @@ class Checkout extends React.Component {
   getNextMinute(currMinutes) {
     const findNextTime = (time) => time > currMinutes;
     const nextTime = MINUTE_INTERVALS.find(findNextTime);
-    return nextTime;
+    return nextTime ? nextTime : 0;
   }
 
   getPickupTime() {
