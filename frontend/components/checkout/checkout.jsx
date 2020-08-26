@@ -113,8 +113,8 @@ class Checkout extends React.Component {
     const newHour = newMinutes ? today.getHours() + 1 : today.getHours() + 2;
 
     const formattedMinutes = newMinutes.toString().padStart(2, "0");
-    const formattedHours = newHour % 12;
-    const amOrPm = (newHour < 24 && newHour > 12) ? 'pm' : 'am';
+    const formattedHours = (newHour % 12) ? newHour % 12 : 12;
+    const amOrPm = (newHour < 24 && newHour >= 12) ? 'pm' : 'am';
 
     const pickupDay = new Date(today);
     if(newHour >= 24) {
