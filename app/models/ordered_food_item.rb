@@ -18,7 +18,7 @@ class OrderedFoodItem < ApplicationRecord
     class_name: :Order,
     dependent: :destroy
 
-  belong_to :food_item,
+  belongs_to :food_item,
     foreign_key: :food_item_id,
     class_name: :FoodItem
 end

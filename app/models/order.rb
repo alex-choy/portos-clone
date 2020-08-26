@@ -16,4 +16,8 @@ class Order < ApplicationRecord
   belongs_to :buyer,
     foreign_key: :buyer_id, 
     class_name: :User
+
+  has_many :ordered_food_items,
+    foreign_key: :order_id,
+    class_name: :OrderedFoodItem
 end
