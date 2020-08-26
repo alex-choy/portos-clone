@@ -7,3 +7,38 @@
 .set-size {
   box-sizing: border-box;
 }
+
+.left-checkout {
+  padding: 20px;
+}
+
+.left-checkout > span {
+  margin: 10px 0;
+  padding: 10px 0;
+  border-bottom: 1px solid gray;
+}
+
+.checkout-title {
+  font-size: 24px;
+  font-weight: 700;
+  display: block;
+}
+
+.checkout-pricing {
+  display: block;
+  color: gray;
+}
+
+.prices {
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.total-price {
+  color: rgb(33, 33, 33);
+}
+
+.pickup-time {
+  font-size: 24px;
+}

@@ -5,7 +5,28 @@ import ShoppingCartItem from '../order_page/shopping_cart/shopping_cart_item';
 import { SHOPPING_CART } from '../order_page/order_page';
 import { getFoodItems } from '../../actions/food_item_actions';
 import { setOrderItemModalId, openOrderItemModal } from '../../actions/modal_actions';
-import { getLocalShoppingCart } from '../../actions/shopping_cart_actions';
+import {
+  getLocalShoppingCart,
+  removeItemFromCart,
+} from "../../actions/shopping_cart_actions";
+import CheckoutPricing from './checkout_pricing';
+const MONTHS = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+const MINUTE_INTERVALS = [15, 30, 45];
+
 
 class Checkout extends React.Component {
   constructor(props) {
@@ -21,7 +42,10 @@ class Checkout extends React.Component {
   }
 
   componentDidUpdate() {
-    localStorage.setItem(SHOPPING_CART, JSON.stringify(this.props.shoppingCart));
+    localStorage.setItem(
+      SHOPPING_CART,
+      JSON.stringify(this.props.shoppingCart)
+    );
   }
 
   editCartItems(foodId) {
@@ -32,7 +56,7 @@ class Checkout extends React.Component {
   renderCartItems() {
     const { shoppingCart, foodItems, removeItemFromCart } = this.props;
     let totalPrice = 0;
-    console.log('shopping cart: ', shoppingCart);
+    console.log("shopping cart: ", shoppingCart);
     const cartItems = shoppingCart.map((cartItem) => {
       const { foodId, quantity } = cartItem;
       const foodItem = foodItems[foodId];
@@ -48,29 +72,53 @@ class Checkout extends React.Component {
       );
     });
 
+    const strTotalPrice = `$${totalPrice.toFixed(2)}`;
     cartItems.push(
-      <div key="cart-bottom" className="no-top-border shopping-cart-bottom">
-        <div className="subtotal">
-          <span>Subtotal:</span>
-          <span>${totalPrice.toFixed(2)}</span>
-        </div>
-        <Link to="/checkout" className="checkout-btn">
-          Place Order
-        </Link>
-      </div>
+      <CheckoutPricing key="total-price" totalPrice={strTotalPrice} />
     );
     return cartItems;
   }
 
+  getNextMinute(currMinutes) {
+    const findNextTime = (time) => time > currMinutes;
+    const nextTime = MINUTE_INTERVALS.find(findNextTime);
+    return nextTime;
+  }
+
+  getPickupTime() {
+    var today = new Date();
+    const newMinutes = this.getNextMinute(today.getMinutes());
+    const newHour = newMinutes ? today.getHours() + 1 : today.getHours() + 2;
+
+    const formattedMinutes = newMinutes.toString().padStart(2, "0");
+    const formattedHours = newHour % 12;
+    const amOrPm = (newHour < 24 && newHour > 12) ? 'pm' : 'am';
+
+    const pickupDay = new Date(today);
+    if(newHour >= 24) {
+      pickupDay.setDate(pickupDay.getDate() + 1);
+    }
+    // console.log(`pickupDay: ${MONTHS[pickupDay.getMonth()]} ${pickupDay.getDate()}`);
+    return `${formattedHours}:${formattedMinutes}${amOrPm} on ${
+      MONTHS[pickupDay.getMonth()]
+    } ${pickupDay.getDate()}`;
+  }
+
   render() {
     const { currentUser, shoppingCart, foodItems } = this.props;
-    if (shoppingCart && JSON.stringify(foodItems) != "{}"){
+    if (shoppingCart && JSON.stringify(foodItems) != "{}") {
       return (
         <div className="checkout-wrapper">
-          <div className="col col-5-8 set-size">
-            <span>
+          <div className="col col-5-8 set-size left-checkout">
+            <span className="checkout-title">
               Hi {currentUser.username}, <br />
               let's finish up your order!
+            </span>
+            <span>
+              Your order will be available at <br />
+              <span className="pickup-time">
+                {this.getPickupTime()}
+              </span>
             </span>
             {/* username with message */}
             {/* pickup time and day */}
@@ -81,7 +129,7 @@ class Checkout extends React.Component {
         </div>
       );
     }
-    return <div>This might take a second, but if not it's probably broken</div>
+    return <div>This might take a second, but if not it's probably broken</div>;
   }
 }
 
