@@ -1,3 +1,9 @@
 .errors {
   color: red;
+  display: list-item;
+  margin: auto;
+  width: 80%;
+}
+
+.errors-wrapper {
 }

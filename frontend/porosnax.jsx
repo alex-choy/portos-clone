@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.getFoodItem = getFoodItem;
   // window.getFoodItems = getFoodItems;
   // window.addItemToCart = addItemToCart;
-  // window.getState = store.getState;
+  window.getState = store.getState;
   // window.dispatch = store.dispatch;
 
   // window.getAllCategories = getAllCategories;

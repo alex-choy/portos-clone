@@ -10,7 +10,6 @@ class Api::OrdersController < ApplicationController
   def create
     # data: { order: {currUser, :notes, :time}, shopping_cart }
     puts 'PARAMS PARAMS PARAMS PARAMS PARAMS PARAMS PARAMS '
-    p shopping_cart_param
     shopping_cart = JSON.parse(shopping_cart_param) 
     # debugger
     p shopping_cart
@@ -18,8 +17,10 @@ class Api::OrdersController < ApplicationController
       fi = FoodItem.find(food_info["foodId"])
       
       # Check that items are in stock before ordering
-      if fi.quantity - food_info["quantity"] < 0  
-        return render json: ["Not enough items in stock, try ordering again"], status: 422
+      if fi.quantity - food_info["quantity"] < 0 
+         p 'LOW QUANTITY LOW QUANTITY LOW QUANTITY LOW QUANTITY LOW QUANTITY LOW QUANTITY'
+         p food_info["foodId"]
+        return render json: ["Not enough items in stock, try ordering different amounts"], status: 422
       end
     end
 

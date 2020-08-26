@@ -20,4 +20,8 @@ class Order < ApplicationRecord
   has_many :ordered_food_items,
     foreign_key: :order_id,
     class_name: :OrderedFoodItem
+
+  has_many :food_items,
+    through: :ordered_food_items,
+    source: :food_item
 end

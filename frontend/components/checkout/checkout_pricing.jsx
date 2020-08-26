@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CheckoutPricing = (props) => {
-  const { totalPrice, handleSubmitOrder } = props;
+  const { totalPrice, handleSubmitOrder, getErrors } = props;
   // const totalPrice = "hi";
   return (
     <div key="cart-bottom" className="no-top-border shopping-cart-bottom">
@@ -19,6 +19,9 @@ const CheckoutPricing = (props) => {
          <h3>Total:</h3>
          <h3>{totalPrice}</h3>
        </span>
+        <span className="errors-wrapper">
+          {getErrors()}
+        </span>
      </div>
       <button onClick={handleSubmitOrder} className="checkout-btn">
        Place Order

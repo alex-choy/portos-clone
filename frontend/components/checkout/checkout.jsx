@@ -11,6 +11,8 @@ import {
 } from "../../actions/shopping_cart_actions";
 import { createOrder } from '../../actions/order_actions';
 import CheckoutPricing from './checkout_pricing';
+import { withRouter } from 'react-router-dom';
+
 const MONTHS = [
   "January",
   "February",
@@ -41,6 +43,7 @@ class Checkout extends React.Component {
     this.editCartItems = this.editCartItems.bind(this);
     this.stateChange = this.stateChange.bind(this);
     this.handleSubmitOrder = this.handleSubmitOrder.bind(this);
+    this.getErrors = this.getErrors.bind(this);
   }
 
   componentDidMount() {
@@ -54,7 +57,6 @@ class Checkout extends React.Component {
       SHOPPING_CART,
       JSON.stringify(this.props.shoppingCart)
     );
-    console.log('checkout updated');
   }
 
   stateChange(field) {
@@ -65,7 +67,17 @@ class Checkout extends React.Component {
     const { shoppingCart, createOrder} = this.props; 
     const order = {...this.state};
     // console.log('SC: ', shoppingCart);
-    createOrder(JSON.stringify(shoppingCart), order);
+    createOrder(JSON.stringify(shoppingCart), order)
+      .then(() => this.props.history.push("/confirmation"));
+  }
+
+  getErrors() {
+    const { orderErrors } = this.props;
+    if(orderErrors.length > 0) {
+      return <ul>
+        {orderErrors.map((error, idx) => <li className="errors" key={idx}>{error}</li>)}
+      </ul>
+    }
   }
 
   editCartItems(foodId) {
@@ -96,7 +108,8 @@ class Checkout extends React.Component {
       <CheckoutPricing 
         key="total-price" 
         totalPrice={strTotalPrice} 
-        handleSubmitOrder={this.handleSubmitOrder} />
+        handleSubmitOrder={this.handleSubmitOrder}
+        getErrors={this.getErrors} />
     );
     return cartItems;
   }
@@ -168,7 +181,9 @@ class Checkout extends React.Component {
 const mSTP = (state) => ({
   currentUser: state.entities.users[state.session.id], 
   shoppingCart: state.ui.shoppingCart,
-  foodItems: state.entities.foodItems
+  orderErrors: state.errors.orders,
+  foodItems: state.entities.foodItems,
+  completedOrders: state.entities.orders
 });
 
 const mDTP = (dispatch) => ({
@@ -182,4 +197,4 @@ const mDTP = (dispatch) => ({
   // modal stuff?
 });
 
-export default connect(mSTP, mDTP)(Checkout);
+export default connect(mSTP, mDTP)(withRouter(Checkout));
