@@ -112,15 +112,19 @@ class Checkout extends React.Component {
               Hi {currentUser.username}, <br />
               let's finish up your order!
             </span>
+            <span className="cash-note">
+              *Currently only taking cash, our credit card system is down!
+            </span>
             <span>
               <p>
-                Your order will be available on
+                Order now, and it will be available on
               </p> 
             </span>
             <span className="pickup-time">
               {this.getPickupTime()}
             </span>
-            Currently only taking cash, our credit card system is down!
+            <textarea className="order-notes" name="order[notes]" id="" cols="50" rows="10" placeholder="Order notes...">
+            </textarea>
           </div>
           <div className="col col-3-8 set-size">
             <div className="cart-header ">
