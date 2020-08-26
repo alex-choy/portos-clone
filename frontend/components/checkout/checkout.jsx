@@ -9,7 +9,7 @@ import {
   getLocalShoppingCart,
   removeItemFromCart,
 } from "../../actions/shopping_cart_actions";
-// import { createOrder } from '../../a'
+import { createOrder } from '../../actions/order_actions';
 import CheckoutPricing from './checkout_pricing';
 const MONTHS = [
   "January",
@@ -54,6 +54,7 @@ class Checkout extends React.Component {
       SHOPPING_CART,
       JSON.stringify(this.props.shoppingCart)
     );
+    console.log('checkout updated');
   }
 
   stateChange(field) {
@@ -61,9 +62,10 @@ class Checkout extends React.Component {
   }
 
   handleSubmitOrder() {
-    const {shoppingCart} = this.props; 
-    console.log(shoppingCart);
-    console.log(this.state);
+    const { shoppingCart, createOrder} = this.props; 
+    const order = {...this.state};
+    // console.log('SC: ', shoppingCart);
+    createOrder(JSON.stringify(shoppingCart), order);
   }
 
   editCartItems(foodId) {

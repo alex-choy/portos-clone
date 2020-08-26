@@ -9,7 +9,9 @@ class Api::OrdersController < ApplicationController
 
   def create
     # data: { order: {currUser, :notes, :time}, shopping_cart }
-    shopping_cart = JSON.parse(params[:shopping_cart]) 
+    puts 'PARAMS PARAMS PARAMS PARAMS PARAMS PARAMS PARAMS '
+    p shopping_cart_param
+    shopping_cart = JSON.parse(shopping_cart_param) 
     # debugger
     p shopping_cart
     shopping_cart.each do |food_info|
@@ -61,5 +63,9 @@ class Api::OrdersController < ApplicationController
   private
   def order_params
     params.require(:order).permit(:buyer_id, :notes, :pickup_time)
+  end
+
+  def shopping_cart_param
+    params.require(:shoppingCart)
   end
 end
