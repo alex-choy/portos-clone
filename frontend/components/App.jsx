@@ -8,6 +8,7 @@ import Menu from './foods/menu';
 import FoodShowContainer from "./foods/food_show_container";
 import OrderPageContainer from "./order_page/order_page_container";
 import CheckoutContainer from "./checkout/checkout";
+import ConfirmationContainer from './confirmation/confirmation_container';
 
 const App = () => (
   <div>
@@ -16,10 +17,11 @@ const App = () => (
     </header>
     <div className="under-masthead">
       <Route exact path="/" component={HomepageContainer} />
-      <ProtectedRoute exact path="/order" component={OrderPageContainer} />
       <Route path={`/menu/:foodId`} component={FoodShowContainer} />
       <Route exact path="/menu" component={Menu} />
+      <ProtectedRoute exact path="/order" component={OrderPageContainer} />
       <ProtectedRoute path="/checkout" component={CheckoutContainer} />
+      <ProtectedRoute path="/confirmation" component={ConfirmationContainer} />
     </div>
 
     <Modal />

@@ -4,7 +4,7 @@ class Api::OrdersController < ApplicationController
   end
 
   def show
-
+    render :show
   end
 
   def create

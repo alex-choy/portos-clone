@@ -7,6 +7,7 @@ import Root from './components/root';
 // import { getFoodItems, getFoodItem } from './actions/food_item_actions';
 // import { getAllCategories } from "./actions/category_actions";
 // import { addItemToCart } from './actions/shopping_cart_actions';
+// import { fetchOrderedFoodItems } from './actions/ordered_food_items';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -30,7 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.getFoodItem = getFoodItem;
   // window.getFoodItems = getFoodItems;
   // window.addItemToCart = addItemToCart;
-  window.getState = store.getState;
+  // window.fetchOrderedFoodItems = fetchOrderedFoodItems;
+  // window.getState = store.getState;
   // window.dispatch = store.dispatch;
 
   // window.getAllCategories = getAllCategories;
