@@ -115,11 +115,13 @@ class Checkout extends React.Component {
               let's finish up your order!
             </span>
             <span>
-              Your order will be available at <br />
+              Your order will be available at <br /><br/><br/>
               <span className="pickup-time">
                 {this.getPickupTime()}
               </span>
             </span>
+            <br/><br/>
+            Currently only taking cash, our credit card system is down!
             {/* username with message */}
             {/* pickup time and day */}
             {/* payment method? cash only? */}
