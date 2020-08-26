@@ -21,6 +21,10 @@ class User < ApplicationRecord
   attr_reader :password
   after_initialize :ensure_session_token, :set_shopping_cart_id
 
+  has_many :orders,
+    foreign_key: :buyer_id,
+    class_name: :Order
+
 
   def self.find_by_credentials(un, pw)
     user = User.find_by(username: un)

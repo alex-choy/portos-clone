@@ -20,4 +20,8 @@ class FoodItem < ApplicationRecord
   belongs_to :category,
     foreign_key: :category_id,
     class_name: :Category
+
+  has_many :ordered_food_items,
+    foreign_key: :food_item_id,
+    class_name: :OrderedFoodItem
 end
