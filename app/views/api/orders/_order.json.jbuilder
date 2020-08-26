@@ -1,0 +1,1 @@
+json.extract! order, :id, :notes, :pickup_time, :updated_at

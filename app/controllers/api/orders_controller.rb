@@ -16,8 +16,8 @@ class Api::OrdersController < ApplicationController
       fi = FoodItem.find(food_info["foodId"])
       
       # Check that items are in stock before ordering
-      if food_info["quantity"] > fi.quantity
-        render json: ["Not enough items in stock, try ordering again"], status: 422
+      if fi.quantity - food_info["quantity"] < 0  
+        return render json: ["Not enough items in stock, try ordering again"], status: 422
       end
     end
 
@@ -37,15 +37,15 @@ class Api::OrdersController < ApplicationController
           food_item.quantity -= quantity
           if food_item.save
           else
-            render json: food_item.errors.full_messages, status: 422
+            return render json: food_item.errors.full_messages, status: 422
           end
         else
-          render json: ofi.errors.full_messages, status: 422
+          return render json: ofi.errors.full_messages, status: 422
         end
       end
-      render json: ["Successfully created all food items!"]
+      return render :show
     else
-      render json: @order.errors.full_messages, status: 422
+      return render json: @order.errors.full_messages, status: 422
     end
 
   end
