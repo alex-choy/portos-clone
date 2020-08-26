@@ -99,9 +99,7 @@ class Checkout extends React.Component {
       pickupDay.setDate(pickupDay.getDate() + 1);
     }
     // console.log(`pickupDay: ${MONTHS[pickupDay.getMonth()]} ${pickupDay.getDate()}`);
-    return `${formattedHours}:${formattedMinutes}${amOrPm} on ${
-      MONTHS[pickupDay.getMonth()]
-    } ${pickupDay.getDate()}`;
+    return `${MONTHS[pickupDay.getMonth()]} ${pickupDay.getDate()} at ${formattedHours}:${formattedMinutes}${amOrPm}`;
   }
 
   render() {
@@ -115,19 +113,23 @@ class Checkout extends React.Component {
               let's finish up your order!
             </span>
             <span>
-              Your order will be available at <br /><br/><br/>
-              <span className="pickup-time">
-                {this.getPickupTime()}
-              </span>
+              <p>
+                Your order will be available on
+              </p> 
             </span>
-            <br/><br/>
+            <span className="pickup-time">
+              {this.getPickupTime()}
+            </span>
             Currently only taking cash, our credit card system is down!
-            {/* username with message */}
-            {/* pickup time and day */}
-            {/* payment method? cash only? */}
-            {/* place order button */}
           </div>
-          <div className="col col-3-8 set-size">{this.renderCartItems()}</div>
+          <div className="col col-3-8 set-size">
+            <div className="cart-header ">
+              <h3>
+                Order Summary
+              </h3>
+            </div>
+            {this.renderCartItems()}
+          </div>
         </div>
       );
     }

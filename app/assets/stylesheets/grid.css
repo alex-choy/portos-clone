@@ -15,10 +15,10 @@
 
 .col-3-8 {
   width: 37.5%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .col-5-8 {
   width: 62.5%;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 }

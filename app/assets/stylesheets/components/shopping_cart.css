@@ -105,8 +105,8 @@
 }
 
 .shopping-cart-bottom {
-  /* width: 100%; */
-
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 
 .subtotal {
