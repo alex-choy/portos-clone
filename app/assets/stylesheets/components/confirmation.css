@@ -1,0 +1,15 @@
+.confirmation-wrapper {
+    width: 85%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.confirmation-wrapper > h1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.order-items {
+  margin-top: 20px;
+  width: 90%
+}

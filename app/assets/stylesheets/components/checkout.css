@@ -27,16 +27,21 @@
 .checkout-pricing {
   display: block;
   color: gray;
+  padding-top: 20px;
 }
 
 .prices {
-  padding: 10px 30px;
+  padding: 7px 30px;
   display: flex;
   justify-content: space-between;
 }
 
+
 .total-price {
   color: rgb(33, 33, 33);
+  padding: 0px 30px;
+  line-height: 10px;
+  font-size: 20px;
 }
 
 .pickup-time {

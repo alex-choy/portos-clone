@@ -55,7 +55,6 @@ const mSTP = (state) => {
       newState.editedQuantity = shoppingCart[foodItemCartIdx].quantity;
     }
   } 
-  // console.log('newState: ', newState);
   return newState;
 }
 

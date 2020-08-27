@@ -19,13 +19,13 @@ const CheckoutPricing = (props) => {
          <h3>Total:</h3>
          <h3>{totalPrice}</h3>
        </span>
-        <span className="errors-wrapper">
+        { getErrors && handleSubmitOrder && <span className="errors-wrapper">
           {getErrors()}
-        </span>
+        </span> }
      </div>
-      <button onClick={handleSubmitOrder} className="checkout-btn">
+      {getErrors && handleSubmitOrder && <button onClick={handleSubmitOrder} className="checkout-btn">
        Place Order
-     </button>
+     </button>}
     </div> 
   );
 };

@@ -5,7 +5,8 @@ import Confirmation from './confirmation';
 const mSTP = (state) => ({
   order: state.entities.orders[Object.keys(state.entities.orders)[0]],
   orderedFoodItems: Object.values(state.entities.orderedFoodItems), 
-  foodItems: state.entities.foodItems
+  foodItems: state.entities.foodItems,
+  currentUser: state.entities.users[state.session.id]
 });
 
 const mDTP = (dispatch) => ({

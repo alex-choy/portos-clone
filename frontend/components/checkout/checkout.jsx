@@ -12,6 +12,7 @@ import {
 import { createOrder } from '../../actions/order_actions';
 import CheckoutPricing from './checkout_pricing';
 import { withRouter } from 'react-router-dom';
+import OrderItems from '../orders/order_items';
 
 const MONTHS = [
   "January",
@@ -140,7 +141,7 @@ class Checkout extends React.Component {
   }
 
   render() {
-    const { currentUser, shoppingCart, foodItems } = this.props;
+    const { currentUser, shoppingCart, foodItems, removeItemFromCart } = this.props;
     if (shoppingCart && JSON.stringify(foodItems) != "{}") {
       return (
         <div className="checkout-wrapper">
@@ -169,7 +170,15 @@ class Checkout extends React.Component {
                 Order Summary
               </h3>
             </div>
-            {this.renderCartItems()}
+            {/* {this.renderCartItems()} */}
+            <OrderItems 
+              cartFoodItems={shoppingCart}
+              foodItems={foodItems}
+              removeItemFromCart={removeItemFromCart}
+              editCartItems={this.editCartItems}
+              handleSubmitOrder={this.handleSubmitOrder}
+              getErrors={this.getErrors}
+            />
           </div>
         </div>
       );
