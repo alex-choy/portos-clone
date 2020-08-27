@@ -23,6 +23,7 @@
   /* border: 1px solid red;
   height: 300px; */
   margin-right: 40px;
+  padding-bottom: 25px;
 }
 
 .order-info {
@@ -41,7 +42,7 @@
 
 .order-item-receipt {
   /* border: 1px solid purple; */
-  padding: 10px 20px;
+  padding: 30px 20px;
   display: flex;
   justify-content: space-between;
 }
@@ -83,4 +84,18 @@
 .price {
   font-size: 20px;
   color: rgb(84, 84, 84);
+}
+
+.delete-order {
+  position: relative;
+  left: 50px;
+  padding: 10px 30px;
+  background-color: rgb(255, 0, 0);
+  color: white;
+  border-radius: 17px;
+  transition: background-color 0.5s;
+}
+
+.delete-order:hover {
+  background-color: rgb(225, 0, 0);
 }

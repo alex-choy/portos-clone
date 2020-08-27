@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import OrderShowItem from "./order_show_item";
+import OrderShowInfo from "./order_show_info";
 
 class OrderShow extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class OrderShow extends React.Component {
 
     this.changeNotes = this.changeNotes.bind(this);
     this.renderOrderShowItems = this.renderOrderShowItems.bind(this);
+    this.getTotalPrice = this.getTotalPrice.bind(this);
   }
 
   componentDidMount() {
@@ -54,18 +56,20 @@ class OrderShow extends React.Component {
     return orderShowItems;
   }
 
+  getTotalPrice() {
+    const { foodItems, orderedFoodItems } = this.props;
+    let totalPrice = 0;
+    orderedFoodItems.map(({ food_item_id, quantity}) => {
+      totalPrice += parseFloat(foodItems[food_item_id].price) * quantity    
+    });
+    return totalPrice.toFixed(2)
+  }
+
   render() {
     const { foodItems, order, orderedFoodItems } = this.props;
     if (Object.keys(foodItems).length && Object.keys(orderedFoodItems).length
             && order  && Object.keys(this.state).length){
-      const { foodItems, 
-              order: { id: orderId, pickup_time: pickupTime }, 
-              orderedFoodItems } = this.props;
-      
-      // goes in the function to render items?
-      const { food_item_id, quantity } = orderedFoodItems[0];
-      const foodItem = foodItems[food_item_id];
-      const { photo_url: imgUrl, name, price, id: foodId } = foodItem;
+      const { id: orderId, pickup_time: pickupTime } = this.props.order;
 
       return (
         <div className="order-show-wrapper">
@@ -73,34 +77,19 @@ class OrderShow extends React.Component {
           <div className="content-wrapper">
             <section className="col-5-8 ordered-items">
               <h2 className="top-box order-summary">Order Summary</h2>
-              {/* <section className="order-item-receipt no-top-border">
-                <section className="left-order-item">
-                  <img src={imgUrl} alt=""/>
-                  <section className="order-item-text">
-                    <Link to={`/menu/${foodId}`} className="food-link">{name}</Link>
-                    <span>Quantity: {quantity}</span>
-                  </section>
-                </section>
-                <span className="price">
-                  ${(parseFloat(price) * quantity).toFixed(2)}
-                </span> 
-
-              </section> */}
               {this.renderOrderShowItems()}
+              <div className="no-top-border subtotal">
+                <span>Total:</span>
+                <span>${this.getTotalPrice()}</span>
+              </div>
             </section>
-            <section className="col-3-8 order-info">
-              <h3>Pickup Time:</h3>
-              <span>{pickupTime}</span>
-              <h3>Order Notes:</h3>
-              <textarea
-                className="order-notes"
-                value={this.state.notes}
-                onChange={this.changeNotes}
-                cols="30"
-                rows="10"
-              ></textarea>
-            </section>
+            <OrderShowInfo
+              notes={this.state.notes}     
+              changeNotes={this.changeNotes}
+              pickupTime={pickupTime}
+            />
           </div>
+          <button className="delete-order">Delete Order</button>
           {/* <input type="text" value={this.state.notes} onChange={this.changeNotes}/> */}
         </div>
       );
