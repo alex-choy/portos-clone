@@ -1,9 +1,19 @@
 .errors {
   color: red;
-  display: list-item;
   margin: auto;
   width: 80%;
 }
 
 .errors-wrapper {
+  padding-top: 30px;
+  margin: 30px 0;
+  font-size: 20px;
+}
+.errors-wrapper > h1 {
+  font-size: 36px;
+  margin: 10px 0;
+}
+
+.errors > a {
+  color: blue;
 }

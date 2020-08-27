@@ -17,9 +17,9 @@ const ordersReducer = (state = _defaultState, action) => {
       return action.orders;
     case REMOVE_ORDER:
       delete newState[action.orderId];
-      return newState;
-    // case ORDER_ERRORS:
-
+      return newState; 
+    case ORDER_ERRORS:
+      return _defaultState;
     default: 
       return state;
   }

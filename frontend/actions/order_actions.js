@@ -26,6 +26,7 @@ const receiveOrderErrors = (errors) => ({
 });
 
 
+
 export const createOrder = (shoppingCart, order) => (dispatch) => (
   OrderAPIUtil.createOrder(shoppingCart, order)
     .then(
@@ -40,10 +41,12 @@ export const updateOrder = (order) => (dispatch) =>
     (errors) => dispatch(receiveOrderErrors(errors.responseJSON))
   );
 
-export const getOrder = (orderId) => (dispatch) => (
-  OrderAPIUtil.requestOrder(orderId)
-    .then((order) => dispatch(receiveOrder(order)))
-);
+export const getOrder = (orderId) => (dispatch) =>
+  OrderAPIUtil.requestOrder(orderId).then(
+    (order) => dispatch(
+      receiveOrder(order)),
+      (errors) => dispatch(receiveOrderErrors(errors.responseJSON))
+  );
 
 export const getOrders = (userId) => (dispatch) => (
   OrderAPIUtil.requestOrders(userId)

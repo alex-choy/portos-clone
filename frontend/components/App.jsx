@@ -10,6 +10,7 @@ import OrderPageContainer from "./order_page/order_page_container";
 import CheckoutContainer from "./checkout/checkout";
 import ConfirmationContainer from './confirmation/confirmation_container';
 import OrderShowContainer from "./orders/order_show_container";
+import AccountContainer from "./account/account_container";
 
 const App = () => (
   <div>
@@ -22,6 +23,7 @@ const App = () => (
       <Route exact path="/menu" component={Menu} />
       <ProtectedRoute path="/order/:orderId" component={OrderShowContainer} />
       <ProtectedRoute exact path="/order" component={OrderPageContainer} />
+      <ProtectedRoute path="/account" component={AccountContainer} />
       <ProtectedRoute path="/checkout" component={CheckoutContainer} />
       <ProtectedRoute path="/confirmation" component={ConfirmationContainer} />
     </div>

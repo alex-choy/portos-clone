@@ -17,7 +17,7 @@ class AccountMasthead extends React.Component {
         <div className="nav-button nav-login">
           <span>Hello {currentUserName}!</span>
           <div className="nav-drp-logout">
-            <Link to="/#">Account</Link>
+            <Link to="/account">Account</Link>
             <hr/>
             <button onClick={logout}>Logout</button>
           </div>

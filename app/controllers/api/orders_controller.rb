@@ -4,11 +4,13 @@ class Api::OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find(params[:id])
-    if @order.buyer_id == current_user.id
+    @order = Order.find_by(id: params[:id])
+    if !@order
+      render json: ["Order doesn't exist"], status: 404
+    elsif @order.buyer_id == current_user.id
       render :show
     else
-      render json: ["You don't have permission so see other user's orders"]
+      render json: ["You don't have permission so see other user's orders"], status: 422
     end
   end
 

@@ -16,27 +16,37 @@ class OrderShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getFoodItems();
-    this.props.fetchOrderedFoodItems(this.props.match.params.orderId);
-    this.props.getOrder(this.props.match.params.orderId).then(() =>{
-      const { notes, pickup_time, id } = this.props.order;
-      this.setState({
-        notes,
-        pickup_time,
-        id
-      },
-      () => console.log(this.state))
-    });
+    this.props.getOrder(this.props.match.params.orderId)
+      .then(() =>{
+        const { notes, pickup_time, id } = this.props.order;
+        this.setState({
+          notes,
+          pickup_time,
+          id
+        })
+      }).then(() =>
+        this.props.getFoodItems()
+      ).then(() =>
+        this.props.fetchOrderedFoodItems(this.props.match.params.orderId)
+      );
   }
 
   componentDidUpdate(previousProps) {
     if (previousProps.match.params.orderId != this.props.match.params.orderId) {
-      this.props.fetchOrderedFoodItems(this.props.match.params.orderId);
-      this.props.getOrder(this.props.match.params.orderId).then(() =>
-        this.setState({
-          notes: this.props.order.notes,
+      
+      this.props.getOrder(this.props.match.params.orderId)
+        .then(() => {
+          const { notes, pickup_time, id } = this.props.order;
+          this.setState({
+            notes,
+            pickup_time,
+            id,
+          });
         })
-      );
+        .then(() => this.props.getFoodItems())
+        .then(() =>
+          this.props.fetchOrderedFoodItems(this.props.match.params.orderId)
+        );
     }
   }
 
@@ -81,7 +91,7 @@ class OrderShow extends React.Component {
 
   render() {
     // console.log(this.state.notes);
-    const { foodItems, order, orderedFoodItems, deleteOrder } = this.props;
+    const { foodItems, order, orderedFoodItems, deleteOrder, errors } = this.props;
     const foodItemsLen = Object.keys(foodItems).length;
     const ordFoodItemsLen = Object.keys(orderedFoodItems).length;
     const stateLen = Object.keys(this.state).length;
@@ -114,6 +124,16 @@ class OrderShow extends React.Component {
           >
             Delete Order
           </button>
+        </div>
+      );
+    } else if (errors.length) {
+      return (
+        <div className="errors">
+          <div className="errors-wrapper">
+            <h1>ERROR:</h1>
+            {errors}
+          </div>
+          <Link to="/account">See your orders here!</Link>
         </div>
       );
     }
