@@ -23,15 +23,15 @@ export const createOrder = (shoppingCart, order) => (
   })
 );
 
-// export const updateOrder = () => (
-//   $.ajax({
-//     method: 'PATCH',
-//     url: `/api/orders/${orderId}`,
-//     data: {
-
-//     }
-//   })
-// );  
+export const updateOrder = (order) => (
+  $.ajax({
+    method: 'PATCH',
+    url: `/api/orders/${order.id}`,
+    data: {
+      order
+    }
+  })
+);  
 
 export const deleteOrder = (orderId) => (
   $.ajax({

@@ -7,82 +7,65 @@ import regeneratorRuntime from "regenerator-runtime";
 class OrderShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { };
 
     this.changeNotes = this.changeNotes.bind(this);
     this.renderOrderShowItems = this.renderOrderShowItems.bind(this);
     this.getTotalPrice = this.getTotalPrice.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
   }
 
   componentDidMount() {
-    Promise.all([
-      // this.props.getOrder(this.props.match.params.orderId),
-      this.props
-        .getFoodItems()
-        .then(() =>
-          this.props.fetchOrderedFoodItems(this.props.match.params.orderId)
-        ),
-      // this.setState({
-      //   notes: this.props.order.notes,
-      // }),
-    ]); 
-    const getAllInfo = async () => {
-      await this.props.getOrder(this.props.match.params.orderId);
-      // const orderResponse = this.props.getOrder(this.props.match.params.orderId);
-      // console.log('order Response: ', orderResponse);
-      // const dummy = await orderResponse.json();
-      // console.log('dummy: ', dummy );
+    this.props.getFoodItems();
+    this.props.fetchOrderedFoodItems(this.props.match.params.orderId);
+    this.props.getOrder(this.props.match.params.orderId).then(() =>{
+      const { notes, pickup_time, id } = this.props.order;
       this.setState({
-        notes: this.props.order.notes
-      })
-    };
-    getAllInfo();
+        notes,
+        pickup_time,
+        id
+      },
+      () => console.log(this.state))
+    });
   }
 
-  // componentDidUpdate() {
-    // const getAllInfo = async () => {
-    //   await this.props.getOrder(this.props.match.params.orderId);
-    //   // const orderResponse = this.props.getOrder(this.props.match.params.orderId);
-    //   // console.log('order Response: ', orderResponse);
-    //   // const dummy = await orderResponse.json();
-    //   // console.log('dummy: ', dummy );
-    //   this.props.fetchOrderedFoodItems(this.props.match.params.orderId);
-    //   this.setState({
-    //     notes: this.props.order.notes,
-    //   });
-    // };
-    // getAllInfo();
-
-  // }
-
-  // componentDidUpdate() {
-  //   Promise.all([
-  //     this.props.getOrder(this.props.match.params.orderId),
-  //     this.props.fetchOrderedFoodItems(this.props.match.params.orderId),
-  //     this.setState({
-  //       notes: this.props.order ? this.props.order.notes : '',
-  //     })
-  //   ]);
-  // }
-
+  componentDidUpdate(previousProps) {
+    if (previousProps.match.params.orderId != this.props.match.params.orderId) {
+      this.props.fetchOrderedFoodItems(this.props.match.params.orderId);
+      this.props.getOrder(this.props.match.params.orderId).then(() =>
+        this.setState({
+          notes: this.props.order.notes,
+        })
+      );
+    }
+  }
 
   changeNotes(e) {
     this.setState({ notes: e.target.value });
   }
 
+  handleUpdate() {
+    const order = {...this.state};
+    this.props.updateOrder(order);
+  }
+
   renderOrderShowItems() {
     const { orderedFoodItems, foodItems } = this.props;
-    const orderShowItems = orderedFoodItems.map(({ food_item_id: foodId, quantity }) => {
-      const { photo_url: imgUrl, name, price } = foodItems[foodId];
-      return <OrderShowItem 
-        key={foodId}
-        imgUrl={imgUrl}
-        name={name}
-        price={price}
-        foodId={foodId}
-        quantity={quantity}
-      />;
-    });
+    const orderShowItems = orderedFoodItems.map(
+      ({ food_item_id: foodId, quantity }) => {
+        const { photo_url: imgUrl, name, price } = foodItems[foodId];
+        return (
+          <OrderShowItem
+            key={foodId}
+            imgUrl={imgUrl}
+            name={name}
+            price={price}
+            foodId={foodId}
+            quantity={quantity}
+          />
+        );
+      }
+    );
 
     return orderShowItems;
   }
@@ -90,17 +73,20 @@ class OrderShow extends React.Component {
   getTotalPrice() {
     const { foodItems, orderedFoodItems } = this.props;
     let totalPrice = 0;
-    orderedFoodItems.map(({ food_item_id, quantity}) => {
-      totalPrice += parseFloat(foodItems[food_item_id].price) * quantity    
+    orderedFoodItems.map(({ food_item_id, quantity }) => {
+      totalPrice += parseFloat(foodItems[food_item_id].price) * quantity;
     });
-    return totalPrice.toFixed(2)
+    return totalPrice.toFixed(2);
   }
 
   render() {
-    console.log(this.state.notes);
-    const { foodItems, order, orderedFoodItems } = this.props;
-    if (Object.keys(foodItems).length && Object.keys(orderedFoodItems).length
-            && order  && Object.keys(this.state).length){
+    // console.log(this.state.notes);
+    const { foodItems, order, orderedFoodItems, deleteOrder } = this.props;
+    const foodItemsLen = Object.keys(foodItems).length;
+    const ordFoodItemsLen = Object.keys(orderedFoodItems).length;
+    const stateLen = Object.keys(this.state).length;
+
+    if (order && foodItemsLen && ordFoodItemsLen && stateLen) {
       const { id: orderId, pickup_time: pickupTime } = this.props.order;
 
       return (
@@ -116,13 +102,18 @@ class OrderShow extends React.Component {
               </div>
             </section>
             <OrderShowInfo
-              notes={this.state.notes}     
+              notes={this.state.notes}
               changeNotes={this.changeNotes}
               pickupTime={pickupTime}
+              updateNotes={this.handleUpdate}
             />
           </div>
-          <button className="delete-order">Delete Order</button>
-          {/* <input type="text" value={this.state.notes} onChange={this.changeNotes}/> */}
+          <button
+            className="delete-order"
+            onClick={() => deleteOrder(order.id)}
+          >
+            Delete Order
+          </button>
         </div>
       );
     }

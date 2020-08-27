@@ -1,7 +1,7 @@
 import React from 'react';
 
 const OrderShowInfo = (props) => {
-  const { notes, changeNotes, pickupTime } = props;
+  const { notes, changeNotes, pickupTime, updateNotes } = props;
   return (
     <section className="col-3-8 order-info">
       <h3>Pickup Time:</h3>
@@ -14,6 +14,7 @@ const OrderShowInfo = (props) => {
         cols="30"
         rows="10"
       ></textarea>
+      <button className="update-notes" onClick={updateNotes}>Update Notes</button>
     </section>
   );
 };

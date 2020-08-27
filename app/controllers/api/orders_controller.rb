@@ -1,10 +1,15 @@
 class Api::OrdersController < ApplicationController
   def index
-
+    @orders = Order.where(buyer_id: params[:user_id])
   end
 
   def show
     @order = Order.find(params[:id])
+    if @order.buyer_id == current_user.id
+      render :show
+    else
+      render json: ["You don't have permission so see other user's orders"]
+    end
   end
 
   def create
@@ -50,12 +55,23 @@ class Api::OrdersController < ApplicationController
 
   end
 
-  def update
-
+  def update  
+    @order = Order.find_by(id: params[:id])
+    if @order.buyer_id == current_user.id
+      if @order.update(order_params)
+        render :show
+      else
+        render json: @order.errors.full_messages, status: 422
+      end
+    else
+      render json: ["You can't edit another user's order!"]
+    end
   end
 
   def destroy
-
+    @order = Order.find(params[:id])
+    @order.destroy
+    render :show
   end
 
   private

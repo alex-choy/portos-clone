@@ -34,8 +34,24 @@ export const createOrder = (shoppingCart, order) => (dispatch) => (
     )
 );
 
+export const updateOrder = (order) => (dispatch) =>
+  OrderAPIUtil.updateOrder(order).then(
+    (order) => dispatch(receiveOrder(order)),
+    (errors) => dispatch(receiveOrderErrors(errors.responseJSON))
+  );
+
 export const getOrder = (orderId) => (dispatch) => (
   OrderAPIUtil.requestOrder(orderId)
     .then((order) => dispatch(receiveOrder(order)))
 );
 
+export const getOrders = (userId) => (dispatch) => (
+  OrderAPIUtil.requestOrders(userId)
+    .then((orders) => dispatch(receiveOrders(orders)))
+);
+
+export const deleteOrder = (orderId) => (dispatch) => (
+  OrderAPIUtil.deleteOrder(orderId)
+    .then((order) => dispatch(removeOrder(Object.keys(order)[0])))
+    // only 1 order is returned, could change it to return id instead
+);

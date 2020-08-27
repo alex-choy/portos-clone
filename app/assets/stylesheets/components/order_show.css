@@ -101,3 +101,16 @@
 .delete-order:hover {
   background-color: rgb(225, 0, 0);
 }
+
+.update-notes {
+  position: relative;
+  padding: 5px 15px;
+  border-radius: 15px;
+  background-color: rgb(5, 42, 255);
+  transition: background-color 0.25s;
+  color: white;
+}
+
+.update-notes:hover {
+  background-color: rgb(0, 0, 200);
+}

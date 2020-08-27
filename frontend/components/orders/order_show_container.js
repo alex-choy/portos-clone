@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import OrderShow from './order_show';
-import { getOrder } from '../../actions/order_actions';
+import { getOrder, deleteOrder, updateOrder } from "../../actions/order_actions";
 import { fetchOrderedFoodItems } from '../../actions/ordered_food_items';
 import { getFoodItems } from '../../actions/food_item_actions';
 
@@ -13,7 +13,9 @@ const mSTP = (state, ownProps) => ({
 const mDTP = (dispatch) => ({
   getOrder: (orderId) => dispatch(getOrder(orderId)),
   fetchOrderedFoodItems: (orderId) => dispatch(fetchOrderedFoodItems(orderId)),
-  getFoodItems: () => dispatch(getFoodItems())
+  getFoodItems: () => dispatch(getFoodItems()),
+  deleteOrder: (orderId) => dispatch(deleteOrder(orderId)),
+  updateOrder: (order) => dispatch(updateOrder(order))
 });
 
 export default connect(mSTP, mDTP)(OrderShow);
