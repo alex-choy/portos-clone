@@ -40,7 +40,6 @@ class Checkout extends React.Component {
       notes: '',
       pickup_time: '',
     }
-    this.renderCartItems = this.renderCartItems.bind(this);
     this.editCartItems = this.editCartItems.bind(this);
     this.stateChange = this.stateChange.bind(this);
     this.handleSubmitOrder = this.handleSubmitOrder.bind(this);
@@ -86,35 +85,6 @@ class Checkout extends React.Component {
     this.props.openOrderItemModal();
   }
 
-  renderCartItems() {
-    const { shoppingCart, foodItems, removeItemFromCart } = this.props;
-    let totalPrice = 0;
-    const cartItems = shoppingCart.map((cartItem) => {
-      const { foodId, quantity } = cartItem;
-      const foodItem = foodItems[foodId];
-      totalPrice += parseFloat(foodItem.price) * quantity;
-      return (
-        <ShoppingCartItem
-          key={foodId}
-          cartQuantity={quantity}
-          foodItem={foodItem}
-          removeItemFromCart={removeItemFromCart}
-          editCartItems={this.editCartItems}
-        />
-      );
-    });
-
-    const strTotalPrice = `$${totalPrice.toFixed(2)}`;
-    cartItems.push(
-      <CheckoutPricing 
-        key="total-price" 
-        totalPrice={strTotalPrice} 
-        handleSubmitOrder={this.handleSubmitOrder}
-        getErrors={this.getErrors} />
-    );
-    return cartItems;
-  }
-
   getNextMinute(currMinutes) {
     const findNextTime = (time) => time > currMinutes;
     const nextTime = MINUTE_INTERVALS.find(findNextTime);
@@ -136,13 +106,12 @@ class Checkout extends React.Component {
     }
 
     const pickup_time = `${MONTHS[pickupDay.getMonth()]} ${pickupDay.getDate()} at ${formattedHours}:${formattedMinutes}${amOrPm}`;
-    // console.log(`pickupDay: ${MONTHS[pickupDay.getMonth()]} ${pickupDay.getDate()}`);
     return pickup_time;
   }
 
   render() {
     const { currentUser, shoppingCart, foodItems, removeItemFromCart } = this.props;
-    if (shoppingCart && JSON.stringify(foodItems) != "{}") {
+    if (shoppingCart.length > 0 && JSON.stringify(foodItems) != "{}") {
       return (
         <div className="checkout-wrapper">
           <div className="col col-5-8 set-size left-checkout">
@@ -170,7 +139,6 @@ class Checkout extends React.Component {
                 Order Summary
               </h3>
             </div>
-            {/* {this.renderCartItems()} */}
             <OrderItems 
               cartFoodItems={shoppingCart}
               foodItems={foodItems}

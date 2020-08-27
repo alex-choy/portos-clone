@@ -4,13 +4,6 @@ import CheckoutPricing from '../checkout/checkout_pricing';
 import OrderItems from '../orders/order_items';
 
 class Confirmation extends React.Component {
-  constructor(props) {
-    super(props);
-
-    // this.renderOrderedItems = this.renderOrderedItems.bind(this);
-  }
-
-
   componentDidMount() {
     if (this.props.order) {
       this.props.fetchOrderedFoodItems(this.props.order.id);

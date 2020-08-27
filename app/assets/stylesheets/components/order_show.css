@@ -1,0 +1,44 @@
+.order-show-wrapper {
+  padding-top: 50px;
+  margin: auto;
+  width: 90%;
+  border: 1px solid black;
+}
+
+.order-title {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.content-wrapper {
+  padding-top: 30px;
+  margin: auto;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid green;
+}
+
+.ordered-items {
+  border: 1px solid red;
+  height: 300px;
+  margin-right: 40px;
+}
+
+.order-info {
+  border: 1px solid blue;
+  height: 300px;
+}
+
+.order-summary {
+  font-size: 28px;
+  font-weight: 600;
+  color: rgb(53, 53, 53);
+  padding: 10px 5px;
+}
+
+.order-item-receipt {
+  border: 1px solid purple;
+  padding: 5px 10px;
+  display: flex;
+}

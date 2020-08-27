@@ -4,12 +4,11 @@ class Api::OrdersController < ApplicationController
   end
 
   def show
-    render :show
+    @order = Order.find(params[:id])
   end
 
   def create
     # data: { order: {currUser, :notes, :time}, shopping_cart }
-    puts 'PARAMS PARAMS PARAMS PARAMS PARAMS PARAMS PARAMS '
     shopping_cart = JSON.parse(shopping_cart_param) 
     # debugger
     p shopping_cart
@@ -18,8 +17,6 @@ class Api::OrdersController < ApplicationController
       
       # Check that items are in stock before ordering
       if fi.quantity - food_info["quantity"] < 0 
-         p 'LOW QUANTITY LOW QUANTITY LOW QUANTITY LOW QUANTITY LOW QUANTITY LOW QUANTITY'
-         p food_info["foodId"]
         return render json: ["Not enough items in stock, try ordering different amounts"], status: 422
       end
     end

@@ -34,3 +34,8 @@ export const createOrder = (shoppingCart, order) => (dispatch) => (
     )
 );
 
+export const getOrder = (orderId) => (dispatch) => (
+  OrderAPIUtil.requestOrder(orderId)
+    .then((order) => dispatch(receiveOrder(order)))
+);
+

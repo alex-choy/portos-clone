@@ -12,6 +12,9 @@
 
 .cart-header {
   padding: 0 10px;
+}
+
+.top-box {
   border: 1px solid lightgray;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;

@@ -67,7 +67,7 @@ class ShoppingCart extends React.Component {
     if (shoppingCart.length > 0 && JSON.stringify(foodItems) != "{}") {
       return (
         <div>
-          <div className="cart-header">
+          <div className="cart-header top-box">
             <h3>Order Summary</h3>
           </div>
           <div className="cart-items-wrapper">
