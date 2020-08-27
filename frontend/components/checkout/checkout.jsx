@@ -68,7 +68,8 @@ class Checkout extends React.Component {
     const order = {...this.state};
     // console.log('SC: ', shoppingCart);
     createOrder(JSON.stringify(shoppingCart), order)
-      .then(() => this.props.history.push("/confirmation"));
+      .then(() => this.props.history.push("/confirmation"))
+      .then(() => localStorage.removeItem(SHOPPING_CART));
   }
 
   getErrors() {

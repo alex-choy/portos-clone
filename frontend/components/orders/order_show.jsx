@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import OrderShowItem from "./order_show_item";
 import OrderShowInfo from "./order_show_info";
+import regeneratorRuntime from "regenerator-runtime";
 
 class OrderShow extends React.Component {
   constructor(props) {
@@ -15,19 +16,44 @@ class OrderShow extends React.Component {
 
   componentDidMount() {
     Promise.all([
-      this.props.getFoodItems().then(() => 
-      this.props.fetchOrderedFoodItems(this.props.match.params.orderId) )
+      // this.props.getOrder(this.props.match.params.orderId),
+      this.props
+        .getFoodItems()
+        .then(() =>
+          this.props.fetchOrderedFoodItems(this.props.match.params.orderId)
+        ),
+      // this.setState({
+      //   notes: this.props.order.notes,
+      // }),
     ]); 
     const getAllInfo = async () => {
-      const orderResponse = this.props.getOrder(this.props.match.params.orderId);
-      const dummy = await orderResponse.json();
-      console.log('dummy: ', dummy );
+      await this.props.getOrder(this.props.match.params.orderId);
+      // const orderResponse = this.props.getOrder(this.props.match.params.orderId);
+      // console.log('order Response: ', orderResponse);
+      // const dummy = await orderResponse.json();
+      // console.log('dummy: ', dummy );
       this.setState({
         notes: this.props.order.notes
       })
     };
     getAllInfo();
   }
+
+  // componentDidUpdate() {
+    // const getAllInfo = async () => {
+    //   await this.props.getOrder(this.props.match.params.orderId);
+    //   // const orderResponse = this.props.getOrder(this.props.match.params.orderId);
+    //   // console.log('order Response: ', orderResponse);
+    //   // const dummy = await orderResponse.json();
+    //   // console.log('dummy: ', dummy );
+    //   this.props.fetchOrderedFoodItems(this.props.match.params.orderId);
+    //   this.setState({
+    //     notes: this.props.order.notes,
+    //   });
+    // };
+    // getAllInfo();
+
+  // }
 
   // componentDidUpdate() {
   //   Promise.all([
