@@ -15,13 +15,18 @@ class OrderShow extends React.Component {
 
   componentDidMount() {
     Promise.all([
-      this.props.getOrder(this.props.match.params.orderId),
       this.props.getFoodItems().then(() => 
-      this.props.fetchOrderedFoodItems(this.props.match.params.orderId) ),
-      this.setState({
-        notes: this.props.order ? this.props.order.notes : '',
-      })
+      this.props.fetchOrderedFoodItems(this.props.match.params.orderId) )
     ]); 
+    const getAllInfo = async () => {
+      const orderResponse = this.props.getOrder(this.props.match.params.orderId);
+      const dummy = await orderResponse.json();
+      console.log('dummy: ', dummy );
+      this.setState({
+        notes: this.props.order.notes
+      })
+    };
+    getAllInfo();
   }
 
   // componentDidUpdate() {
@@ -66,6 +71,7 @@ class OrderShow extends React.Component {
   }
 
   render() {
+    console.log(this.state.notes);
     const { foodItems, order, orderedFoodItems } = this.props;
     if (Object.keys(foodItems).length && Object.keys(orderedFoodItems).length
             && order  && Object.keys(this.state).length){

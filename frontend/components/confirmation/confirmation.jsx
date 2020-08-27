@@ -2,6 +2,7 @@ import React from 'react';
 import ShoppingCartItem from '../order_page/shopping_cart/shopping_cart_item';
 import CheckoutPricing from '../checkout/checkout_pricing';
 import OrderItems from '../orders/order_items';
+import { Link } from 'react-router-dom';
 
 class Confirmation extends React.Component {
   componentDidMount() {
@@ -30,6 +31,7 @@ class Confirmation extends React.Component {
               foodItems={foodItems}
             />
           </div>
+          <Link className="to-order-btn" to={`order/${order.id}`}>Check out your order here!</Link>
         </div>
       );
     }

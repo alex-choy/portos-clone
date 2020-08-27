@@ -13,3 +13,13 @@
   margin-top: 20px;
   width: 90%
 }
+
+
+.to-order-btn {
+  padding: 20px;
+  color: blue;
+}
+
+.to-order-btn:hover {
+  text-decoration: underline;
+}

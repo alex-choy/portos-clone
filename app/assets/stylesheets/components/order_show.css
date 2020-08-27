@@ -1,5 +1,6 @@
 .order-show-wrapper {
   padding-top: 50px;
+  padding-bottom: 50px;
   margin: auto;
   width: 90%;
   border: 1px solid black;
@@ -26,9 +27,10 @@
   padding-bottom: 25px;
 }
 
-.order-info {
-  border: 1px solid blue;
-  height: 300px;
+.to-order-btn {
+    position: relative;
+    color: blue;
+    top: 30px;
 }
 
 .order-summary {

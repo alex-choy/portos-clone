@@ -39,7 +39,7 @@ food_items = [
   {name: 'Vanilla Bean Cheesecake', quantity: 40, price: 6.00, category_id: cake.id,
     description: "Vanilla cheesecake, graham cracker crust, dried apricot layer on the bottom, mango jam spread on top", 
     image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/alana-harris-sSLi0wraDmQ-unsplash.jpg"},
-  {name: 'Lemon Cupcake', quantity: 0 , price: 2.25, category_id: baked_good.id,
+  {name: 'Lemon Cupcake', quantity: 200 , price: 2.25, category_id: baked_good.id,
     description: "Lemon-flavored mini cupcakes, topped with buttercream", 
     image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/chaman-raj-JbeYtG0HizE-unsplash.jpg"},
   {name: 'Black Sesame Honey Bread', quantity: 0 , price: 5.00, category_id: bread.id,
