@@ -1,5 +1,6 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
+import OrderShowItem from "./order_show_item";
 
 class OrderShow extends React.Component {
   constructor(props) {
@@ -7,6 +8,7 @@ class OrderShow extends React.Component {
     this.state = {};
 
     this.changeNotes = this.changeNotes.bind(this);
+    this.renderOrderShowItems = this.renderOrderShowItems.bind(this);
   }
 
   componentDidMount() {
@@ -20,22 +22,50 @@ class OrderShow extends React.Component {
     ]); 
   }
 
+  // componentDidUpdate() {
+  //   Promise.all([
+  //     this.props.getOrder(this.props.match.params.orderId),
+  //     this.props.fetchOrderedFoodItems(this.props.match.params.orderId),
+  //     this.setState({
+  //       notes: this.props.order ? this.props.order.notes : '',
+  //     })
+  //   ]);
+  // }
+
 
   changeNotes(e) {
     this.setState({ notes: e.target.value });
   }
 
+  renderOrderShowItems() {
+    const { orderedFoodItems, foodItems } = this.props;
+    const orderShowItems = orderedFoodItems.map(({ food_item_id: foodId, quantity }) => {
+      const { photo_url: imgUrl, name, price } = foodItems[foodId];
+      return <OrderShowItem 
+        key={foodId}
+        imgUrl={imgUrl}
+        name={name}
+        price={price}
+        foodId={foodId}
+        quantity={quantity}
+      />;
+    });
+
+    return orderShowItems;
+  }
+
   render() {
-    if (Object.keys(this.props.foodItems).length && this.props.order 
-            && this.props.orderedFoodItems && Object.keys(this.state).length){
+    const { foodItems, order, orderedFoodItems } = this.props;
+    if (Object.keys(foodItems).length && Object.keys(orderedFoodItems).length
+            && order  && Object.keys(this.state).length){
       const { foodItems, 
               order: { id: orderId, pickup_time: pickupTime }, 
               orderedFoodItems } = this.props;
       
-      // 
+      // goes in the function to render items?
       const { food_item_id, quantity } = orderedFoodItems[0];
       const foodItem = foodItems[food_item_id];
-      const { photo_url } = foodItem;
+      const { photo_url: imgUrl, name, price, id: foodId } = foodItem;
 
       return (
         <div className="order-show-wrapper">
@@ -43,9 +73,20 @@ class OrderShow extends React.Component {
           <div className="content-wrapper">
             <section className="col-5-8 ordered-items">
               <h2 className="top-box order-summary">Order Summary</h2>
-              <section className="order-item-receipt">
-                <img src={photo_url} alt=""/>
-              </section>
+              {/* <section className="order-item-receipt no-top-border">
+                <section className="left-order-item">
+                  <img src={imgUrl} alt=""/>
+                  <section className="order-item-text">
+                    <Link to={`/menu/${foodId}`} className="food-link">{name}</Link>
+                    <span>Quantity: {quantity}</span>
+                  </section>
+                </section>
+                <span className="price">
+                  ${(parseFloat(price) * quantity).toFixed(2)}
+                </span> 
+
+              </section> */}
+              {this.renderOrderShowItems()}
             </section>
             <section className="col-3-8 order-info">
               <h3>Pickup Time:</h3>

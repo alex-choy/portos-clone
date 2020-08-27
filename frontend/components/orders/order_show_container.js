@@ -6,7 +6,7 @@ import { getFoodItems } from '../../actions/food_item_actions';
 
 const mSTP = (state, ownProps) => ({
   order: state.entities.orders[ownProps.match.params.orderId], // Only 1 order shows up in the orderState 
-  orderedFoodItems: state.entities.orderedFoodItems,
+  orderedFoodItems: Object.values(state.entities.orderedFoodItems),
   foodItems: state.entities.foodItems
 });
 

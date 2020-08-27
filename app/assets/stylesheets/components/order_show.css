@@ -16,12 +16,12 @@
   width: 95%;
   display: flex;
   justify-content: space-between;
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
 
 .ordered-items {
-  border: 1px solid red;
-  height: 300px;
+  /* border: 1px solid red;
+  height: 300px; */
   margin-right: 40px;
 }
 
@@ -35,10 +35,52 @@
   font-weight: 600;
   color: rgb(53, 53, 53);
   padding: 10px 5px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 
 .order-item-receipt {
-  border: 1px solid purple;
-  padding: 5px 10px;
+  /* border: 1px solid purple; */
+  padding: 10px 20px;
   display: flex;
+  justify-content: space-between;
+}
+
+.order-item-receipt img {
+  object-fit: contain;
+  max-height: 150px;
+  width: unset;
+}
+
+.left-order-item {
+  width: 70%;
+  min-width: 350px;
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.order-item-text {
+  margin-left: 20px;
+}
+
+.order-item-text > span {
+  display: block;
+  padding-top: 20px;
+}
+
+.food-link {
+  font-size: 24px;
+  font-weight: 600;
+  /* transition: color .25s; */
+  padding: 10px 0;
+  color: green;
+}
+
+.food-link:hover {
+  text-decoration: underline;
+}
+
+.price {
+  font-size: 20px;
+  color: rgb(84, 84, 84);
 }
