@@ -1,3 +1,5 @@
+# PoroSnax README
+
 ## Description 
 
 PoroSnax is an onilne bakery store, where users purchase food items. Users place items into a shopping cart, proceed to checkout, and place an order. Orders are saved for each user, and available to view through their account page.
