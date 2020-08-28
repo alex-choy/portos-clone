@@ -32,7 +32,6 @@ class ShoppingCart extends React.Component {
 
   renderCartItems() {
     const { foodItems, removeItemFromCart, shoppingCart} = this.props;
-    // console.log(shoppingCart);
     let totalPrice = 0;
     const cartItems = shoppingCart.map((foodInfo) => {
       const { foodId, quantity: cartQuantity } = foodInfo;
@@ -62,8 +61,6 @@ class ShoppingCart extends React.Component {
 
   render() {
     const { foodItems, shoppingCart } = this.props;
-    // console.log('foodItems: ', foodItems);
-    // if(JSON.stringify(foodItems) != '{}') {
     if (shoppingCart.length > 0 && JSON.stringify(foodItems) != "{}") {
       return (
         <div>

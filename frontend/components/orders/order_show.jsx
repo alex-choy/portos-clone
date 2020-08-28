@@ -90,7 +90,6 @@ class OrderShow extends React.Component {
   }
 
   render() {
-    // console.log(this.state.notes);
     const { foodItems, order, orderedFoodItems, deleteOrder, errors, history } = this.props;
     const foodItemsLen = Object.keys(foodItems).length;
     const ordFoodItemsLen = Object.keys(orderedFoodItems).length;

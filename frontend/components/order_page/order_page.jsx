@@ -25,13 +25,7 @@ class OrderPage extends React.Component {
     event.preventDefault();
     this.props.openOrderItemModal();
     this.props.setOrderItemModalId(foodId);
-    // console.log(e.target.className);
   }
-
-  // addItemToCart(foodId, quantity) {
-  //   // console.log(`foodId: ${foodId}, quantity: ${quantity}`);
-  //   this.setState({ [foodId]: quantity });
-  // }
 
   toTitleCase(phrase) {
     return phrase

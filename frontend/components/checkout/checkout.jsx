@@ -64,7 +64,6 @@ class Checkout extends React.Component {
   handleSubmitOrder() {
     const { shoppingCart, createOrder} = this.props; 
     const order = {...this.state};
-    // console.log('SC: ', shoppingCart);
     createOrder(JSON.stringify(shoppingCart), order)
       .then(() => this.props.history.push("/confirmation"))
       .then(() => localStorage.removeItem(SHOPPING_CART));

@@ -14,9 +14,7 @@ export const removeItemFromCart = (foodId) => ({
   foodId
 });
 
-export const getLocalShoppingCart = () => {
-  console.log(localStorage.getItem(SHOPPING_CART));
-  return {
-    type: GET_LOCAL_SHOPPING_CART,
-    shoppingCart: JSON.parse(localStorage.getItem(SHOPPING_CART))
-}};
+export const getLocalShoppingCart = () => ({
+  type: GET_LOCAL_SHOPPING_CART,
+  shoppingCart: JSON.parse(localStorage.getItem(SHOPPING_CART))
+});
