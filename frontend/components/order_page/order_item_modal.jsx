@@ -3,7 +3,6 @@ import OrderItemQuantity from './order_item_quantity';
 import AddToCart from './add_to_cart';
 
 class OrderItemModal extends React.Component {
-  // set state quantity to 1 or the passed in value?
   constructor(props) {
     super(props);
     this.state = {
@@ -38,7 +37,6 @@ class OrderItemModal extends React.Component {
     const { stateQuantity } = this.state;
     const foodInfo = {foodId: id, quantity: stateQuantity};
     this.props.addItemToCart(foodInfo);
-    // localStorage.setItem(name, quantity);
   }
 
   render() {

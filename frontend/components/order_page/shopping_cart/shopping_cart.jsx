@@ -17,10 +17,6 @@ class ShoppingCart extends React.Component {
     this.editCartItems = this.editCartItems.bind(this);
   }
 
-  componentDidMount() {
-    // this.props.getFoodItems();
-  }
-
   componentDidUpdate() {
     localStorage.setItem(SHOPPING_CART, JSON.stringify(this.props.shoppingCart));
   }
