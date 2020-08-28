@@ -12,6 +12,14 @@
 
 .cart-header {
   padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-header > p{
+  margin-top: auto;
+  margin-bottom: auto;
+  font-weight: 700;
 }
 
 .top-box {

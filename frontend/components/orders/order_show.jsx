@@ -91,7 +91,7 @@ class OrderShow extends React.Component {
 
   render() {
     // console.log(this.state.notes);
-    const { foodItems, order, orderedFoodItems, deleteOrder, errors } = this.props;
+    const { foodItems, order, orderedFoodItems, deleteOrder, errors, history } = this.props;
     const foodItemsLen = Object.keys(foodItems).length;
     const ordFoodItemsLen = Object.keys(orderedFoodItems).length;
     const stateLen = Object.keys(this.state).length;
@@ -122,7 +122,7 @@ class OrderShow extends React.Component {
             <Link to="/account">Back to Orders</Link>
             <button
               className="delete-order"
-              onClick={() => deleteOrder(order.id)}
+              onClick={() => deleteOrder(order.id).then(history.push("/account"))}
             >
               Delete Order
             </button>

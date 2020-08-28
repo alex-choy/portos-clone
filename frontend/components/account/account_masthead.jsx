@@ -9,12 +9,12 @@ class AccountMasthead extends React.Component {
   }
 
   componentDidUpdate() {
-    localStorage.removeItem(SHOPPING_CART);
   }
 
   handleLogout() {
     this.props.logout()
-      .then(() => this.props.history.push("/"));
+      .then(() => this.props.history.push("/"))
+      .then(() => localStorage.removeItem(SHOPPING_CART));
   }
 
   render() {

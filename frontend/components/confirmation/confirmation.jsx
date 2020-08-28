@@ -20,12 +20,14 @@ class Confirmation extends React.Component {
           <h4>Thank you {currentUser.username} for your order! </h4>
           <p>Here are the details:</p>
           <div className="order-items">
-            <div className="cart-header ">
+            <div className="cart-header top-box">
               <h3>
                 Order Summary
-                </h3>
+              </h3>
+              <p>
+                Pickup time: {order.pickup_time}
+              </p>
             </div>
-            {/* {this.renderOrderedItems()} */}
             <OrderItems 
               cartFoodItems={orderedFoodItems} 
               foodItems={foodItems}

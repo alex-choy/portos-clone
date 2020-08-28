@@ -1,7 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import ShoppingCartItem from '../order_page/shopping_cart/shopping_cart_item';
 import { SHOPPING_CART } from '../order_page/order_page';
 import { getFoodItems } from '../../actions/food_item_actions';
 import { setOrderItemModalId, openOrderItemModal } from '../../actions/modal_actions';
@@ -124,23 +122,24 @@ class Checkout extends React.Component {
               *Currently only taking cash, our credit card system is down!
             </span>
             <span>
-              <p>
-                Order now, and it will be available on
-              </p> 
+              <p>Order now, and it will be available on</p>
             </span>
-            <span className="pickup-time">
-              {this.state.pickup_time}
-            </span>
-            <textarea className="order-notes" name="order[notes]" id="" cols="50" rows="10" placeholder="Order notes..." onChange={this.stateChange('notes')}>
-            </textarea>
+            <span className="pickup-time">{this.state.pickup_time}</span>
+            <textarea
+              className="order-notes"
+              name="order[notes]"
+              id=""
+              cols="50"
+              rows="10"
+              placeholder="Order notes..."
+              onChange={this.stateChange("notes")}
+            ></textarea>
           </div>
           <div className="col col-3-8 set-size">
-            <div className="cart-header ">
-              <h3>
-                Order Summary
-              </h3>
+            <div className="cart-header  top-box">
+              <h3>Order Summary</h3>
             </div>
-            <OrderItems 
+            <OrderItems
               cartFoodItems={shoppingCart}
               foodItems={foodItems}
               removeItemFromCart={removeItemFromCart}
