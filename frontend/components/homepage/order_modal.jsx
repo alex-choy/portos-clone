@@ -20,16 +20,18 @@ const OrderModal = (props) => {
           <h2>OPEN TO</h2>
           <h2>SERVE YOU</h2>
         </span>
-        <span className="order-modal-subtitle ord-mod">
-          <p>You better sit tight in your car</p>
-        </span>
-        <Link className="ord-button pickup" to="/order">Pickup In-Store</Link>
-        <br />
-        <br />
-        <span className="order-modal-subtitle ord-mod">
-          <p>Maybe it'll ship, maybe it won't</p>
-        </span>
-        <button className="ord-button delivery">Home Delivery</button>
+        <div className="order-btn-wrapper">
+          <span className="order-modal-subtitle ord-mod">
+            <p>You better sit tight in your car</p>
+          </span>
+          <Link className="ord-button pickup" to="/order">Pickup In-Store</Link>
+        </div>
+        <div className="order-btn-wrapper">
+          <span className="order-modal-subtitle ord-mod">
+            <p>Maybe it'll ship, maybe it won't</p>
+          </span>
+          <Link to="/menu" className="ord-button delivery">See Our Menu</Link>
+        </div>
       </div>
     </div>
   );

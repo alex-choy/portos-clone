@@ -28,7 +28,7 @@
     /* top: 12%; */
     transform: translate(-50%);
     width: 375px;
-    height: 450px;
+    height: 425px;
     padding: 30px;
     margin: auto;
     background-color: white;
@@ -49,10 +49,18 @@
 
 .order-modal-title {
   font-size: 48px;
+  display: block;
+  padding-bottom: 12px;
+}
+
+.order-btn-wrapper {
+  margin-bottom: 25px;
 }
 
 .order-modal-subtitle {
-  font-size: 12px;
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
 }
 
 .ord-button {
@@ -63,11 +71,24 @@
 }
 
 .pickup {
+  display: block;
   background-color: #662F1E;
   color: #E4AF2B;
+  transition: background-color .25s;
+}
+
+.pickup:hover {
+  background-color: #4f2417;
 }
 
 .delivery {
+  display: block;
   color: #662F1E;
   background-color: #E4AF2B;
+  transition: background-color .25s;
+}
+
+
+.delivery:hover { 
+  background-color: #d39700;
 }
