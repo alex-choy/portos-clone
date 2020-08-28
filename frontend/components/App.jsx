@@ -28,6 +28,7 @@ const App = () => (
       <ProtectedRoute path="/account" component={AccountContainer} />
       <ProtectedRoute path="/checkout" component={CheckoutContainer} />
       <ProtectedRoute path="/confirmation" component={ConfirmationContainer} />
+      <div className="push"></div>
     </div>
     <Modal />
     <Footer />

@@ -1,13 +1,17 @@
 .footer-wrapper {
-  height: 100px;
+  margin-top: 20px;
+  position: fixed;
+  bottom: 0;
+  /* height: 180px; */
   width: 100%;
 }
 
 .footer {
+  box-sizing: border-box;
   background-color: rgb(235, 235, 235);
   margin: auto;
-  padding: 25px;
-  width: 90%;
+  padding: 20px 60px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   text-align: center;

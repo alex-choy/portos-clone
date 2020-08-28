@@ -45,3 +45,21 @@
   flex-direction: column;
   justify-content: space-around;
 }
+
+.no-orders {
+  padding-top: 40px;
+  width: 80%;
+  margin: auto;
+}
+
+.no-orders > h2 {
+  font-size: 28px;
+}
+
+.no-orders > a {
+  color: blue;
+}
+
+.no-orders > a:hover {
+  text-decoration: underline;
+}

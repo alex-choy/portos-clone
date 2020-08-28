@@ -11,7 +11,12 @@ class Account extends React.Component {
   render() {
     const { orders } = this.props;
     if(orders.length < 1) {
-      return <div>Looks like you have no orders! <br/><Link to="/order">Click here to make orders</Link></div>
+      return <div className="no-orders">
+        <h2>
+          Looks like you have no orders!
+        </h2> <br/>
+        <Link to="/order">Click here to make an order</Link>
+      </div>
     } 
     return (
       <div className="account-wrapper">
