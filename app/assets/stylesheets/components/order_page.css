@@ -28,12 +28,14 @@
 
 .category-items-wrapper {
   display: flex;
-  height: 100%;
+  flex-flow: wrap;
+  width: 100%;
 }
 
 .category-item {
   box-sizing: border-box;
-  width: 50%;
+  width: 45%;
+  min-width: 250px;
   font-family: "Bebas Neue", sans-serif;
   height: 140px;
 }

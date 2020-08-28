@@ -24,6 +24,7 @@ baked_good = Category.create(name: 'baked_good')
 pastry = Category.create(name: 'pastry')
 bread = Category.create(name: 'bread')
 cake = Category.create(name: 'cake')
+sweet_treat = Category.create(name: 'sweet_treat')
 
 
 food_items = [
@@ -44,15 +45,15 @@ food_items = [
     image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/chaman-raj-JbeYtG0HizE-unsplash.jpg"},
   {name: 'Black Sesame Honey Bread', quantity: 0 , price: 5.00, category_id: bread.id,
     description: "Soft, fluffy bread sweetened with honey, sprinked with black sesame seeds and extra honey", 
-    image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/abraham-cisneros-0xxCRrgFrXk-unsplash.jpg"}
+    image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/abraham-cisneros-0xxCRrgFrXk-unsplash.jpg"},
 
   {name: 'Artisan Sourdough Bread', quantity: 100 , price: 7.50, category_id: bread.id,
     description: "Freshly-baked sourdoug bread, a hearty thick crust with a soft, chewy sponge. Perfect toasted with some butter", 
     image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/stephen-walker-_-SwhhV7tSo-unsplash.jpg"},
-  {name: 'Sugar Donuts', quantity: 200 , price: 2.00, category_id: bread.id, # CATEGORY
+  {name: 'Sugar Donuts', quantity: 200 , price: 2.00, category_id: sweet_treat.id, 
     description: "Rounded donuts, filled with raspberry jam and tossed in sugar", 
     image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/seashell-in-love-kristin-NKIXkOXk-_A-unsplash.jpg"},
-  {name: 'Pain au Chocolat', quantity: 100 , price: 5.75 category_id: pastry.id, # CATEGORY
+  {name: 'Pain au Chocolat', quantity: 100 , price: 5.75, category_id: pastry.id, 
     description: "Crisp on the outside, fluffy on the inside croissants with a piece of chocolate in the center", 
     image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/mink-mingle-qZ5lPCPvdXE-unsplash.jpg"},
   {name: 'Burnt Cheesecake', quantity: 80 , price: 4.25, category_id: cake.id, 
@@ -66,7 +67,42 @@ food_items = [
     image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/foto-t-N53gS2c6LtE-unsplash.jpg"},
   {name: 'Twisted Krispy Sesame Roll', quantity: 400 , price: 2.75, category_id: baked_good.id, 
     description: "A twisted, baked bread, topped with a rice cereal, with a sesame-seed flavor", 
-    image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/oskar-yildiz-9B9-Wq1cZMI-unsplash.jpg"}
+    image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/oskar-yildiz-9B9-Wq1cZMI-unsplash.jpg"},
+
+  {name: 'Chocolate Gingerbread Cookies', quantity: 400 , price: 1.50, category_id: cookie.id, 
+    description: "Chocolate holiday-season cookies, frosted with decoration and baked to a thin, crisp texture", 
+    image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/food_items/american-heritage-chocolate-1VNS4aeOmJc-unsplash.jpg"},
+  {name: 'Chocolate-Dipped Cereal Treat', quantity: 300 , price: 1.25, category_id: sweet_treat.id, 
+    description: "Cereal treats dipped in cocolate, sprinked with colorful, edible mini beads", 
+    image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/food_items/american-heritage-chocolate-uHHC3xS9u3o-unsplash.jpg"},
+  {name: 'Coconut Almond Cheeseake', quantity: 400 , price: 10.50, category_id: cake.id, 
+    description: "Coconut flavored cheesecake with a graham cracker crust, topped with coconut shavings and candied, sliced almonds", 
+    image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/food_items/ana-tavares-NyQwVPacW00-unsplash.jpg"},
+  {name: 'Twisted Cinnamon Donut', quantity: 500 , price: 2.50, category_id: sweet_treat.id, 
+    description: "Spiral-shaped donuts that you can peel and twist like a coil! Tossed with sugar and cinnamon", 
+    image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/food_items/basile-bedelek-wMPmhf3qShg-unsplash.jpg"},
+  {name: 'Fudge Peanut Butter Brownies', quantity: 400 , price: 2.00, category_id: baked_good.id, 
+    description: "Dense, chocolate-y brownies, swirled with fudge and peanut butter", 
+    image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/food_items/chaman-raj-0lmVsDyqpVI-unsplash.jpg"},
+    
+  {name: 'Peanut Butter Chocolate Chip Oatmeal Cookies', quantity: 400 , price: 1.00, category_id: cookie.id, 
+    description: "Thin-n-crispy oatmeal cookies, mixed with peanut butter and topped chocolate chips", 
+    image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/food_items/corleto-peanut-butter-HIXCrSevIKQ-unsplash.jpg"},
+  {name: 'Country Loaf', quantity: 400 , price: 6.00, category_id: bread.id, 
+    description: "Soft and chewy center with a thick crust, great with jams or grilled cheese sandwiches", 
+    image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/food_items/ddp-QnQSxrXFgnw-unsplash.jpg"},
+  {name: 'Molten Choco Cupcakes', quantity: 400 , price: 1.25, category_id: baked_good.id, 
+    description: "Chocolate cupcakes with a molten center, bake for 5 minutes before serving!", 
+    image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/food_items/fernanda-tadini-agqjcUO7brc-unsplash.jpg"},
+  {name: 'Vanilla Birthday Cupcake', quantity: 400 , price: 1.75, category_id: baked_good.id, 
+    description: "Light vanilla cupcakes with sprinkles everywhere, topped with vanilla buttercream", 
+    image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/food_items/nickie-joseph-T6oD9CIlpGA-unsplash.jpg"},
+  {name: 'Whole Blueberry Tart', quantity: 400, price: 20.00, category_id: pastry.id, 
+    description: "12\" tart, made with a shortbread crust, blueberry cream filling, topped with fresh blueberries", 
+    image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/food_items/raphael-maksian-vPedCtyqArw-unsplash.jpg"},
+  {name: 'Chocolate Ice Cream Cake', quantity: 400 , price: 25.00, category_id: cake.id, 
+    description: "Chocolate cake, layered with chocolate ganache, topped with 3 pounds of fresh whipping cream, drizzled with chocolate sauce", 
+    image_url: "https://porosnax-dev.s3-us-west-1.amazonaws.com/food_items/sj-baren-diUixdrqh0Q-unsplash.jpg"}
 ]
 # Food Items
 food_items.each do |food_info|
