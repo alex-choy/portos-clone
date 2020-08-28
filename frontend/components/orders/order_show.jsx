@@ -121,7 +121,7 @@ class OrderShow extends React.Component {
             <Link to="/account">Back to Orders</Link>
             <button
               className="delete-order"
-              onClick={() => deleteOrder(order.id).then(history.push("/account"))}
+              onClick={() => deleteOrder(order.id).then(() => history.push("/account"))}
             >
               Delete Order
             </button>

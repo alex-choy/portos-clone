@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { withRouter } from "react-router";
 import { LOGIN_MODAL } from '../components/shared_components/popup_modal';
 import { openSessionModal } from '../actions/modal_actions';
-import LoginFormContainer from '../components/session_forms/login_form_container';
+import LoginFormProtected from "../components/session_forms/login_form_protected";
 // custom routes
 // render only if a user is not logged in (login page for now)
 const Auth = ({ component: Component, path, loggedIn, exact }) => (
@@ -36,7 +36,7 @@ const Protected = ({ component: Component, path, loggedIn, exact, openSessionMod
       path={path}
       exact={exact}
       render={(props) =>
-        loggedIn ? <Component {...props} /> : <LoginFormContainer />
+        loggedIn ? <Component {...props} /> : <LoginFormProtected />
       }
     />
   );

@@ -47,9 +47,7 @@ class SessionForm extends React.Component {
         <form className="session-form" onSubmit={this.handleSubmit}>
           {sessionErrors.length > 0 && <ul className="errors">{errorMsgs}</ul>}
           <div className="session-field">
-            <label htmlFor="session-username">
-              Username: 
-            </label>
+            <label htmlFor="session-username">Username:</label>
             <input
               id="session-username"
               type="text"
@@ -58,21 +56,23 @@ class SessionForm extends React.Component {
             />{" "}
             <br />
           </div>
-          <div className="session-field">  
-            <label htmlFor="session-password">
-              Password: 
-            </label>
+          <div className="session-field">
+            <label htmlFor="session-password">Password:</label>
             <input
               id="session-password"
               type="password"
               value={password}
               onChange={this.handleChange("password")}
-            /><br/>
+            />
+            <br />
           </div>
-          <button className="session-button">{formType}</button>
-        </form><br />
+          <div className="session-btns">
+            {formText === "Signup" && <DemoUser processForm={processForm} />}
+            <button className="session-button">{formType}</button>
+          </div>
+        </form>
+        <br />
         {otherSession}
-        {formText === 'Signup' && <DemoUser processForm={processForm} />}
       </div>
     );
   }

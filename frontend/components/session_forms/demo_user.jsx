@@ -17,14 +17,9 @@ class DemoUser extends React.Component {
 
   render() {
     return (
-      <div className="demo-user">
-        Don't want to create an account?
-        <br />
-        Use our 
-        <Link to="/#" onClick={this.loginDemoUser} className="other-form-link">
-          Guest User
-        </Link>
-      </div>
+      <button onClick={this.loginDemoUser} className="demo-btn">
+        Demo Login
+      </button>
     );
   }
 };
