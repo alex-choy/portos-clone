@@ -1,7 +1,7 @@
 .food-index-wrapper {
   vertical-align:top;
-  display:inline-block;
-  margin:0 auto;
+  /* display:inline-block; */
+  margin: auto;
   /* border: 1px solid red; */
 }
 

@@ -17,6 +17,7 @@
 body {
   font-family: "Bebas Neue",sans-serif;
 }
+
 .avoid-masthead {
   box-sizing: border-box;
   padding-top: 40px;
@@ -26,7 +27,6 @@ body {
   /* border: 1px solid red; */
 } 
 
-
 .under-masthead { 
-    padding-top: 85px;
+  padding-top: 85px;
 }

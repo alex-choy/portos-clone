@@ -11,9 +11,11 @@ import CheckoutContainer from "./checkout/checkout";
 import ConfirmationContainer from './confirmation/confirmation_container';
 import OrderShowContainer from "./orders/order_show_container";
 import AccountContainer from "./account/account_container";
+import Footer from './footer/footer';
+
 
 const App = () => (
-  <div>
+  <div className="app">
     <header>
       <MastheadContainer />
     </header>
@@ -27,8 +29,8 @@ const App = () => (
       <ProtectedRoute path="/checkout" component={CheckoutContainer} />
       <ProtectedRoute path="/confirmation" component={ConfirmationContainer} />
     </div>
-
     <Modal />
+    <Footer />
   </div>
 );
 

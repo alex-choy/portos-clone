@@ -1,0 +1,31 @@
+.footer-wrapper {
+  height: 100px;
+  width: 100%;
+}
+
+.footer {
+  background-color: rgb(235, 235, 235);
+  margin: auto;
+  padding: 25px;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.left-footer {
+  display: block;
+  float: left;
+  font-size: 20px;
+}
+
+.right-footer {
+  display: block;
+  float: right;
+}
+.right-footer > a > i{
+  margin-left: 10px;
+}
+.fa-github {
+  height: 20px;
+}

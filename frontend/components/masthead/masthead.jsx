@@ -15,7 +15,7 @@ class Masthead extends React.Component {
           <div className="center-nav">
             <Link to="/menu" className="nav-link">MENU</Link>
             {/* <Link to="/#" className="nav-link">TAKE AND BAKE</Link> */}
-            <Link to="/" className="nav-link nav-link-logo">POROSNAXX</Link>
+            <Link to="/" className="nav-link nav-link-logo">POROSNAX</Link>
             <Link to="/#" className="nav-link">LOCATIONS</Link>
             {/* <Link to="/#" className="nav-link">OUR STORY</Link> */}
           </div>

@@ -10,10 +10,10 @@ class Menu extends React.Component {
         {/* picture, 270px height, 100% width */}
         {/* 20-25% left nav-bar for sorting? */}
         {/* 75-80% right menu grid */}
-        <aside className="col col-1-5">
+        {/* <aside className="col col-1-5">
           <MenuAside />
-        </aside>
-        <section className="col col-4-5 food-index-wrapper">
+        </aside> */}
+        <section className="food-index-wrapper">
           <FoodIndexContainer />
         </section>
       </section>
