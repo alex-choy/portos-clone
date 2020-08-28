@@ -11,6 +11,7 @@ import { createOrder } from '../../actions/order_actions';
 import CheckoutPricing from './checkout_pricing';
 import { withRouter } from 'react-router-dom';
 import OrderItems from '../orders/order_items';
+import { Link } from 'react-router-dom';
 
 const MONTHS = [
   "January",
@@ -150,7 +151,12 @@ class Checkout extends React.Component {
         </div>
       );
     }
-    return <div>This might take a second, but if not it's probably broken</div>;
+    return <div className="no-renderd-page">
+      <h2>
+        There's no shopping cart items!
+      </h2> <br/>
+      <Link to="/order">Click here to go to the order page!</Link>
+      </div>;
   }
 }
 

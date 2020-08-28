@@ -17,3 +17,7 @@
 .errors > a {
   color: blue;
 }
+    
+.errors > a:hover { 
+  text-decoration: underline;
+}

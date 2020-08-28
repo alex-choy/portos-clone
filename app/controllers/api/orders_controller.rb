@@ -16,6 +16,7 @@ class Api::OrdersController < ApplicationController
 
   def create
     # data: { order: {currUser, :notes, :time}, shopping_cart }
+    sleep(1)
     shopping_cart = JSON.parse(shopping_cart_param) 
     # debugger
     p shopping_cart
