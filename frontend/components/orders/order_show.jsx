@@ -33,7 +33,6 @@ class OrderShow extends React.Component {
 
   componentDidUpdate(previousProps) {
     if (previousProps.match.params.orderId != this.props.match.params.orderId) {
-      
       this.props.getOrder(this.props.match.params.orderId)
         .then(() => {
           const { notes, pickup_time, id } = this.props.order;

@@ -1,12 +1,14 @@
 import { connect } from 'react-redux';
 import Account from './account';
+import { getOrders } from '../../actions/order_actions';
 
 const mSTP = (state) => ({
-  orders: state.entities.orders
+  orders: Object.values(state.entities.orders),
+  currentUser: state.entities.users[state.session.id],
 });
 
 const mDTP = (dispatch) => ({
-  receiveOrders: (userId) => dispatch(receiveOrders(userId)),
+  getOrders: (userId) => dispatch(getOrders(userId)),
 });
 
 export default connect(mSTP, mDTP)(Account);

@@ -1,0 +1,47 @@
+.account-wrapper {
+  width: 80%;
+  margin: auto;
+  padding-top: 30px;
+}
+
+.account-wrapper > h1 {
+  font-size: 32px;
+  padding: 20px 0px;
+  width: 50%;
+}
+
+.account-wrapper > h2 {
+  font-size: 24px;
+  padding: 10px 0px;
+}
+
+.order-link {
+  font-size: 20px;
+  line-height: 5px;
+}
+
+.order-link:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
+.user-order {
+  width: 50%;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 1px solid gray;
+  /* border: 1px solid green; */
+}
+.user-order:first-child {
+  border-top: 1px solid gray;
+  padding-top: 15px;
+  /* background-color: red; */
+}
+
+.order-times {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
