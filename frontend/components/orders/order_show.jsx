@@ -55,7 +55,8 @@ class OrderShow extends React.Component {
 
   handleUpdate() {
     const order = {...this.state};
-    this.props.updateOrder(order);
+    this.props.updateOrder(order)
+      .then(() => alert("Your notes have been updated!"));
   }
 
   renderOrderShowItems() {
@@ -117,12 +118,15 @@ class OrderShow extends React.Component {
               updateNotes={this.handleUpdate}
             />
           </div>
-          <button
-            className="delete-order"
-            onClick={() => deleteOrder(order.id)}
-          >
-            Delete Order
-          </button>
+          <div className="order-btns">
+            <Link to="/account">Back to Orders</Link>
+            <button
+              className="delete-order"
+              onClick={() => deleteOrder(order.id)}
+            >
+              Delete Order
+            </button>
+          </div>
         </div>
       );
     } else if (errors.length) {

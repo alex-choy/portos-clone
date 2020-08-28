@@ -3,7 +3,6 @@
   padding-bottom: 50px;
   margin: auto;
   width: 90%;
-  border: 1px solid black;
 }
 
 .order-title {
@@ -88,20 +87,6 @@
   color: rgb(84, 84, 84);
 }
 
-.delete-order {
-  position: relative;
-  left: 50px;
-  padding: 10px 30px;
-  background-color: rgb(255, 0, 0);
-  color: white;
-  border-radius: 17px;
-  transition: background-color 0.5s;
-}
-
-.delete-order:hover {
-  background-color: rgb(225, 0, 0);
-}
-
 .update-notes {
   position: relative;
   padding: 5px 15px;
@@ -115,4 +100,35 @@
   background-color: rgb(0, 0, 200);
 }
 
+.order-btns {
+  margin-left: 35px;
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
 
+.order-btns > * {
+  padding-left: 30px;
+  color: white;
+  border-radius: 17px;
+  padding: 10px 30px;
+  transition: background-color 0.5s;
+}
+
+.order-btns > a {
+  background-color: rgb(0, 169, 0);
+}
+.order-btns > a:hover {
+  background-color: green;
+}
+
+
+.delete-order {
+  position: relative;
+  left: 50px;
+  background-color: rgb(255, 0, 0);
+}
+
+.delete-order:hover {
+  background-color: rgb(225, 0, 0);
+}
