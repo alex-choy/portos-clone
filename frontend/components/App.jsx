@@ -19,7 +19,7 @@ const App = () => (
     <header>
       <MastheadContainer />
     </header>
-    <div className="under-masthead">
+    <div className="under-masthead cf">
       <Route exact path="/" component={HomepageContainer} />
       <Route path={`/menu/:foodId`} component={FoodShowContainer} />
       <Route exact path="/menu" component={Menu} />
@@ -28,8 +28,8 @@ const App = () => (
       <ProtectedRoute path="/account" component={AccountContainer} />
       <ProtectedRoute path="/checkout" component={CheckoutContainer} />
       <ProtectedRoute path="/confirmation" component={ConfirmationContainer} />
-      <div className="push"></div>
     </div>
+    <div className="push"></div>
     <Modal />
     <Footer />
   </div>

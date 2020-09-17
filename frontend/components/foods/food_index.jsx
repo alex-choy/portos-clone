@@ -15,7 +15,7 @@ class FoodIndex extends React.Component {
 
   render() {
     return (
-      <div className="food-card-list">
+      <div className="food-card-list cf">
         {this.createFoodItems()}
       </div>
     );

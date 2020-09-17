@@ -46,6 +46,7 @@ class Checkout extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     this.props.getFoodItems();
     this.props.getLocalShoppingCart();
     this.setState({ pickup_time: this.getPickupTime() });

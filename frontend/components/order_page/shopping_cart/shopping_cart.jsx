@@ -43,7 +43,7 @@ class ShoppingCart extends React.Component {
         />
       );
     });
-    cartItems.push(
+    const subtotalArea = (
       <div key="cart-bottom" className="no-top-border shopping-cart-bottom">
         <div className="subtotal">
           <span>Subtotal:</span>
@@ -52,7 +52,12 @@ class ShoppingCart extends React.Component {
         <Link to="/checkout" className="checkout-btn">Checkout</Link>
       </div>
     );
-    return cartItems;
+    return (
+      <div>
+        <div className="cart-items">{cartItems}</div>
+        {subtotalArea}
+      </div>
+    );
   }
 
   render() {

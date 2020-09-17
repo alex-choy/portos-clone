@@ -17,8 +17,10 @@
 
 
 .to-order-btn {
-  padding: 20px;
+  padding: 5px;
   color: blue;
+  position: relative;
+  top: 30px;
 }
 
 .to-order-btn:hover {

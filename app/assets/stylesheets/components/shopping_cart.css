@@ -30,7 +30,12 @@
 
 .cart-items-wrapper {
   /* border: 1px solid purple; */
-  height: 300px;
+  max-height: 300px;
+}
+
+.cart-items {
+  max-height: 250px;
+  overflow-y: scroll;
 }
 
 .cart-item {
@@ -119,6 +124,7 @@
 .shopping-cart-bottom {
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
+  border-top: 1px solid lightgray;
 }
 
 .subtotal {
