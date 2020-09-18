@@ -1,6 +1,6 @@
 .footer-wrapper {
   margin-top: 20px;
-  position: fixed;
+  position: relative;
   bottom: 0;
   /* height: 180px; */
   width: 100%;
@@ -18,7 +18,7 @@
 }
 
 .push {
-  height: 125px;
+  height: 50px;
   width: 100%;
   /* background-color: red; */
   position: relative;
@@ -37,9 +37,16 @@
   display: block;
   float: right;
 }
-.right-footer > a > i{
+
+.fab {
   margin-left: 10px;
-}
-.fa-github {
   height: 20px;
+  padding: 5px;
+  border-radius: 3px;
+  background-color: transparent;
+  transition: color 0.2s;
+}
+
+.fab:hover {
+  color: gray;
 }

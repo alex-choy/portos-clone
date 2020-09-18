@@ -7,7 +7,7 @@ class Footer extends React.Component {
       <div className="footer-wrapper">
         <footer className="footer">
           <div className="left-footer">
-            <h2>&copy;PoroSnaxx</h2>
+            <h2>&copy;PoroSnax</h2>
           </div>
           <div className="right-footer">
             <a href="https://github.com/alex-choy">
