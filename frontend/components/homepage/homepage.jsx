@@ -1,6 +1,7 @@
-import React from 'react';
+import React from "react";
 import VideoOverlay from "./video_overlay";
-import OrderModalContainer from './order_modal_container';
+import OrderModalContainer from "./order_modal_container";
+import HomepagePhotos from "./homepage-photos";
 
 class Homepage extends React.Component {
   componentDidMount() {
@@ -9,16 +10,13 @@ class Homepage extends React.Component {
 
   render() {
     return (
-      <div>
+      <section>
         <VideoOverlay />
         <OrderModalContainer />
-        {/* <img
-          src="https://porosnax-dev.s3-us-west-1.amazonaws.com/abraham-cisneros-0xxCRrgFrXk-unsplash.jpg"
-          alt="doesn't work"
-        /> */}
-      </div>
-    ); 
+        <HomepagePhotos />
+      </section>
+    );
   }
-};
+}
 
 export default Homepage;
