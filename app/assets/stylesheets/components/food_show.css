@@ -48,6 +48,7 @@
   background-color: #662F1E;
   color: white;
   border-radius: 3px;
+  transition: color, 0.2s;
 }
 
 .to-menu-index:hover {
@@ -62,6 +63,7 @@
   font-size: 20px;
   background-color: #E4AF2B;
   color: whitesmoke;
+  transition: color, 0.2s;
 }
 
 .to-order-page:hover {

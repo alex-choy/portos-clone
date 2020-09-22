@@ -52,10 +52,11 @@
   padding: 10px 15px;
   white-space: nowrap;
   text-align: center;
+  transition: color, 0.2s;
 }
 
 .nav-button:hover {
-  color: white;
+  color: rgb(249, 249, 249);
 }
 
 .nav-login-wrapper {
