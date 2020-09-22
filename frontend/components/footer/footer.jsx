@@ -10,10 +10,10 @@ class Footer extends React.Component {
             <h2>&copy;PoroSnax</h2>
           </div>
           <div className="right-footer">
-            <a href="https://github.com/alex-choy">
+            <a href="https://github.com/alex-choy" target="_blank">
               <i className="fab fa-github fa-lg"></i>
             </a>
-            <a href="https://www.linkedin.com/in/alexchoy179/">
+            <a href="https://www.linkedin.com/in/alexchoy179/" target="_blank">
               <i className="fab fa-linkedin-in fa-lg"></i>
             </a>
           </div>
