@@ -16,7 +16,15 @@ class Masthead extends React.Component {
             <Link to="/menu" className="nav-link">MENU</Link>
             {/* <Link to="/#" className="nav-link">TAKE AND BAKE</Link> */}
             <Link to="/" className="nav-link nav-link-logo">POROSNAX</Link>
-            <Link to="/#" className="nav-link">LOCATIONS</Link>
+            {/* <a target="_blank" href="https://www.portosbakery.com/" className="nav-link">PORTO'S SITE</a> */}
+            <div className="about-links">
+              <a href="https://github.com/alex-choy" target="_blank">
+                <i className="fab fa-github fa-lg"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/alexchoy179/" target="_blank">
+                <i className="fab fa-linkedin-in fa-lg"></i>
+              </a>
+            </div>
             {/* <Link to="/#" className="nav-link">OUR STORY</Link> */}
           </div>
           <Link to="/order" className="nav-button nav-pickup">In-Car Pickup</Link>

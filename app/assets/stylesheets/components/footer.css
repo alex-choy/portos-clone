@@ -37,16 +37,3 @@
   display: block;
   float: right;
 }
-
-.fab {
-  margin-left: 10px;
-  height: 20px;
-  padding: 5px;
-  border-radius: 3px;
-  background-color: transparent;
-  transition: color 0.2s;
-}
-
-.fab:hover {
-  color: gray;
-}

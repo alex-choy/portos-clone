@@ -124,3 +124,22 @@
   height: 30px;
   padding: 10px 15px 5px;
 }
+
+.about-links {
+  position: relative;
+  top: 3px;
+}
+
+.fab {
+  margin-left: 10px;
+  height: 20px;
+  padding: 5px;
+  border-radius: 3px;
+  background-color: transparent;
+  transition: color 0.2s;
+  color: #808080;
+}
+
+.fab:hover {
+  color: rgb(33, 33, 33);
+}
