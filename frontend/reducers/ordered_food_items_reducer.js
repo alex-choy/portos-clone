@@ -1,4 +1,4 @@
-import { REMOVE_ORDER } from "../actions/order_actions";
+import { RECEIVE_ORDERS, REMOVE_ORDER } from "../actions/order_actions";
 
 const { GET_ORDERED_FOOD_ITEMS } = require("../actions/ordered_food_items");
 
@@ -10,6 +10,8 @@ const orderedFoodItemsReducer = (state = _defaultState, action) => {
     case GET_ORDERED_FOOD_ITEMS:
       return action.orderedFoodItems;
     case REMOVE_ORDER:
+      return _defaultState;
+    case RECEIVE_ORDERS:
       return _defaultState;
     default:
       return state;

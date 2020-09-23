@@ -16,7 +16,8 @@ class OrderShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getOrder(this.props.match.params.orderId)
+    const orderId = this.props.match.params.orderId;
+    this.props.getOrder(orderId)
       .then(() =>{
         const { notes, pickup_time, id } = this.props.order;
         this.setState({
@@ -25,15 +26,16 @@ class OrderShow extends React.Component {
           id
         })
       }).then(() =>
-        this.props.getFoodItems()
+        this.props.getOrdersFoodItems(orderId)
       ).then(() =>
-        this.props.fetchOrderedFoodItems(this.props.match.params.orderId)
+        this.props.fetchOrderedFoodItems(orderId)
       );
   }
 
   componentDidUpdate(previousProps) {
-    if (previousProps.match.params.orderId != this.props.match.params.orderId) {
-      this.props.getOrder(this.props.match.params.orderId)
+    const newOrderId = this.props.match.params.orderId;
+    if (previousProps.match.params.orderId != newOrderId) {
+      this.props.getOrder(newOrderId)
         .then(() => {
           const { notes, pickup_time, id } = this.props.order;
           this.setState({
@@ -42,9 +44,9 @@ class OrderShow extends React.Component {
             id,
           });
         })
-        .then(() => this.props.getFoodItems())
+        .then(() => this.props.getOrdersFoodItems(newOrderId))
         .then(() =>
-          this.props.fetchOrderedFoodItems(this.props.match.params.orderId)
+          this.props.fetchOrderedFoodItems(newOrderId)
         );
     }
   }

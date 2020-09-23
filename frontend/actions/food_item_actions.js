@@ -22,6 +22,11 @@ export const getFoodItems = () => (dispatch) => (
     .then((foodItems) => dispatch(receiveFoodItems(foodItems)))
 );
 
+export const getOrdersFoodItems = (orderId) => (dispatch) => {
+  FoodItemAPIUtil.requestOrdersFoodItems(orderId)
+    .then((foodItems) => dispatch(receiveFoodItems(foodItems)))
+};
+
 // how do we deal with looking for invalid foods?
 export const getFoodItem = (foodId) => (dispatch) => (
   FoodItemAPIUtil.requestFoodItem(foodId)

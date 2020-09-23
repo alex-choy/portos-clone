@@ -1,6 +1,11 @@
 class Api::FoodItemsController < ApplicationController
   def index
-    @food_items = FoodItem.all
+    if params[:order_id]
+      @order = Order.includes(:food_items).find_by(id: params[:order_id])
+      @food_items = @order.food_items
+    else
+      @food_items = FoodItem.all
+    end
   end
 
   def show
