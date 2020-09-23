@@ -13,15 +13,11 @@ const mSTP = (state) => ({
 });
 
 const mDTP = (dispatch) => ({
-  // getCategories: () => dispatch(getCategories()),
-  // getFoodItems: () => dispatch(getFoodItems()),
   getCategoriesAndFoodItems: () => dispatch(getCategoriesAndFoodItems()),
   setOrderItemModalId: (foodId) => dispatch(setOrderItemModalId(foodId)),
   openOrderItemModal: () => dispatch(openOrderItemModal()),
   getLocalShoppingCart: (shoppingCart) =>
     dispatch(getLocalShoppingCart(shoppingCart)),
-  // openOrderItemModalAndSetFoodId: () =>
-  //   dispatch(openOrderItemModalAndSetFoodId()),
 });
 
 export default connect(mSTP, mDTP)(OrderPage);

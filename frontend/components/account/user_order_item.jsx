@@ -5,7 +5,7 @@ const UserOrderItem = ({ id, pickupTime, updatedAt}) => {
   
   return (
     <div className="user-order">
-      <Link to={`/order/${id}`} className="order-link">
+      <Link to={`/orders/${id}`} className="order-link">
         <h3>Order #{id}</h3>
       </Link>
       <span className="order-times">
