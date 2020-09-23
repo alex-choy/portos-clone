@@ -31,8 +31,6 @@ const Modal = (props) => {
         quantity = 1;
         buttonText = "Add to Cart"
       }
-      console.log(`quantity: ${quantity}`);
-      console.log(`buttonText: ${buttonText}`);
       component = <OrderItemModalContainer foodItem={props.foodItem} quantity={quantity} buttonText={buttonText}/>;
       break;
     default: 
