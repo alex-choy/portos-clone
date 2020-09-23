@@ -7,6 +7,7 @@ class OrderItemModal extends React.Component {
     super(props);
     this.state = {
       stateQuantity: props.quantity,
+      buttonText: props.buttonText,
       decreaseAllowed: true,
     };
     this.increaseQuantity = this.increaseQuantity.bind(this);
@@ -41,7 +42,7 @@ class OrderItemModal extends React.Component {
 
   render() {
     const { name, description, photo_url, quantity, price } = this.props.foodItem;
-    const { stateQuantity } = this.state;
+    const { stateQuantity, buttonText } = this.state;
     return (
       <div className="order-item-modal-wrapper">
         <h2>{name}</h2>
@@ -61,7 +62,9 @@ class OrderItemModal extends React.Component {
                 remainingQuantity={quantity} 
                 addItemToCart={this.addItemToCart}
                 stateQuantity={stateQuantity}
-                price={price} />
+                price={price} 
+                buttonText={buttonText}
+              />
               {/* Make price or sold out component here */}
             </div>
           </section>

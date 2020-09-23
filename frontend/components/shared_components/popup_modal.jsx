@@ -23,8 +23,17 @@ const Modal = (props) => {
       component = <SignupFormContainer />;
       break;
     case ORDER_ITEM_MODAL:
-      const quantity = (editedQuantity) ? editedQuantity : 1
-      component = <OrderItemModalContainer foodItem={props.foodItem} quantity={quantity} />;
+      let quantity, buttonText;
+      if(editedQuantity) {
+        quantity = editedQuantity;
+        buttonText = "Update Cart"
+      } else {
+        quantity = 1;
+        buttonText = "Add to Cart"
+      }
+      console.log(`quantity: ${quantity}`);
+      console.log(`buttonText: ${buttonText}`);
+      component = <OrderItemModalContainer foodItem={props.foodItem} quantity={quantity} buttonText={buttonText}/>;
       break;
     default: 
       return null;

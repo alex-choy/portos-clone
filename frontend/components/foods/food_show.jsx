@@ -7,6 +7,7 @@ class FoodShow extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0)
     this.props.getFoodItem(this.props.match.params.foodId);
   }
 

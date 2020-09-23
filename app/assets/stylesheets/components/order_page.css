@@ -224,6 +224,10 @@
   color: rgb(180, 180, 180);
 }
 
+.disabled:hover {
+  cursor: default;
+}
+
 .add-to-cart {
   display: flex;
   flex-direction: column;

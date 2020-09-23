@@ -4,6 +4,8 @@ import OrderItemModal from './order_item_modal';
 
 const mSTP = (state, ownProps) => ({
   foodItem: ownProps.foodItem,
+  // quantity: state.quantity,
+  // buttonText: buttonText
 });
 
 const mDTP = (dispatch) => ({
