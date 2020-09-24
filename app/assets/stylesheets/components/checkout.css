@@ -27,8 +27,16 @@
 
 .btn-order-page {
   padding: 5px 10px;
+  border-radius: 20px;
+  position: relative;
+  top: 40px;
   color: white;
-  
+  background-color:#662F1E;
+  transition: background-color 0.2s;
+}
+
+.btn-order-page:hover {
+  background-color: #58281a;
 }
 
 .checkout-pricing {

@@ -51,14 +51,18 @@ class OrderPage extends React.Component {
       const foodIds = this.props.categories[category];
       const categoryEles = this.renderEachCategory(foodIds, category);
       if (categoryEles.length) {
+        let categoryName = category;
+        const categoryNameLen = categoryName.length;
+        if(categoryName.charAt(categoryNameLen - 1) === "y") {
+          categoryName = categoryName.slice(0, categoryNameLen - 1) + "ie";
+        }
         items.push(
           <div className={`category ${category} cf`} key={category}>
-            <h2 className="category-title">{this.toTitleCase(category)}s</h2>
+            <h2 className="category-title">{this.toTitleCase(categoryName)}s</h2>
             <hr/>
             <section className="category-items-wrapper">{categoryEles}</section>
           </div>
         );
-        // items.push(categoryEles);
       }
     }
 
