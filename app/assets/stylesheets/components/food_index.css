@@ -20,10 +20,7 @@
   box-sizing: border-box;
   width: 300px;
   height: 325px;
-  padding: 0px 20px 20px;
-  margin-right: 45px;
-  margin-bottom: 50px;
-  margin-top: 20px;
+  margin: 20px 35px 50px 15px;
 }
 
 .food-card > h2 {
@@ -40,13 +37,18 @@
   color: green;
 }
 
-.search-bar {
+.search-food {
   position: absolute;
   top: -25px;
   left: 20px;
   font-size: 20px;
 }
 
-.search-food {
+.search-bar {
   margin-left: 5px;
+}
+
+.search-food:focus {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
 }

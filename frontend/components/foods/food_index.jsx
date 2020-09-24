@@ -44,9 +44,9 @@ class FoodIndex extends React.Component {
       return (
         <div className="food-card-list cf">
 
-          <section className="search-bar">
+          <section className="search-food">
             <i className="fa fa-search" aria-hidden="true"></i>
-            <input type="text" className="search-food" placeholder="Search..." onChange={this.changeInput}/>
+            <input type="text" className="search-bar" placeholder="Search..." onChange={this.changeInput}/>
           </section>
           {this.createFoodItems()}
         </div>
