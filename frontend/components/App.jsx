@@ -29,9 +29,9 @@ const App = () => (
       <ProtectedRoute path="/checkout" component={CheckoutContainer} />
       <ProtectedRoute path="/confirmation" component={ConfirmationContainer} />
     </div>
-    <div className="push"></div>
-    <Modal />
+    {/* <div className="push"></div> */}
     <Footer />
+    <Modal />
   </div>
 );
 

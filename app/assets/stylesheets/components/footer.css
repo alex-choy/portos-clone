@@ -1,8 +1,6 @@
 .footer-wrapper {
-  margin-top: 20px;
-  position: relative;
+  position: absolute;
   bottom: 0;
-  /* height: 180px; */
   width: 100%;
 }
 
