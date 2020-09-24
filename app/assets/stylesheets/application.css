@@ -17,6 +17,7 @@
 body {
   height: 100%;
   font-family: "Bebas Neue",sans-serif;
+  overflow-y: scroll;
 }
 
 .avoid-masthead {
@@ -32,4 +33,14 @@ body {
   padding-top: 85px;
   min-height: 100%;
   display: block;
+}
+
+.page-header {
+  color: rgb(94, 94, 94);
+  font-family: "Bebas Neue",sans-serif;
+  width: 100px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 32px;
+  font-weight: 700;
 }
