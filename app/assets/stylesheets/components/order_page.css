@@ -1,9 +1,27 @@
+.order-page {
+  margin: 40px;
+}
+
 .order-page-wrapper {
+  position: relative;
   width: 80%;
   margin: auto;
   margin-top: 20px; 
   display: flex;
   /* border: 1px solid green; */
+}
+
+.order-search-food {
+  position: absolute;
+  top: -54px;
+  left: 0px;
+  border: 1px solid rgb(31, 31, 31);
+  padding: 3px 5px;
+  border-radius: 5px;
+}
+
+#order-fa-search {
+  top: -1px;
 }
 
 .order-items {

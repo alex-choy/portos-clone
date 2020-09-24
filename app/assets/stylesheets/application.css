@@ -42,9 +42,10 @@ body {
 }
 
 .page-header {
+  display: block;
   color: rgb(94, 94, 94);
   font-family: "Bebas Neue",sans-serif;
-  width: 100px;
+  text-align: center;
   margin-right: auto;
   margin-left: auto;
   font-size: 32px;

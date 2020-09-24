@@ -135,7 +135,7 @@ class Checkout extends React.Component {
               placeholder="Order notes..."
               onChange={this.stateChange("notes")}
             ></textarea>
-            <Link className="btn-order-page" to="/order">Back to Order</Link>
+            <Link className="btn-order-page" to="/order">Back to Order Page</Link>
           </div>
           <div className="col col-3-8 set-size">
             <div className="cart-header  top-box">

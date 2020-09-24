@@ -72,14 +72,21 @@ class OrderPage extends React.Component {
   render() {
     if (this.props.foodItems && this.props.categories) {
       return (
-        <div className="order-page-wrapper">
-          <section className="order-items">
-            {this.renderAllItemsByCategory()}
-          </section>
-          <aside className="shopping-cart">
-            <ShoppingCart />
-          </aside>
-          <Modal />
+        <div className="order-page">  
+          <h1 className="page-header">ORDER PAGE</h1>
+          <div className="order-page-wrapper">
+            <section className="search-food order-search-food">
+              <i id="order-fa-search" className="fa fa-search" aria-hidden="true"></i>
+              <input type="text" className="search-bar" placeholder="Search..." onChange={this.changeInput} />
+            </section>
+            <section className="order-items">
+              {this.renderAllItemsByCategory()}
+            </section>
+            <aside className="shopping-cart">
+              <ShoppingCart />
+            </aside>
+            <Modal />
+          </div>
         </div>
       );
     } else {
