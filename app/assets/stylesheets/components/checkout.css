@@ -25,6 +25,12 @@
   /* border-bottom: 1px solid gray; */
 }
 
+.btn-order-page {
+  padding: 5px 10px;
+  color: white;
+  
+}
+
 .checkout-pricing {
   display: block;
   color: gray;

@@ -39,11 +39,11 @@
 
 .search-food {
   position: absolute;
-  top: -25px;
-  left: 20px;
+  top: -34px;
+  left: 15px;
   font-size: 20px;
-  border: 1px solid black;
-  padding: 5px 10px;
+  border: 1px solid rgb(75, 75, 75);
+  padding: 3px 5px;
   border-radius: 5px;
 }
 
@@ -51,7 +51,9 @@
   margin-left: 5px;
 }
 
-.search-food:focus {
-  border-bottom: 1px solid #000;
-  box-shadow: 0 1px 0 0 #000;
+.fa-search {
+  position: relative;
+  top: 2px;
+  color: rgb(31, 31, 31);
+  font-size: 16px;
 }
