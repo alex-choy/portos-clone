@@ -34,6 +34,7 @@
   padding: 5px 15px;
   text-decoration: none;
   font-size: 20px;
+  height: 30px;
   font-weight: 500;
   overflow: hidden;
   white-space: nowrap;
@@ -78,10 +79,8 @@
   top: 43px;
   left: 0px;
   width: 200px;
-  /* height: 100px; */
   padding-top: 10px;
   position: absolute;
-  /* display: none; */
   box-shadow: 5px 5px 5px 3px #aaaaaa;
   text-align: left;
 
@@ -125,13 +124,27 @@
   padding: 10px 15px 5px;
 }
 
-.about-links {
+.about {
   position: relative;
-  top: 3px;
+}
+
+.about-links {
+  display: none;
+  position: absolute;
+  width: 100px;
+  padding: 5px 10px;
+  top: -3px;
+  left: 0;
+  text-decoration: none;
+}
+
+.about:hover .about-links {
+  display: flex;
+  justify-content: space-around;
 }
 
 .fab {
-  margin-left: 10px;
+  /* margin-left: 10px; */
   height: 20px;
   padding: 5px;
   border-radius: 3px;

@@ -23,15 +23,15 @@ const App = () => (
       <Route exact path="/" component={HomepageContainer} />
       <Route path={`/menu/:foodId`} component={FoodShowContainer} />
       <Route exact path="/menu" component={Menu} />
-      <ProtectedRoute path="/order/:orderId" component={OrderShowContainer} />
+      <ProtectedRoute path="/orders/:orderId" component={OrderShowContainer} />
       <ProtectedRoute exact path="/order" component={OrderPageContainer} />
       <ProtectedRoute path="/account" component={AccountContainer} />
       <ProtectedRoute path="/checkout" component={CheckoutContainer} />
       <ProtectedRoute path="/confirmation" component={ConfirmationContainer} />
     </div>
-    <div className="push"></div>
-    <Modal />
+    {/* <div className="push"></div> */}
     <Footer />
+    <Modal />
   </div>
 );
 

@@ -33,7 +33,7 @@ class Confirmation extends React.Component {
               foodItems={foodItems}
             />
           </div>
-          <Link className="to-order-btn" to={`order/${order.id}`}>Check out your order here!</Link>
+          <Link className="to-order-btn" to={`orders/${order.id}`}>Check out your order here!</Link>
         </div>
       );
     }

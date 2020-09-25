@@ -22,16 +22,15 @@
 .order-modal-parent {
     position: absolute;
     box-sizing: border-box;
-    /* position: relative; */
     left: 50%;
     top: 150px;
-    /* top: 12%; */
     transform: translate(-50%);
     width: 375px;
     height: 425px;
-    padding: 30px;
+    padding: 5px 30px;
     margin: auto;
     background-color: white;
+    border-radius: 3px;
 }
 
 .order-modal-child {

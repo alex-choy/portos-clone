@@ -6,6 +6,7 @@
 }
 
 .food-card-list {
+  position: relative;
   display: block;
   margin: 0 auto;
   width: 100%;
@@ -17,20 +18,9 @@
 .food-card {
   float: left;
   box-sizing: border-box;
-  /* width: calc((100% - (55px*2))/3);
-  min-width: 250px;
-  max-width: 300px; */
   width: 300px;
   height: 325px;
-  padding: 20px;
-  margin-right: 45px;
-  /* margin: 0px calc((100% - (300px*3)) / 6) 50px; */
-  margin-bottom: 50px;
-  /* margin: 0 auto 50px auto; */
-  /* border: 1px solid goldenrod; */
-  /* border: 1px solid #BFBFBF;
-  border-radius: 3px;
-  box-shadow: 10px 10px 5px #aaaaaa; */
+  margin: 20px 35px 50px 15px;
 }
 
 .food-card > h2 {
@@ -39,4 +29,31 @@
   font-size: 22px;
   font-weight: 600;    
   font-family: "Bebas Neue",sans-serif;
+  transition: color .15s;
+}
+
+
+.food-card:hover > h2 {
+  color: green;
+}
+
+.search-food {
+  position: absolute;
+  top: -34px;
+  left: 15px;
+  font-size: 20px;
+  border: 1px solid rgb(75, 75, 75);
+  padding: 3px 5px;
+  border-radius: 5px;
+}
+
+.search-bar {
+  margin-left: 5px;
+}
+
+.fa-search {
+  position: relative;
+  top: 2px;
+  color: rgb(31, 31, 31);
+  font-size: 16px;
 }

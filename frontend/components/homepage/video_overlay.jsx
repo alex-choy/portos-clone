@@ -7,7 +7,7 @@ class VideoOverlay extends React.Component {
     // const { homepageOrderModalOpen } = this.props.homeOrderModal;
     return (
       // chrome allows autoplay only if muted
-      <video className="homepage-video" width="100%" muted loop playsInline autoPlay>
+      <video className="homepage-video" width="100%" muted loop playsInline>
         <source
           src="https://porosnax-dev.s3-us-west-1.amazonaws.com/food_items/baked-goods.mp4"
           type="video/mp4"
