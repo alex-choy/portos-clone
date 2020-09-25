@@ -46,21 +46,12 @@
   justify-content: space-around;
 }
 
-.no-renderd-page {
+.no-rendered-page {
   padding-top: 40px;
   width: 80%;
   margin: auto;
 }
 
-.no-renderd-page > h2 {
+.no-rendered-page > h2 {
   font-size: 32px;
-}
-
-.no-renderd-page > a {
-  color: blue;
-  font-size: 20px;
-}
-
-.no-renderd-page > a:hover {
-  text-decoration: underline;
 }

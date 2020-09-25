@@ -35,7 +35,7 @@
 
 .cart-items {
   max-height: 265px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .cart-item {
@@ -43,7 +43,7 @@
   padding-right: 0;
 }
 
-.cart-item span {
+.cart-item-name {
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -51,6 +51,12 @@
   /* white-space: nowrap; */
   overflow: hidden;
   height: 24px;
+
+  font-weight: 700;
+  font-size: 16px;
+  padding-top: 4px;
+  color: rgb(31, 31, 31);
+  line-height: 24px;
 }
 
 .cart-item-top {
@@ -60,15 +66,6 @@
   font-size: 18px;
   vertical-align: middle;
 }
-
-.cart-item-name {
-  font-weight: 700;
-  font-size: 16px;
-  padding-top: 4px;
-  color: rgb(31, 31, 31);
-  line-height: 24px;
-}
-
 .item-top-left {
   display: flex;
   /* justify-content: space-between; */
@@ -79,9 +76,8 @@
 
 .cart-quantity {
   padding: 3px;
-  width: 40px;
-  height: 20px;
-  margin-right: 20px;
+  min-width: 30px;
+  margin-right: 10px;
   background-color: rgb(223, 223, 223);
   text-align: center;
   vertical-align: middle;
@@ -92,7 +88,6 @@
   color: gray;
   text-align: right;
   margin-right: 20px;
-  /* border: 1px solid goldenrod; */
 }
 
 .cart-item-bot {
@@ -103,15 +98,19 @@
   color: rgb(114, 114, 114);
 }
 
-.cart-item-bot > button {
+.cart-btn {
   padding: 10px;
   font-size: 16px;
   color: rgb(114, 114, 114);
   transition: color 0.3s;
 }
 
-.cart-item-bot > button:hover {
+.edit-cart-item:hover {
   color: green;
+}
+
+.remove-cart-item:hover {
+  color: red;
 }
 
 .separator {

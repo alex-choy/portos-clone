@@ -2,9 +2,17 @@ import React from 'react';
 const displayButtons = (id, removeItemFromCart, editCartItems) => {
   return (
     <div className="cart-item-bot">
-      <button onClick={() => editCartItems(id)}>Edit</button>
+      <button 
+        className="edit-cart-item cart-btn" 
+        onClick={() => editCartItems(id)}>
+        Edit  
+      </button>
       <p className="separator">|</p>
-      <button onClick={() => removeItemFromCart(id)}>Remove</button>
+      <button 
+        className="remove-cart-item cart-btn" 
+        onClick={() => removeItemFromCart(id)}>
+        Remove 
+      </button>
     </div>
   )
 };
@@ -26,6 +34,7 @@ const ShoppingCartItem = ({
           <p>${(price * cartQuantity).toFixed(2)}</p>
         </div>
       </div>
+      {/* Only make buttons for ordering, not in the confirmation page */}
       {removeItemFromCart && editCartItems ? displayButtons(id, removeItemFromCart, editCartItems) : ''}
     </div>
   );

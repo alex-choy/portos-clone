@@ -64,7 +64,7 @@
 
 .ord-button {
   width: 100%;
-  padding: 15px 60px;
+  padding: 15px 30px;
   font-size: 28px;
   font-weight: 500;
 }
@@ -80,7 +80,7 @@
   background-color: #4f2417;
 }
 
-.delivery {
+.menu {
   display: block;
   color: #662F1E;
   background-color: #E4AF2B;
@@ -88,7 +88,7 @@
 }
 
 
-.delivery:hover { 
+.menu:hover { 
   background-color: #d39700;
 }
 

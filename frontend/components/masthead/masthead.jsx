@@ -20,7 +20,7 @@ class Masthead extends React.Component {
               POROSNAX
             </Link>
             <div className="about nav-link ">
-              ABOUT
+              ABOUT ME
               <div className="about-links">
                 <a
                   href="https://github.com/alex-choy"

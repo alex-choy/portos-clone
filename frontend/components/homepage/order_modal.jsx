@@ -40,18 +40,18 @@ class OrderModal extends React.Component {
           </span>
           <div className="order-btn-wrapper">
             <span className="order-modal-subtitle ord-mod">
-              <p>You better sit tight in your car</p>
+              <p>Maybe it'll ship, maybe it won't</p>
             </span>
-            <Link className="ord-button pickup" to="/order">
-              Pickup In-Store
+            <Link to="/menu" className="ord-button menu">
+              See Our Menu
             </Link>
           </div>
           <div className="order-btn-wrapper">
             <span className="order-modal-subtitle ord-mod">
-              <p>Maybe it'll ship, maybe it won't</p>
+              <p>You better sit tight in your car</p>
             </span>
-            <Link to="/menu" className="ord-button delivery">
-              See Our Menu
+            <Link className="ord-button pickup" to="/order">
+              Pickup In-Store
             </Link>
           </div>
         </div>

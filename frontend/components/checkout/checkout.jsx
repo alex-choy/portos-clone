@@ -153,11 +153,11 @@ class Checkout extends React.Component {
         </div>
       );
     }
-    return <div className="no-renderd-page">
+    return <div className="no-rendered-page">
       <h2>
         There's no shopping cart items!
       </h2> <br/>
-      <Link to="/order">Click here to go to the order page!</Link>
+          <Link className="btn-order-page" to="/order">Back to Order Page</Link>
       </div>;
   }
 }

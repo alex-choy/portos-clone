@@ -23,8 +23,9 @@
 
 .center-nav {
   display: flex;
-  width: 45%;
+  width: 65%;
   justify-content: space-around;
+  margin: 0 60px;
   /* background-color: #fff; */
 }
 
@@ -33,8 +34,8 @@
   /* background-color: teal; */
   padding: 5px 15px;
   text-decoration: none;
-  font-size: 20px;
-  height: 30px;
+  font-size: 22px;
+  height: 32px;
   font-weight: 500;
   overflow: hidden;
   white-space: nowrap;
@@ -45,7 +46,11 @@
 }
 
 .nav-link-logo {
-   font-weight: 700;
+  position: relative;
+  top: -7px;
+  font-size: 30px;
+  height: 40px;
+  font-weight: 700;
 }
 
 .nav-button {
@@ -131,11 +136,12 @@
 .about-links {
   display: none;
   position: absolute;
-  width: 100px;
+  width: 150px;
   padding: 5px 10px;
   top: -3px;
   left: 0;
   text-decoration: none;
+  font-size: 20px;
 }
 
 .about:hover .about-links {
