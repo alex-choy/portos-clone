@@ -8,17 +8,22 @@ export const SHOPPING_CART = "shoppingCart";
 class OrderPage extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      userInput: "",
+    }
 
     this.itemClick = this.itemClick.bind(this);
     // this.addItemToCart = this.addItemToCart.bind(this);
     this.renderEachCategory = this.renderEachCategory.bind(this);
     this.renderAllItemsByCategory = this.renderAllItemsByCategory.bind(this);
+    this.changeInput = this.changeInput.bind(this);
   }
 
   componentDidMount() {
     let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
     this.props.getLocalShoppingCart(shoppingCart);
-    this.props.getCategoriesAndFoodItems();
+    this.props.getCategoriesAndFoodItems()
+      .then(() => this.setState({filteredCategories: this.props.categories}));
   }
 
   itemClick(foodId) {
@@ -35,8 +40,28 @@ class OrderPage extends React.Component {
       .join(' ');
   };
 
+  changeInput(e) {
+    this.setState({userInput: e.target.value.toLowerCase()});
+    const { foodItems } = this.props;  
+    const newFilteredCats = {...this.props.categories};
+    console.log('newFiltCat: ', newFilteredCats);
+    for(const category in newFilteredCats) {
+      newFilteredCats[category] = newFilteredCats[category].filter(foodId => {
+        const foodItem = foodItems[foodId];
+        return foodItem.name.toLowerCase().includes(e.target.value.toLowerCase());
+      }); 
+    }
+    console.log(newFilteredCats);
+    this.setState({filteredCategories: newFilteredCats});
+  }
+
+
+  /**
+   * Given foodIds that belong to a category, make items for each foodId
+   * @param {Number Array} foodIds 
+   */
   renderEachCategory(foodIds) {
-    const foodItems = this.props.foodItems;
+    const { foodItems } = this.props;
     let categoryEles = [];
     foodIds.forEach((id) => {
       const foodItem = foodItems[id];
@@ -45,18 +70,21 @@ class OrderPage extends React.Component {
     return categoryEles;
   }
 
+  /**
+   * Grab React state food items
+   */
   renderAllItemsByCategory() {
-    let items = [];
-    for (const category in this.props.categories) {
-      const foodIds = this.props.categories[category];
-      const categoryEles = this.renderEachCategory(foodIds, category);
+    let categories = [];
+    for (const category in this.state.filteredCategories) {
+      const foodIds = this.state.filteredCategories[category];
+      const categoryEles = this.renderEachCategory(foodIds);
       if (categoryEles.length) {
         let categoryName = category;
         const categoryNameLen = categoryName.length;
         if(categoryName.charAt(categoryNameLen - 1) === "y") {
           categoryName = categoryName.slice(0, categoryNameLen - 1) + "ie";
         }
-        items.push(
+        categories.push(
           <div className={`category ${category} cf`} key={category}>
             <h2 className="category-title">{this.toTitleCase(categoryName)}s</h2>
             <hr/>
@@ -66,11 +94,11 @@ class OrderPage extends React.Component {
       }
     }
 
-    return items;
+    return categories;
   }
 
   render() {
-    if (this.props.foodItems && this.props.categories) {
+    if (this.props.foodItems && this.state.filteredCategories) {
       return (
         <div className="order-page">  
           <h1 className="page-header">ORDER PAGE</h1>
