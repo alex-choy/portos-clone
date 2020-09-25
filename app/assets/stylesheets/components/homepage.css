@@ -10,7 +10,6 @@
 
 .homepage-photos {
   margin-top: 50px;
-  padding: 50px 30px;
   display: flex;
   justify-content: space-around;
   text-align-last: center;
@@ -21,7 +20,7 @@
   margin: auto;
   display: inline-block;
   width: 45%;
-  height: 400px;
+  height: 100%;
 }
 
 .homepage-photo {
@@ -31,10 +30,6 @@
   object-fit: cover;
   filter: brightness(0.7);
   border-radius: 3px;
-}
-
-.homepage-photo-wrapper:last-child {
-  margin-left: 50px;
 }
 
 .photo-info {
