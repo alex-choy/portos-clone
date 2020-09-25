@@ -78,10 +78,8 @@
   top: 43px;
   left: 0px;
   width: 200px;
-  /* height: 100px; */
   padding-top: 10px;
   position: absolute;
-  /* display: none; */
   box-shadow: 5px 5px 5px 3px #aaaaaa;
   text-align: left;
 
@@ -125,11 +123,31 @@
   padding: 10px 15px 5px;
 }
 
-.about-links {
+.about {
   position: relative;
-  top: 3px;
 }
 
+.about-links {
+  display: none;
+  position: absolute;
+  top: 20px;
+  width: 100px;
+  height: 30px;
+  border: 1px solid black;
+  text-decoration: none;
+}
+
+.about-links:hover {
+  text-decoration: none;
+}
+
+.about-link {
+  z-index: 5001;
+}
+
+.about:hover > .about-links {
+  display: block;
+}
 .fab {
   margin-left: 10px;
   height: 20px;

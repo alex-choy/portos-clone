@@ -44,7 +44,7 @@
   width: 50%;
   height: 60%;
   padding: 20px;
-  z-index: 5;
+  z-index: 1;
   text-align: center;
 }
 
@@ -56,18 +56,14 @@
 }
 
 .photo-btn {
+  /* top: -200px; */
   position: absolute;
   top: 275px;
   left: 41%;
-  z-index: 10;
+  z-index: 2;
   padding: 5px 10px;
   background: rgba(38, 38, 38, 1);
   background:  #662F1E;
   color: white;
   font-size: 20px;
-}
-
-
-.photo-btn:hover {
-  background:  #4b2317;
 }
