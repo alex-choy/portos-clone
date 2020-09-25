@@ -49,23 +49,25 @@
 }
 
 .photo-text {
+  position: relative;
   color: #E9D19B;
   font-size: 36px;
   font-weight: 700;
 }
 
 .photo-btn {
-  position: relative;
-  top: 80px;
+  position: absolute;
+  top: 275px;
+  left: 41%;
+  z-index: 10;
   padding: 5px 10px;
   background: rgba(38, 38, 38, 1);
-  background-color:  #662F1E;
+  background:  #662F1E;
   color: white;
   font-size: 20px;
-  transition: background-color 0.2s;
 }
 
 
 .photo-btn:hover {
-  background-color:  #4b2317;
+  background:  #4b2317;
 }
