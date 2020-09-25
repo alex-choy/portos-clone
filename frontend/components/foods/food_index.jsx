@@ -32,7 +32,11 @@ class FoodIndex extends React.Component {
       currFoodItems = this.state.filteredFoodItems;
     }
     if(currFoodItems.length < 1) {
-      return <div><span>No results</span></div>
+      return (
+        <div className="no-results no-menu-results">
+          <span>No results</span>
+        </div>
+      );
     }
     return currFoodItems.map((foodItem) => (
       <FoodIndexItem key={foodItem.id} foodItem={foodItem}/>

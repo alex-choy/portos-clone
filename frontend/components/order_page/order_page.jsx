@@ -62,7 +62,6 @@ class OrderPage extends React.Component {
           }
         );
       }
-      console.log(newFilteredCats);
       this.setState({ filteredCategories: newFilteredCats });
     });
   }
@@ -108,8 +107,8 @@ class OrderPage extends React.Component {
         );
       }
     }
-
-    return categories;
+    if(categories.length > 0) return categories;
+    return <div className="no-results"><span>No Results</span></div>
   }
 
   render() {

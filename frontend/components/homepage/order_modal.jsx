@@ -9,7 +9,6 @@ class OrderModal extends React.Component {
     if(this.props.modal) {
       const homepageVideo = document.getElementById("homepage-video");
       const closeModal = document.getElementById("close-modal");
-      console.log(closeModal);
       closeModal.addEventListener("click", () => {
         homepageVideo.play();
       });
