@@ -34,6 +34,7 @@
   padding: 5px 15px;
   text-decoration: none;
   font-size: 20px;
+  height: 30px;
   font-weight: 500;
   overflow: hidden;
   white-space: nowrap;
@@ -130,26 +131,20 @@
 .about-links {
   display: none;
   position: absolute;
-  top: 20px;
   width: 100px;
-  height: 30px;
-  border: 1px solid black;
+  padding: 5px 10px;
+  top: -3px;
+  left: 0;
   text-decoration: none;
 }
 
-.about-links:hover {
-  text-decoration: none;
+.about:hover .about-links {
+  display: flex;
+  justify-content: space-around;
 }
 
-.about-link {
-  z-index: 5001;
-}
-
-.about:hover > .about-links {
-  display: block;
-}
 .fab {
-  margin-left: 10px;
+  /* margin-left: 10px; */
   height: 20px;
   padding: 5px;
   border-radius: 3px;

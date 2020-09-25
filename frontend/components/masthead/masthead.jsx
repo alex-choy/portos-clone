@@ -21,18 +21,22 @@ class Masthead extends React.Component {
             </Link>
             <div className="about nav-link ">
               ABOUT
-              {/* 
               <div className="about-links">
-                <a href="https://github.com/alex-choy" className="about-link" target="_blank">
+                <a
+                  href="https://github.com/alex-choy"
+                  className="about-link"
+                  target="_blank"
+                >
                   <i className="fab fa-github fa-lg"></i>
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/alexchoy179/" className="about-link"
+                  href="https://www.linkedin.com/in/alexchoy179/"
+                  className="about-link"
                   target="_blank"
                 >
                   <i className="fab fa-linkedin-in fa-lg"></i>
                 </a>
-            </div> */}
+              </div>
             </div>
             {/* <Link to="/#" className="nav-link">OUR STORY</Link> */}
           </div>
